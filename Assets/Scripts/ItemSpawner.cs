@@ -13,6 +13,8 @@ public class ItemSpawner : MonoBehaviour {
 
 	public int pLength = 5;
 
+	public float randMin = 10f, randMax = 10f;
+
 	// Use this for initialization
 	void Start () {
 
@@ -31,7 +33,7 @@ public class ItemSpawner : MonoBehaviour {
 		{
 			Transform clone = Instantiate(item, new Vector3(randomX, randomY, 0), Quaternion.identity) as Transform;
 			clone.LookAt(earth.transform.position);
-			timer = 10 + Random.value *10;
+			timer = randMin + Random.value *randMax;
 			itemCounter++;
 		}
 	}
