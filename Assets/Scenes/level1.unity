@@ -205,8 +205,9 @@ GameObject:
   - 65: {fileID: 458721343}
   - 23: {fileID: 458721342}
   - 114: {fileID: 458721346}
+  - 114: {fileID: 458721347}
   m_Layer: 0
-  m_Name: PlayerA
+  m_Name: PlayerB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,9 +275,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cb297815ab6ff459eb9e6f14be3b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 2
+  playerName: 
+  planet: {fileID: 84567572}
+  speed: .100000001
+  movingDirection: 0
+--- !u!114 &458721347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458721341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cb297815ab6ff459eb9e6f14be3b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerNumber: 0
   playerName: 
+  planet: {fileID: 0}
   speed: 0
+  movingDirection: 0
 --- !u!1 &1289302550
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +403,7 @@ GameObject:
   - 33: {fileID: 1702467883}
   - 65: {fileID: 1702467882}
   - 23: {fileID: 1702467881}
+  - 114: {fileID: 1702467885}
   m_Layer: 0
   m_Name: PlayerA
   m_TagString: Untagged
@@ -442,6 +462,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1702467885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702467880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cb297815ab6ff459eb9e6f14be3b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 1
+  playerName: 
+  planet: {fileID: 84567572}
+  speed: .100000001
+  movingDirection: 0
 --- !u!1 &1755828651
 GameObject:
   m_ObjectHideFlags: 0
