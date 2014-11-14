@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public int playerNumber;
 	public string playerName;
-	public GameObject planet;
+	private GameObject planet;
 	[SerializeField]
 	private float speed;
 
@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start () 
 	{
-	
+        planet = GameMaster.Earth;
 	}
 	
 	// Update is called once per frame
