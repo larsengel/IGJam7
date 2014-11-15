@@ -8,7 +8,8 @@ public class PlayerScript : MonoBehaviour {
 	private GlewGunScript gun;
 	private GameObject planet;
 	[SerializeField]
-	private float speed;
+    private float speed;
+    public GameObject catchObject = null;
 
 	public enum DIRECTION
 	{LEFT = -1,	NONE = 0, RIGHT = 1}
@@ -51,5 +52,6 @@ public class PlayerScript : MonoBehaviour {
 		this.gameObject.transform.up = -( planet.GetComponent<CircleCollider2D>().center - new Vector2(this.transform.position.x, this.transform.position.y) ).normalized;
 		//correct position (distance to planet-center)...
 		this.gameObject.transform.position += -transform.up * ( ( Vector2.Distance(this.planet.transform.position, new Vector2(this.transform.position.x, this.transform.position.y)) + this.transform.localScale.y ) - ( planet.GetComponent<CircleCollider2D>().radius*2 - this.transform.localScale.y*2 ) );
+
 	}
 }

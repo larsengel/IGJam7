@@ -20,18 +20,21 @@ public class ItemSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer -= Time.deltaTime;
-
-		float angle = Random.value * 2*Mathf.PI;
-
-		float randomX = pLength * Mathf.Cos (angle) + GameMaster.Earth.transform.position.x;
-		float randomY = pLength * Mathf.Sin (angle) + GameMaster.Earth.transform.position.y;
-
 		if(timer < 0)
 		{
-			Transform clone = Instantiate(item, new Vector3(randomX, randomY, 0), Quaternion.identity) as Transform;
-			clone.LookAt(GameMaster.Earth.transform.position);
-			timer = randMin + Random.value *randMax;
-			itemCounter++;
+            Spawn();
 		}
 	}
+
+    private void Spawn()
+    {
+        float angle = Random.value * 2 * Mathf.PI;
+        float randomX = pLength * Mathf.Cos(angle) + GameMaster.Earth.transform.position.x;
+        float randomY = pLength * Mathf.Sin(angle) + GameMaster.Earth.transform.position.y;
+
+        Transform clone = Instantiate(item, new Vector3(randomX, randomY, 0), Quaternion.identity) as Transform;
+        clone.LookAt(GameMaster.Earth.transform.position);
+        timer = randMin + Random.value * randMax;
+        itemCounter++;
+    }
 }
