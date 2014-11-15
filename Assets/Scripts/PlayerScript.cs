@@ -22,11 +22,17 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f;
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
+    public float CatchSlowmo = 0.3f;
+    public float JumpSlowmo = 0.5f;
+    
 
     // Jump
     private bool enableJump = false;
-    public float jumpTime = 1.0f;
+    private float jumpTime = 1.5f;
     private float jumpCurrent = 0;
+    private float gravityDefault = 0;
+    private float gravityCurrent = 0;
+    private float jumpSpeed = 2.5f;
 
 	public enum AIM
 	{ DOWN = -1, NONE = 0, UP = 1 }
@@ -37,6 +43,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		planet = GameMaster.Earth;
 		gun = this.gameObject.transform.GetChild(0).gameObject.GetComponent<GlewGunScript>();
+        this.gravityDefault = this.jumpTime / 2;
 	}
 	
 	// Update is called once per frame
@@ -59,12 +66,12 @@ public class PlayerScript : MonoBehaviour {
             case 1:
                 PlayerCode = "A";
                 if (Input.GetKeyDown(KeyCode.Joystick1Button0)) // A - Jump
-                    this.enableJump = true;
+                    StartJump();
                 break;
             case 2:
                 PlayerCode = "B";
                 if (Input.GetKeyDown(KeyCode.Joystick2Button0)) // A - Jump
-                    this.enableJump = true;
+                    StartJump();
                 break;
         }
 
@@ -100,12 +107,17 @@ public class PlayerScript : MonoBehaviour {
 	private void Move()
 	{
         // Player Movement
-        Utility.DoAroundMovement(this.transform, movingDirection, speed, !this.enableJump);
+        float tmpSpeed = speed;
+        if (this.catchFollowing == true) // slow down if catch item
+            tmpSpeed *= CatchSlowmo;
+        if (this.enableJump == true) // slow down if Jump
+            tmpSpeed *= JumpSlowmo;
+        Utility.DoAroundMovement(this.transform, movingDirection, tmpSpeed, !this.enableJump);
 
         if (this.catchObject != null && catchFollowing == true)
         {
             // Item Movement
-            Utility.DoAroundMovement(this.catchObject, movingDirection, speed);
+            Utility.DoAroundMovement(this.catchObject, movingDirection, tmpSpeed, !this.enableJump);
         }
     }
 
@@ -142,14 +154,25 @@ public class PlayerScript : MonoBehaviour {
         gun.Fire(lookAtDirection);
     }
 
+    private void StartJump()
+    {
+        this.enableJump = true;
+        this.gravityCurrent = this.gravityDefault;
+    }
+
     private void Jump()
     {
         if(this.enableJump == true)
         {
             this.jumpCurrent += Time.deltaTime;
+            this.gravityCurrent -= Time.deltaTime;
             if(this.jumpCurrent <= this.jumpTime)
             {
-                this.transform.Translate(Vector3.up * 1.0f * Time.deltaTime);
+                Vector3 speedJump = Vector3.up * this.jumpSpeed * Time.deltaTime * (this.gravityCurrent / this.gravityDefault);
+
+                this.transform.Translate(speedJump);
+                if (this.catchObject != null && this.catchFollowing == true)
+                    this.catchObject.transform.Translate(speedJump);
             }
             else
             {
