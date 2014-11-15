@@ -52,7 +52,7 @@ public	float test;
 			Debug.Log("loadedt");
 			charge.GetComponent<GlueCharge>().fire(this.transform.forward);
 			charge = null;
-			TheHUD.TheLiveBar.SetGlueAmount(this.transform.parent.GetComponent<PlayerScript>().playerNumber,this.Glue);
+			//THEHUD.TheLiveBar.SetGlueAmount(this.transform.parent.GetComponent<PlayerScript>().playerNumber,this.Glue);
 		}
 	}
 }
