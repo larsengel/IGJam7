@@ -190,9 +190,11 @@ MonoBehaviour:
   itemCounter: 0
   item: {fileID: 400000, guid: 7d58dadcf79c8fa4f99131af211326fa, type: 2}
   timer: 2
-  pLength: 5
+  pLength: 10
   randMin: 1
   randMax: 2
+  engineSprite: {fileID: 21300000, guid: e88e1598dd62e3c43a335e41bccbe61a, type: 3}
+  moduleSprite: {fileID: 21300000, guid: fe0a8385a55c13243be255a6dc948fae, type: 3}
 --- !u!114 &92526219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +402,9 @@ MonoBehaviour:
   catchObject: {fileID: 0}
   catchFollowing: 0
   speed: 5
+  rocketBase: {fileID: 0}
   movingDirection: 0
+  jumpTime: 1
   gunDirection: 0
 --- !u!1 &677780771
 GameObject:
@@ -851,7 +855,9 @@ MonoBehaviour:
   catchObject: {fileID: 0}
   catchFollowing: 0
   speed: 5
+  rocketBase: {fileID: 0}
   movingDirection: 0
+  jumpTime: 1
   gunDirection: 0
 --- !u!1 &1755828651
 GameObject:
