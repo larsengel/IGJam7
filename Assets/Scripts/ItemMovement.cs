@@ -19,7 +19,7 @@ public class ItemMovement : MonoBehaviour {
 		float y2 = _earth.transform.position.y;
 
 		float d = Vector2.Distance (new Vector2 (x1, y1), new Vector2 (x2, y2));
-		Debug.Log (d);
+
 
 		if(d > 3.5f)
         {

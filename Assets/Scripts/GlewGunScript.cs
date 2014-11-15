@@ -29,7 +29,7 @@ public class GlewGunScript : MonoBehaviour {
 		this.transform.position = this.transform.parent.gameObject.transform.position;
 
 		if(Glue > 0 && !Loadet)
-			charge = ( GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject ).GetComponent<GlueCharge>();
+			;//	charge = ( GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject ).GetComponent<GlueCharge>();
 		else
 			charge.DoGlew();
 	}
