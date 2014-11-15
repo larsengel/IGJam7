@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class TheCreditsScreen : blindGUITexturedContainer
+public class TheSCREENS : blindGUITexturedContainer
 {
 
 	blindGUIAnimationState SHOWN,HIDDEN;

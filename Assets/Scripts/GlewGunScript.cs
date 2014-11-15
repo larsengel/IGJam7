@@ -49,12 +49,14 @@ public	float test;
 	{
 		if(Loadet)
 		{
+			Debug.Log("loadedt");
 			charge.GetComponent<GlueCharge>().fire(this.transform.forward);
 			charge = null;
 			Glue -= 1;
 		}
 		else
 		{
+
 			//todo:: audio:fault shooting...
 		}
 	}
