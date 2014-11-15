@@ -73,16 +73,16 @@ public class PlayerScript : MonoBehaviour {
         {
             case 1:
                 PlayerCode = "A";
-                if (Input.GetKeyDown(KeyCode.Joystick1Button0)) // A - Jump
+                if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.E)) // A - Jump
                     StartJump();
-				if (Input.GetKeyDown(KeyCode.Joystick1Button3)) // Y - Launch
+				if (Input.GetKeyDown(KeyCode.Joystick1Button3)  || Input.GetKeyDown(KeyCode.Q)) // Y - Launch
 					Launch();
                 break;
             case 2:
                 PlayerCode = "B";
-                if (Input.GetKeyDown(KeyCode.Joystick2Button0)) // A - Jump
+                if (Input.GetKeyDown(KeyCode.Joystick2Button0)  || Input.GetKeyDown(KeyCode.O)) // A - Jump
                     StartJump();
-				if (Input.GetKeyDown(KeyCode.Joystick2Button3)) // Y - Launch
+				if (Input.GetKeyDown(KeyCode.Joystick2Button3)  || Input.GetKeyDown(KeyCode.P)) // Y - Launch
 					Launch();
 		    	break;
         }
@@ -166,9 +166,11 @@ public class PlayerScript : MonoBehaviour {
 
     private void StartJump()
     {
-		this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Jump");
         if (this.enableJump == false)
         {
+			if(playerNumber == 2)
+				this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Jump");
+			GameObject.Find ("ScriptContainer/Jump").GetComponent<AudioSource> ().Play ();
             this.enableJump = true;
             this.gravityCurrent = this.gravityDefault;
         }
@@ -215,7 +217,10 @@ public class PlayerScript : MonoBehaviour {
     {
         this.enableDamage = true;
         this.gravityCurrent = this.gravityDefault;
-		this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+		if(playerNumber == 2)
+			this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+		GameObject.Find ("ScriptContainer/Hit").GetComponent<AudioSource> ().Play ();
+
     }
 
     public void Damage()

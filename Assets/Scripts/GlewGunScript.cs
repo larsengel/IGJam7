@@ -25,6 +25,7 @@ public class GlewGunScript : MonoBehaviour
         if (this.timeCurrent >= this.timeNeed)
 		{
             this.timeCurrent = 0;
+			GameObject.Find ("ScriptContainer/Laser").GetComponent<AudioSource> ().Play ();
 
             GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
             charge.GetComponent<GlueCharge>().movementDirection = direction;
