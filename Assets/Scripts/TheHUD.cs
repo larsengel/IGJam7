@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TheHud : blindGUITexturedContainer
+public class TheHUD : blindGUITexturedContainer
 {
-	/*
-	private const int _theID = 1;
 	
-	void Start () {
-	
+	private const TheGUI.THE_MODE _theID = TheGUI.THE_MODE.THE_GAME;
+
+
+
+	public override void Start()
+	{
+
 	}
 
 	public bool Enable()
@@ -31,27 +34,22 @@ public class TheHud : blindGUITexturedContainer
 		TheActive = TheGUI.TheMode;
 	}
 
-
-
-
-	//public bool _IEnabled=true;
-
 	public TheGUI.THE_MODE TheActive
 	{
 		get
 		{
-			return m_enabled ? (TheGUI.THE_MODE)_theID : TheGUI.THE_MODE.NONE;
+			return m_enabled ? _theID : TheGUI.THE_MODE.THE_NONE;
 		}
 		set
 		{
-			if(value == (TheGUI.THE_MODE)_theID)
+			if(value == _theID)
 				m_enabled = Enable();
 			else
 				m_enabled = Disable();
 
 		}
 	}
-	void Update () {
 	
-	}*/
+
+
 }
