@@ -46,12 +46,16 @@ public class PlayerScript : MonoBehaviour {
 				gunDirection = (AIM)Input.GetAxis("AimA");
 				if(Input.GetKeyDown(KeyCode.Joystick1Button0))
 					Catch();
+                if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                    Jump();
                 break;
             case 2:
 			    movingDirection=(DIRECTION)Input.GetAxis("PlayerBControll");
 				gunDirection = (AIM)Input.GetAxis("AimB");
 				if(Input.GetKeyDown(KeyCode.Joystick2Button0))
                     Catch();
+                if (Input.GetKeyDown(KeyCode.Joystick2Button1))
+                    Jump();
                 break;
         }
 	}
@@ -85,9 +89,16 @@ public class PlayerScript : MonoBehaviour {
         {
             catchFollowing = true;
         }
-        else if(catchFollowing == true)
+        else if (this.catchObject != null && catchFollowing == true)
         {
             catchFollowing = false;
+            this.catchObject = null;
         }
     }
+
+    private void Jump()
+    {
+
+    }
+
 }
