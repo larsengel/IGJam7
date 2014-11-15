@@ -254,7 +254,8 @@ public class PlayerScript : MonoBehaviour {
                 // Jump top
                 Vector3 damageJump = new Vector3(0, 1, 0) * this.damageHeight * Time.deltaTime * (this.gravityCurrent / this.damageGravity);
                 // Jump backwords
-                damageJump += new Vector3(1, 0, 0) * this.damageSpeed * Time.deltaTime;
+                //Debug.Log(lookAtDirection);
+                damageJump += new Vector3((float)lookAtDirection*-1, 0, 0) * this.damageSpeed * Time.deltaTime;
                 this.transform.Translate(damageJump);
             }
             else
@@ -268,7 +269,8 @@ public class PlayerScript : MonoBehaviour {
 
     public void LookOtherWay()
     {
-        this.movingDirection = (DIRECTION)((float)this.lookAtDirection * -1);
+        this.lookAtDirection = (DIRECTION)((float)this.lookAtDirection * -1);
+        this.movingDirection = (DIRECTION)((float)this.lookAtDirection);
     }
 
 
