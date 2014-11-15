@@ -17,6 +17,14 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
     private DIRECTION movingDirection;
     private DIRECTION lookAtDirection;
+    private float axisDiff = 0.7f;
+    private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
+    private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
+
+    // Jump
+    private bool enableJump = false;
+    public float jumpTime = 1.0f;
+    private float jumpCurrent = 0;
 
 	public enum AIM
 	{ DOWN = -1, NONE = 0, UP = 1 }
@@ -34,43 +42,63 @@ public class PlayerScript : MonoBehaviour {
 	{
 		GetInputs();
 		Move();
-		//gun.Reloade();
+        Jump();
 	}
 
 
 	private void GetInputs()
 	{
+        if (pickup == PICKUPSTATUS.DOWNTHISFRAME)
+            pickup = PICKUPSTATUS.WASDOWN;
+
+        string PlayerCode = "A";
         switch (playerNumber)
         {
             case 1:
-			    movingDirection=(DIRECTION)Input.GetAxis("PlayerAControll");
-				gunDirection = (AIM)Input.GetAxis("AimA");
-				if(Input.GetKeyDown(KeyCode.Joystick1Button0)) // A
-					Catch();
-                if(Input.GetKeyDown(KeyCode.Joystick1Button1)) // B
-                    Jump();
-				if(Input.GetKeyDown(KeyCode.Joystick1Button2)) // X
-					Fire();
+                PlayerCode = "A";
+                if (Input.GetKeyDown(KeyCode.Joystick1Button0)) // A - Jump
+                    this.enableJump = true;
                 break;
             case 2:
-			    movingDirection=(DIRECTION)Input.GetAxis("PlayerBControll");
-				gunDirection = (AIM)Input.GetAxis("AimB");
-				if(Input.GetKeyDown(KeyCode.Joystick2Button0))
-                    Catch();
-                if(Input.GetKeyDown(KeyCode.Joystick2Button1))
-                    Jump();
-				if(Input.GetKeyDown(KeyCode.Joystick2Button2))
-					Fire();
+                PlayerCode = "B";
+                if (Input.GetKeyDown(KeyCode.Joystick2Button0)) // A - Jump
+                    this.enableJump = true;
                 break;
         }
+
+		// Movement Controller Axis X + Y + A/D + Left/Right
+        float axis = Input.GetAxis("Player"+PlayerCode+"Control");
+        if (axis < axisDiff * -1)
+            movingDirection = DIRECTION.LEFT;
+        else if (axis > axisDiff)
+            movingDirection = DIRECTION.RIGHT;
+        else
+            movingDirection = DIRECTION.NONE;
         if (movingDirection != 0)
             lookAtDirection = movingDirection;
+
+		gunDirection = (AIM)Input.GetAxis("AimA");
+
+        // Reset LT Pickup'ing
+        if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") > 0.6f && pickup == PICKUPSTATUS.NONE) // LR
+        {
+            pickup = PICKUPSTATUS.DOWNTHISFRAME;
+            Catch();
+        }
+        if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") <= 0 && pickup == PICKUPSTATUS.WASDOWN) // LR - Reset Pickup
+        {
+            pickup = PICKUPSTATUS.NONE;
+        }
+
+        // RT - Fire
+        if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") < -0.6f) // RT
+            Fire();
 	}
 
 	private void Move()
 	{
         // Player Movement
-        Utility.DoAroundMovement(this.transform, movingDirection, speed);
+        Utility.DoAroundMovement(this.transform, movingDirection, speed, !this.enableJump);
 
         if (this.catchObject != null && catchFollowing == true)
         {
@@ -95,14 +123,31 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    private void Jump()
-    {
-
-    }
-
     private void Fire()
     {
         gun.Fire(lookAtDirection);
+    }
+
+    private void Jump()
+    {
+        Debug.Log("jump action");
+        if(this.enableJump == true)
+        {
+            Debug.Log(jumpCurrent);
+            this.jumpCurrent += Time.deltaTime;
+            if(this.jumpCurrent <= this.jumpTime)
+            {
+                Debug.Log("trams");
+                this.transform.Translate(Vector3.up * 1.0f * Time.deltaTime);
+
+            }
+            else
+            {
+                this.jumpCurrent = 0;
+                this.enableJump = false;
+            }
+        }
+
     }
 
 }
