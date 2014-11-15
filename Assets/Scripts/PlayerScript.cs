@@ -22,8 +22,8 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f;
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    public float CatchSlowmo = 0.5f;
-    public float JumpSlowmo = 0.7f;
+    public float CatchSlowmo = 0.7f;
+    public float JumpSlowmo = 0.8f;
     
 
     // Jump
@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour {
     private float jumpCurrent = 0;
     private float gravityDefault = 0;
     private float gravityCurrent = 0;
-    private float jumpSpeed = 2.5f;
+    private float jumpSpeed = 3.0f;
 
 	public enum AIM
 	{ DOWN = -1, NONE = 0, UP = 1 }
