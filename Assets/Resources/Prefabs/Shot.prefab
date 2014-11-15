@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: Shot
-  m_TagString: Untagged
+  m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037d7cd22011a2e499c26f000adfbd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   movementDirection: 0
 --- !u!212 &21200000
 SpriteRenderer:

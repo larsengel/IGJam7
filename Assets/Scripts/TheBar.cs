@@ -13,15 +13,7 @@ public class TheBar : blindGUITexturedContainer
 
 	void Awake()
 	{
-
-		
-
 		TheLiveBar = this;
-	}
-
-	void Start()
-	{
-		
 	}
 
 	public void SetGlueAmount(int playerNumber,int value)
