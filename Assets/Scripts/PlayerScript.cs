@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f; // controls must not be val 1. they could be pressed a little bit
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    private float CatchSlowmo = 0.6f;
+    private float CatchSlowmo = 0.8f;
     private float JumpSlowmo = 0.8f;
 
     // Jump
@@ -66,6 +66,7 @@ public class PlayerScript : MonoBehaviour {
 
 	private void GetInputs()
 	{
+        DIRECTION oldMovement = movingDirection;
         if (pickup == PICKUPSTATUS.DOWNTHISFRAME)
             pickup = PICKUPSTATUS.WASDOWN;
 
@@ -78,6 +79,8 @@ public class PlayerScript : MonoBehaviour {
                     StartJump();
 				if (Input.GetKeyDown(KeyCode.Joystick1Button3)  || Input.GetKeyDown(KeyCode.Q)) // Y - Launch
 					Launch();
+                if (Input.GetKeyDown(KeyCode.Joystick1Button2)) // X
+                    Catch();
                 break;
             case 2:
                 PlayerCode = "B";
@@ -85,6 +88,8 @@ public class PlayerScript : MonoBehaviour {
                     StartJump();
 				if (Input.GetKeyDown(KeyCode.Joystick2Button3)  || Input.GetKeyDown(KeyCode.P)) // Y - Launch
 					Launch();
+                if (Input.GetKeyDown(KeyCode.Joystick2Button2)) // X
+                    Catch();
 		    	break;
         }
 
@@ -115,6 +120,14 @@ public class PlayerScript : MonoBehaviour {
         // RT - Fire
         if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") < -0.6f && this.catchFollowing == false) // RT - Shot
             Fire();
+
+        // Animator - Update Direction and Speed
+        if(oldMovement != movingDirection)
+        {
+                PlayerAnimation animation = this.GetComponent<PlayerAnimation>();
+                animation.UpdateAnimator();
+        }
+
 	}
 
 	private void Move()
@@ -171,6 +184,8 @@ public class PlayerScript : MonoBehaviour {
         {
 			if(playerNumber == 2)
 				this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Jump");
+			if(playerNumber == 1)
+				this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetTrigger ("Jump");
 			GameObject.Find ("ScriptContainer/Jump").GetComponent<AudioSource> ().Play ();
             this.enableJump = true;
             this.gravityCurrent = this.gravityDefault;
@@ -222,6 +237,8 @@ public class PlayerScript : MonoBehaviour {
         
 		if(playerNumber == 2)
 			this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+		if(playerNumber == 1)
+			this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetTrigger ("Hitted");
 		GameObject.Find ("ScriptContainer/Hit").GetComponent<AudioSource> ().Play ();
 
     }
@@ -238,7 +255,8 @@ public class PlayerScript : MonoBehaviour {
                 // Jump top
                 Vector3 damageJump = new Vector3(0, 1, 0) * this.damageHeight * Time.deltaTime * (this.gravityCurrent / this.damageGravity);
                 // Jump backwords
-                damageJump += new Vector3(1, 0, 0) * this.damageSpeed * Time.deltaTime;
+                //Debug.Log(lookAtDirection);
+                damageJump += new Vector3((float)lookAtDirection*-1, 0, 0) * this.damageSpeed * Time.deltaTime;
                 this.transform.Translate(damageJump);
             }
             else
@@ -252,7 +270,8 @@ public class PlayerScript : MonoBehaviour {
 
     public void LookOtherWay()
     {
-        this.movingDirection = (DIRECTION)((float)this.lookAtDirection * -1);
+        this.lookAtDirection = (DIRECTION)((float)this.lookAtDirection * -1);
+        this.movingDirection = (DIRECTION)((float)this.lookAtDirection);
     }
 
 

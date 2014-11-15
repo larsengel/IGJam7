@@ -42,11 +42,15 @@ public class RocketBase : MonoBehaviour {
 		float height = renderer.bounds.size.y;
 
 		int dir = rocketNumber == 1 ? 1 : -1; 
-
 		newCoords.x = transform.position.x - width / 2;
-		newCoords.y = transform.position.y - dir * height / 4;
 
-		newCoords.x += width/3 * (cnt%3);
+		if(dir == -1)
+			newCoords.y = (transform.position.y-0.2f) - dir * height / 4;
+		else
+			newCoords.y = transform.position.y - dir * height / 4;
+
+		newCoords.x += width/3f * (cnt%3);
+		newCoords.x += 0.1f * width;
 		newCoords.y += height/8 * (int)(cnt/3) * dir;
 
 		return newCoords;
@@ -62,8 +66,20 @@ public class RocketBase : MonoBehaviour {
 		{
 			modules++;
 		}
+		
+		Vector3 theScale = item.transform.localScale;
+		theScale.x = 0.35f;
+		theScale.y = 0.35f;
+		item.transform.localScale = theScale;
+		float itemWidth = item.renderer.bounds.size.x;
+		float itemHeight = item.renderer.bounds.size.y;
+
 		Vector2 ItemCoords = getModuleCoords ();
+		ItemCoords.x += itemWidth / 2;
+		ItemCoords.y += itemHeight / 2;
+
 		item.transform.position = ItemCoords;
+		item.transform.rotation = Quaternion.identity;
 		placedItems.Add (item);
 		GameObject.Find ("ScriptContainer/ModuleToRocket").GetComponent<AudioSource> ().Play ();
 
@@ -121,12 +137,12 @@ public class RocketBase : MonoBehaviour {
 		}
 		if(countdownValue <= 0 && isCountdownStarted)
 		{
-			GUI.TextField(new Rect(Screen.width/2 - 100, Screen.height/2 - 10, 200, 20), "WIN! Player " + rocketNumber, 25);
+            GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + rocketNumber + "(" + (rocketNumber == 1 ? "red" : "blue") + ")", 25);
 			Time.timeScale = 0;
 		}
 		if(placedItems.Count == 0 && isCountdownStarted)
 		{
-			GUI.TextField(new Rect(Screen.width/2 - 100, Screen.height/2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1), 25);
+            GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1) + "(" + (rocketNumber == 2 ? "red" : "blue") + ")", 25);
 			Time.timeScale = 0;
 		}
 	}

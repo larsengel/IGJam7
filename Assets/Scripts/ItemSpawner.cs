@@ -13,7 +13,9 @@ public class ItemSpawner : MonoBehaviour {
 
 	public float randMin = 10f, randMax = 10f;
 
-	public Sprite engineSprite, moduleSprite;
+    public Sprite engineSprite, moduleSprite;
+
+    private int counter;
 
 	// Use this for initialization
 	void Start () {
@@ -31,14 +33,14 @@ public class ItemSpawner : MonoBehaviour {
 
     private void Spawn()
     {
+        this.counter++;
+
 		float angle;
 		float rnd = Random.value;
-		Debug.Log (rnd);
 		if(rnd > 0.5f)
 			angle = Random.Range ((float)0.0,(float)0.25f) - 0.125f;
 		else
 			angle = Random.Range ((float)(0.375f), (float)(0.625f));
-		Debug.Log (angle);
 		angle *= 2 * Mathf.PI;
 
         float randomX = pLength * Mathf.Cos(angle) + GameMaster.Earth.transform.position.x;
@@ -51,6 +53,7 @@ public class ItemSpawner : MonoBehaviour {
 		clone.GetComponent<SpriteRenderer> ().sprite = clone.GetComponent<Item> ().type == 1 ? engineSprite : moduleSprite;
 
         timer = randMin + Random.value * randMax;
+        timer += this.counter * 0.2f;
         itemCounter++;
     }
 }
