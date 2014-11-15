@@ -26,7 +26,6 @@ public class GlueCharge : MonoBehaviour
 		_hit = false;
 		Engaged = false;
 	}
-	
 
 	public void DoGlew()
 	{
@@ -44,7 +43,7 @@ public class GlueCharge : MonoBehaviour
 	public bool flow()
 	{
 		transform.position += (transform.forward * Time.deltaTime * speed);
-
+		transform.localScale += new Vector3(transform.localScale.x, 0.01f, transform.localScale.z);
 		//todo: return true if hit something..
 		return false;
 	}

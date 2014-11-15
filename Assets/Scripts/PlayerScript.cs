@@ -12,13 +12,14 @@ public class PlayerScript : MonoBehaviour {
 	private float speed;
 
 	public enum DIRECTION
-	{
-		LEFT = -1,
-		NONE = 0,
-		RIGHT = 1
-	}
+	{LEFT = -1,	NONE = 0, RIGHT = 1	}
+	[SerializeField]
 	private DIRECTION movingDirection;
 
+	public enum AIM
+	{ DOWN = -1, NONE = 0, UP = 1 }
+	[SerializeField]
+	internal AIM gunDirection;
 
 	void Start () 
 	{
@@ -40,10 +41,14 @@ public class PlayerScript : MonoBehaviour {
 		if(playerNumber==1)
 		{
 			movingDirection=(DIRECTION)Input.GetAxis("PlayerAControll");
+			gunDirection = (AIM)Input.GetAxis("AimA");
+			if(Input.GetButtonDown("Fire1"))
+				gun.Fire();
 		}
 		else
 		{
 			movingDirection=(DIRECTION)Input.GetAxis("PlayerBControll");
+			gunDirection = (AIM)Input.GetAxis("AimB");
 		}
 	}
 

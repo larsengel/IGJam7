@@ -21,23 +21,38 @@ public class GlewGunScript : MonoBehaviour {
 	{
 		_glue = 100;
 	}
-	
 
+public	float test;
+	private float rotator
+	{
+		get 
+		{
+			return test =( (float)( (int)this.transform.parent.gameObject.GetComponent<PlayerScript>().gunDirection )*3 );
+		}
+	}
 	
 	public void Reloade() 
 	{
 		this.transform.position = this.transform.parent.gameObject.transform.position;
+		this.transform.Rotate(this.transform.forward, rotator);
 
 		if(Glue > 0 && !Loadet)
-			;//	charge = ( GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject ).GetComponent<GlueCharge>();
+			charge = ( GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject ).GetComponent<GlueCharge>();
 		else
 			charge.DoGlew();
 	}
 
 	public void Fire()
 	{
-		charge.fire(this.transform.forward);
-		charge = null;
-		Glue -= 1;
+		if(Loadet)
+		{
+			charge.fire(this.transform.forward);
+			charge = null;
+			Glue -= 1;
+		}
+		else
+		{
+			//todo:: audio:fault shooting...
+		}
 	}
 }
