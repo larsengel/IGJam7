@@ -77,7 +77,9 @@ public class PlayerScript : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.E)) // A - Jump
                     StartJump();
 				if (Input.GetKeyDown(KeyCode.Joystick1Button3)  || Input.GetKeyDown(KeyCode.Q)) // Y - Launch
-					Launch();
+			        Launch();
+                if(Input.GetKeyDown(KeyCode.Joystick1Button2)) // X
+                    Catch();
                 break;
             case 2:
                 PlayerCode = "B";
@@ -85,6 +87,8 @@ public class PlayerScript : MonoBehaviour {
                     StartJump();
 				if (Input.GetKeyDown(KeyCode.Joystick2Button3)  || Input.GetKeyDown(KeyCode.P)) // Y - Launch
 					Launch();
+                if(Input.GetKeyDown(KeyCode.Joystick2Button2)) // X
+                    Catch();
 		    	break;
         }
 

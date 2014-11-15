@@ -33,12 +33,12 @@ public class ItemSpawner : MonoBehaviour {
     {
 		float angle;
 		float rnd = Random.value;
-		Debug.Log (rnd);
+		//Debug.Log (rnd);
 		if(rnd > 0.5f)
 			angle = Random.Range ((float)0.0,(float)0.25f) - 0.125f;
 		else
 			angle = Random.Range ((float)(0.375f), (float)(0.625f));
-		Debug.Log (angle);
+		//Debug.Log (angle);
 		angle *= 2 * Mathf.PI;
 
         float randomX = pLength * Mathf.Cos(angle) + GameMaster.Earth.transform.position.x;
