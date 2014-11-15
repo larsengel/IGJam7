@@ -21,9 +21,10 @@ public class ItemMovement : MonoBehaviour {
 		float d = Vector2.Distance (new Vector2 (x1, y1), new Vector2 (x2, y2));
 		Debug.Log (d);
 
-		//if(d > 3.5f)
-		//{
-		transform.forward = new Vector3 (1, 1, 0);
-		//}
+		if(d > 3.5f)
+        {
+            this.transform.Translate(Vector3.forward * Time.deltaTime);
+		}
+
 	}
 }
