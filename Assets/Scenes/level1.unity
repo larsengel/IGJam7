@@ -645,7 +645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766415576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .338493466, y: .216829255, z: 0}
+  m_LocalPosition: {x: .338493556, y: -.0433763936, z: 0}
   m_LocalScale: {x: 1.02660346, y: .100000001, z: 1}
   m_Children:
   - {fileID: 1313448673}
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargePrefab: {fileID: 100000, guid: 951703ffe3b8d5346a08ba0412bf8ec5, type: 2}
-  timeNeed: 1
+  timeNeed: 1.5
 --- !u!1 &851794680
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,8 +948,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115053906}
-  m_LocalRotation: {x: 0, y: 0, z: .391935736, w: .919992626}
-  m_LocalPosition: {x: .13278912, y: .123009533, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .0167418923, w: .999859929}
+  m_LocalPosition: {x: .235139132, y: .0184229352, z: 0}
   m_LocalScale: {x: .971596777, y: .100000001, z: 1}
   m_Children:
   - {fileID: 1660680486}
@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargePrefab: {fileID: 100000, guid: 951703ffe3b8d5346a08ba0412bf8ec5, type: 2}
-  timeNeed: 1
+  timeNeed: 1.5
 --- !u!1 &1289302550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1214,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1660680485}
   m_LocalRotation: {x: 0, y: 0, z: -.0106327608, w: .999943554}
-  m_LocalPosition: {x: .38784799, y: .0446221419, z: 0}
+  m_LocalPosition: {x: .39395234, y: .0433615781, z: 0}
   m_LocalScale: {x: 55.7576523, y: 29.0167542, z: 1}
   m_Children: []
   m_Father: {fileID: 1115053907}
@@ -1584,7 +1584,7 @@ Transform:
   m_PrefabInternal: {fileID: 1970365930}
   m_GameObject: {fileID: 1913843619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0401860774, y: 3.84964705, z: 0}
+  m_LocalPosition: {x: .00358729064, y: 3.73985052, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1671,11 +1671,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 7d68affde521ba74ca59753cf943ed0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .0401860774
+      value: .00358729064
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d68affde521ba74ca59753cf943ed0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.84964705
+      value: 3.73985052
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d68affde521ba74ca59753cf943ed0b, type: 2}
       propertyPath: m_LocalPosition.z
