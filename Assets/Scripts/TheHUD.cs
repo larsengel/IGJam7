@@ -5,6 +5,7 @@ using System.Collections;
 
 public class TheHUD : blindGUITexturedContainer
 {
+    /*
 	private blindGUIAnimationState astate;
 	private blindGUIText[] TextDisplay = new blindGUIText[6];
 	public static TheHUD Turtlecount;
@@ -92,6 +93,6 @@ public class TheHUD : blindGUITexturedContainer
 
 
 
+*/
 
-	
 }

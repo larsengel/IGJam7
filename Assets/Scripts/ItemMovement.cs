@@ -25,8 +25,9 @@ public class ItemMovement : MonoBehaviour {
 	
 		if(d > 3.5f)
         {
-			this.transform.up = ( this.transform.position - _earth.transform.position ).normalized;
-            this.transform.Translate(-this.transform.up * Time.deltaTime);
+			//this.transform.up = ( this.transform.position - _earth.transform.position ).normalized;
+            //this.transform.Translate(-this.transform.up * Time.deltaTime);
+            this.transform.Translate(Vector3.up * Time.deltaTime);
         }
         else
         {
