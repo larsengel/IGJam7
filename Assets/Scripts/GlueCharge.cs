@@ -3,10 +3,14 @@ using System.Collections;
 
 public class GlueCharge : MonoBehaviour
 {
-	
+	public int MAXIMUM_RANGE=10;
 	private bool Engaged;
 	[SerializeField]
 	private float speed;
+	public float deltaSpeed
+	{
+		get { return speed * Time.deltaTime; }
+	}
 	private bool _hit;
 	public bool Hit
 	{
@@ -38,14 +42,15 @@ public class GlueCharge : MonoBehaviour
 	public void fire(Vector2 direction)
 	{ 
 		this.transform.forward = direction;
+		Engaged = true;
 	}
 
 	public bool flow()
 	{
-		transform.position += (transform.forward * Time.deltaTime * speed);
-		transform.localScale += new Vector3(transform.localScale.x, 0.01f, transform.localScale.z);
-		//todo: return true if hit something..
-		return false;
+	
+		transform.localScale += new Vector3(transform.localScale.x,transform.localScale.y + deltaSpeed, transform.localScale.z);
+		return transform.localScale.y >= MAXIMUM_RANGE;
+
 	}
 
 	private void OnHit()

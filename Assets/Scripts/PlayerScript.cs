@@ -44,17 +44,21 @@ public class PlayerScript : MonoBehaviour {
             case 1:
 			    movingDirection=(DIRECTION)Input.GetAxis("PlayerAControll");
 				gunDirection = (AIM)Input.GetAxis("AimA");
+				if(Input.GetKeyDown(KeyCode.Joystick1Button2))
+					gun.Fire();
 				if(Input.GetKeyDown(KeyCode.Joystick1Button0))
 					Catch();
-                if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                if(Input.GetKeyDown(KeyCode.Joystick1Button1))
                     Jump();
                 break;
             case 2:
 			    movingDirection=(DIRECTION)Input.GetAxis("PlayerBControll");
 				gunDirection = (AIM)Input.GetAxis("AimB");
+				if(Input.GetKeyDown(KeyCode.Joystick2Button2))
+					gun.Fire();
 				if(Input.GetKeyDown(KeyCode.Joystick2Button0))
                     Catch();
-                if (Input.GetKeyDown(KeyCode.Joystick2Button1))
+                if(Input.GetKeyDown(KeyCode.Joystick2Button1))
                     Jump();
                 break;
         }
