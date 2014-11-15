@@ -14,7 +14,7 @@ public class PlayerAnimation : MonoBehaviour {
 		if(playerScript.playerNumber == 2)
 			this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs((float)playerScript.movingDirection));
 		if(playerScript.playerNumber == 1)
-			this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs((float)playerScript.movingDirection));Mathf.Abs((float)playerScript.movingDirection));
+			this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs((float)playerScript.movingDirection));
 
         if(playerScript.movingDirection != 0)
         {
