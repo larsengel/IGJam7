@@ -93,7 +93,7 @@ public class PlayerScript : MonoBehaviour {
         }
         else if (this.catchObject != null && catchFollowing == true) //Ablegen
         {
-			if(this.rocketBase != null)
+			if(this.rocketBase != null && this.rocketBase.GetComponent<RocketBase>().getModuleCnt() < 12)
 			{
 				rocketBase.placeItem(this.catchObject.gameObject);
 
@@ -118,5 +118,14 @@ public class PlayerScript : MonoBehaviour {
     {
         gun.Fire(lookAtDirection);
     }
+
+	void Launch()
+	{
+		if(this.rocketBase != null && this.rocketBase.GetComponent<RocketBase>().isStartable())
+		{
+			this.rocketBase.GetComponent<RocketBase>().startCountdown();
+		}
+
+	}
 
 }

@@ -13,6 +13,8 @@ public class ItemSpawner : MonoBehaviour {
 
 	public float randMin = 10f, randMax = 10f;
 
+	public Sprite engineSprite, moduleSprite;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -37,6 +39,7 @@ public class ItemSpawner : MonoBehaviour {
         //clone.LookAt(GameMaster.Earth.transform.position);
         clone.transform.up = GameMaster.Earth.transform.position - clone.transform.position;
 		clone.GetComponent<Item> ().type = Random.value > 0.8 ? 1 : 0;
+		clone.GetComponent<SpriteRenderer> ().sprite = clone.GetComponent<Item> ().type == 1 ? engineSprite : moduleSprite;
 
         timer = randMin + Random.value * randMax;
         itemCounter++;

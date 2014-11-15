@@ -273,6 +273,8 @@ MonoBehaviour:
   pLength: 5
   randMin: 1
   randMax: 2
+  engineSprite: {fileID: 21300000, guid: e88e1598dd62e3c43a335e41bccbe61a, type: 3}
+  moduleSprite: {fileID: 21300000, guid: fe0a8385a55c13243be255a6dc948fae, type: 3}
 --- !u!1 &204004760
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,9 +665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcd72cc9934dbf43b69308f11028237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _glue: 100
   chargePrefab: {fileID: 100000, guid: 951703ffe3b8d5346a08ba0412bf8ec5, type: 2}
-  test: 0
+  timeNeed: 1
 --- !u!1 &1115053906
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,9 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcd72cc9934dbf43b69308f11028237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _glue: 100
   chargePrefab: {fileID: 100000, guid: 951703ffe3b8d5346a08ba0412bf8ec5, type: 2}
-  test: 0
+  timeNeed: 1
 --- !u!1 &1215002960
 GameObject:
   m_ObjectHideFlags: 0

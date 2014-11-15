@@ -3,12 +3,31 @@ using System.Collections;
 
 public class RocketBase : MonoBehaviour {
 
-	public int engines;
-	public int modules;
+	public int engines = 0;
+	public int modules = 0;
 
 	public int rocketNumber;
 
-	int getModuleCnt()
+	public bool isCountdownStarted = false;
+	public float countdownValue;
+
+	public int maxCountdown = 30;
+	public int minCountdown = 10;
+	public int secondsPerEngine = 5;
+
+	void Update()
+	{
+		if(isCountdownStarted)
+		{
+			countdownValue -= Time.deltaTime;
+			if(countdownValue <= 0)
+			{
+				Debug.Log("WIN! Player " + rocketNumber); 
+			}
+		}
+	}
+
+	public int getModuleCnt()
 	{
 		return engines+modules;
 	}
@@ -65,6 +84,17 @@ public class RocketBase : MonoBehaviour {
 			if(player.playerNumber == rocketNumber)
 				player.rocketBase = null;
 		}
+	}
+
+	public bool isStartable()
+	{
+		return engines > 0;
+	}
+
+	public void startCountdown()
+	{
+		countdownValue = Mathf.Max(minCountdown, maxCountdown - engines * secondsPerEngine);
+		isCountdownStarted = true;
 	}
 
 }
