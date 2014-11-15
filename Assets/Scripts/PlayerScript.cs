@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour {
 	public enum DIRECTION
 	{LEFT = -1,	NONE = 0, RIGHT = 1	}
 	[SerializeField]
-    private DIRECTION movingDirection;
+    public DIRECTION movingDirection;
     private DIRECTION lookAtDirection;
     private float axisDiff = 0.7f;
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
@@ -160,6 +160,7 @@ public class PlayerScript : MonoBehaviour {
 
     private void StartJump()
     {
+		this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Jump");
         if (this.enableJump == false)
         {
             this.enableJump = true;
