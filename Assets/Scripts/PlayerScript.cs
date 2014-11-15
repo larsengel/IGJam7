@@ -66,6 +66,7 @@ public class PlayerScript : MonoBehaviour {
 
 	private void GetInputs()
 	{
+        DIRECTION oldMovement = movingDirection;
         if (pickup == PICKUPSTATUS.DOWNTHISFRAME)
             pickup = PICKUPSTATUS.WASDOWN;
 
@@ -119,6 +120,17 @@ public class PlayerScript : MonoBehaviour {
         // RT - Fire
         if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") < -0.6f && this.catchFollowing == false) // RT - Shot
             Fire();
+
+        // Animator - Update Direction and Speed
+        if(oldMovement != movingDirection)
+        {
+            if (this.playerNumber == 2)
+            {
+                PlayerAnimation animation = this.GetComponent<PlayerAnimation>();
+                animation.UpdateAnimator();
+            }
+        }
+
 	}
 
 	private void Move()
