@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerCatch : MonoBehaviour {
 
-    private GameObject catchObject = null;
     private PlayerScript player;
 
 	// Use this for initialization
@@ -31,18 +30,18 @@ public class PlayerCatch : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Item" && catchObject != null)
+        if (other.tag == "Item" && player.catchObject != null)
         {
-            catchObject = other.gameObject;
+            player.catchObject = other.gameObject;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "Item" && catchObject == other)
+        if (other.tag == "Item" && player.catchObject == other)
         {
-            catchObject = null;
+            player.catchObject = null;
         }
 
     }
