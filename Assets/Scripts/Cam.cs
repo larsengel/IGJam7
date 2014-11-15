@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Cam : MonoBehaviour {
 
-	private float speed = -5.0f;
+	public float speed = -5.0f;
 
 	// Use this for initialization
 	void Start () {
