@@ -51,6 +51,7 @@ public class RocketBase : MonoBehaviour {
 
 		newCoords.x += width/3f * (cnt%3);
 		newCoords.x += 0.1f * width;
+		newCoords.y += height/8 * (int)(cnt/3) * dir;
 
 		return newCoords;
 	}
