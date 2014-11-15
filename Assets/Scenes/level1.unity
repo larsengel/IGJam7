@@ -328,7 +328,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 3.4000001
+  m_Radius: 3.5
   m_Center: {x: 0, y: 0}
 --- !u!1 &92526215
 GameObject:
@@ -365,7 +365,7 @@ Transform:
   - {fileID: 1010879717}
   - {fileID: 675421573}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!114 &92526217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,10 +390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCounter: 0
   item: {fileID: 400000, guid: 7d58dadcf79c8fa4f99131af211326fa, type: 2}
-  timer: 2
+  timer: 3
   pLength: 10
-  randMin: 1
-  randMax: 2
+  randMin: 10
+  randMax: 20
   engineSprite: {fileID: 21300000, guid: 41a70e7507fe43b4583e1d7ada41d4ce, type: 3}
   moduleSprite: {fileID: 21300000, guid: e390e2c4217fc3645829003e78214779, type: 3}
 --- !u!114 &92526219
@@ -1396,7 +1396,7 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -2065,8 +2065,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766415576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .338493556, y: -.0433763936, z: 0}
-  m_LocalScale: {x: 1.02660346, y: .100000001, z: 1}
+  m_LocalPosition: {x: .338493645, y: -.0433765016, z: 0}
+  m_LocalScale: {x: 1.02660334, y: .100000001, z: 1}
   m_Children:
   - {fileID: 1313448673}
   m_Father: {fileID: 1702467884}
@@ -2225,7 +2225,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &883753289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,9 +2857,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115053906}
-  m_LocalRotation: {x: 0, y: 0, z: .0908097699, w: .995868266}
-  m_LocalPosition: {x: .235139832, y: .0184230115, z: 0}
-  m_LocalScale: {x: .971596777, y: .100000001, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: .0908097923, w: .995868266}
+  m_LocalPosition: {x: .292507559, y: -.293523759, z: 0}
+  m_LocalScale: {x: .971596718, y: .100000009, z: 1}
   m_Children:
   - {fileID: 1660680486}
   m_Father: {fileID: 458721345}
@@ -3156,8 +3156,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313448672}
-  m_LocalRotation: {x: 0, y: 0, z: -.689035058, w: .724728107}
-  m_LocalPosition: {x: .366324931, y: .745124936, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.761349022, w: .648342311}
+  m_LocalPosition: {x: .410076112, y: -2.98620462, z: 0}
   m_LocalScale: {x: 8.68491077, y: 2.45634699, z: 1}
   m_Children: []
   m_Father: {fileID: 766415577}
@@ -3539,8 +3539,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1660680485}
-  m_LocalRotation: {x: 0, y: 0, z: -.0674898326, w: .997720003}
-  m_LocalPosition: {x: .390865207, y: -.177331999, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.130828798, w: .99140501}
+  m_LocalPosition: {x: .230745286, y: .20151718, z: 0}
   m_LocalScale: {x: 55.7576523, y: 29.0167542, z: 1}
   m_Children: []
   m_Father: {fileID: 1115053907}
@@ -3661,7 +3661,7 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4122,7 +4122,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1918700680
 GameObject:
   m_ObjectHideFlags: 0
