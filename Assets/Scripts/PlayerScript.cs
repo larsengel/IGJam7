@@ -86,13 +86,13 @@ public class PlayerScript : MonoBehaviour {
 
     private void Catch()
     {
-        if (this.catchObject != null && catchFollowing == false)
+        if (this.catchObject != null && catchFollowing == false)	//Aufnehmen
         {
             catchFollowing = true;
             this.catchObject.transform.Translate(Vector3.up * 0.4f);
 
         }
-        else if (this.catchObject != null && catchFollowing == true)
+        else if (this.catchObject != null && catchFollowing == true) //Ablegen
         {
             catchFollowing = false;
             this.catchObject.transform.Translate(Vector3.up * -0.4f);
