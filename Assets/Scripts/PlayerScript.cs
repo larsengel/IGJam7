@@ -175,6 +175,8 @@ public class PlayerScript : MonoBehaviour {
         {
 			if(playerNumber == 2)
 				this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Jump");
+			if(playerNumber == 1)
+				this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetTrigger ("Jump");
 			GameObject.Find ("ScriptContainer/Jump").GetComponent<AudioSource> ().Play ();
             this.enableJump = true;
             this.gravityCurrent = this.gravityDefault;
@@ -226,6 +228,8 @@ public class PlayerScript : MonoBehaviour {
         
 		if(playerNumber == 2)
 			this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+		if(playerNumber == 1)
+			this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetTrigger ("Hitted");
 		GameObject.Find ("ScriptContainer/Hit").GetComponent<AudioSource> ().Play ();
 
     }
