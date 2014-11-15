@@ -42,12 +42,13 @@ public class RocketBase : MonoBehaviour {
 		float height = renderer.bounds.size.y;
 
 		int dir = rocketNumber == 1 ? 1 : -1; 
-
 		newCoords.x = transform.position.x - width / 2;
+
 		if(dir == -1)
 			newCoords.y = (transform.position.y-0.2f) - dir * height / 4;
 		else
 			newCoords.y = transform.position.y - dir * height / 4;
+
 		newCoords.x += width/3f * (cnt%3);
 		newCoords.x += 0.1f * width;
 

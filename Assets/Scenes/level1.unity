@@ -201,7 +201,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d8e6c31c1bb9264ea2637fe4a11f0b3, type: 2}
       propertyPath: m_LocalScale.x
-      value: .233497322
+      value: .233497337
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d8e6c31c1bb9264ea2637fe4a11f0b3, type: 2}
       propertyPath: m_LocalScale.y
@@ -1311,7 +1311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d68affde521ba74ca59753cf943ed0b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7d68affde521ba74ca59753cf943ed0b, type: 2}
       propertyPath: m_Name
@@ -1421,8 +1421,8 @@ Transform:
   m_LocalPosition: {x: 3.9000001, y: -1.86264515e-07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 961052556}
   - {fileID: 1115053907}
+  - {fileID: 961052556}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &458721346
@@ -2225,7 +2225,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &883753289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,12 +2380,12 @@ Transform:
   m_GameObject: {fileID: 961052555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0926932022, y: -.664392531, z: -.00421576481}
-  m_LocalScale: {x: .233497322, y: .233497322, z: .233497322}
+  m_LocalScale: {x: .233497337, y: .233497322, z: .233497322}
   m_Children:
   - {fileID: 228242506}
   - {fileID: 588152078}
   m_Father: {fileID: 458721345}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!95 &961052557
 Animator:
   serializedVersion: 3
@@ -2863,7 +2863,7 @@ Transform:
   m_Children:
   - {fileID: 1660680486}
   m_Father: {fileID: 458721345}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!23 &1115053908
 Renderer:
   m_ObjectHideFlags: 0
@@ -4122,7 +4122,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1918700680
 GameObject:
   m_ObjectHideFlags: 0
