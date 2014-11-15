@@ -6,7 +6,8 @@ public class PlayerAnimation : MonoBehaviour {
 	void Update () {
 		PlayerScript playerScript = this.GetComponent<PlayerScript> ();
 
-		this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs((float)playerScript.movingDirection));
+		if(playerScript.playerNumber == 2)
+			this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs((float)playerScript.movingDirection));
 
         // TODO only update if change
 		if((float)playerScript.movingDirection != 0)

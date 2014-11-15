@@ -65,6 +65,8 @@ public class RocketBase : MonoBehaviour {
 		Vector2 ItemCoords = getModuleCoords ();
 		item.transform.position = ItemCoords;
 		placedItems.Add (item);
+		GameObject.Find ("ScriptContainer/ModuleToRocket").GetComponent<AudioSource> ().Play ();
+
 		//item.transform.localScale
 	}
 
@@ -104,6 +106,7 @@ public class RocketBase : MonoBehaviour {
 	{
 		countdownValue = Mathf.Max(minCountdown, maxCountdown - engines * secondsPerEngine);
 		isCountdownStarted = true;
+		GameObject.Find ("ScriptContainer/Countdown").GetComponent<AudioSource> ().Play ();
 	}
 
 	void OnGUI()
