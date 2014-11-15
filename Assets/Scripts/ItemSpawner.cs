@@ -53,7 +53,7 @@ public class ItemSpawner : MonoBehaviour {
 		clone.GetComponent<SpriteRenderer> ().sprite = clone.GetComponent<Item> ().type == 1 ? engineSprite : moduleSprite;
 
         timer = randMin + Random.value * randMax;
-        timer += this.counter * 0.5f;
+        timer += this.counter * 0.2f;
         itemCounter++;
     }
 }

@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f; // controls must not be val 1. they could be pressed a little bit
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    private float CatchSlowmo = 0.6f;
+    private float CatchSlowmo = 0.8f;
     private float JumpSlowmo = 0.8f;
 
     // Jump

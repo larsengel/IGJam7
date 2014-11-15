@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCounter: 0
   item: {fileID: 400000, guid: 7d58dadcf79c8fa4f99131af211326fa, type: 2}
-  timer: 3
+  timer: 0
   pLength: 10
   randMin: 5
   randMax: 10
@@ -806,56 +806,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 742edfbee0a6ed542897aa508d68ae53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &204004760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 204004762}
-  - 212: {fileID: 204004761}
-  m_Layer: 0
-  m_Name: Ozone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &204004761
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 204004760}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: a2e7106ec3908764c9c2b491ddaf8882, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: .419607848}
---- !u!4 &204004762
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 204004760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.59448636, y: .340542167, z: -2.86303616}
-  m_LocalScale: {x: .955560923, y: .955560923, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1289302555}
 --- !u!1 &228242505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1212,56 @@ Transform:
   m_Children:
   - {fileID: 1050338875}
   m_Father: {fileID: 228242506}
+--- !u!1 &421391289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 421391291}
+  - 212: {fileID: 421391290}
+  m_Layer: 0
+  m_Name: Ozon_neu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &421391290
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421391289}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300000, guid: d187e9bff5a51ba409b544eb8756a6d3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: .392156869}
+--- !u!4 &421391291
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421391289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.363028049, y: -.152046502, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1289302555}
 --- !u!1001 &436572270
 Prefab:
   m_ObjectHideFlags: 0
@@ -3097,7 +3097,7 @@ Transform:
   - {fileID: 241728065}
   - {fileID: 1745516816}
   - {fileID: 677780772}
-  - {fileID: 204004762}
+  - {fileID: 421391291}
   m_Father: {fileID: 0}
 --- !u!114 &1289302556
 MonoBehaviour:

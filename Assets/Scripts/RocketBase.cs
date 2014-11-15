@@ -137,12 +137,12 @@ public class RocketBase : MonoBehaviour {
 		}
 		if(countdownValue <= 0 && isCountdownStarted)
 		{
-			GUI.TextField(new Rect(Screen.width/2 - 100, Screen.height/2 - 10, 200, 20), "WIN! Player " + rocketNumber, 25);
+            GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + rocketNumber + "(" + (rocketNumber == 1 ? "red" : "blue") + ")", 25);
 			Time.timeScale = 0;
 		}
 		if(placedItems.Count == 0 && isCountdownStarted)
 		{
-			GUI.TextField(new Rect(Screen.width/2 - 100, Screen.height/2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1), 25);
+            GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1) + "(" + (rocketNumber == 2 ? "red" : "blue") + ")", 25);
 			Time.timeScale = 0;
 		}
 	}
