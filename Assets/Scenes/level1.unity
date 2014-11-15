@@ -857,7 +857,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 204004760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.363864899, y: -.159995288, z: 1.97000027}
+  m_LocalPosition: {x: -1.59448636, y: .340542167, z: -2.86303616}
   m_LocalScale: {x: .955560923, y: .955560923, z: 1}
   m_Children: []
   m_Father: {fileID: 1289302555}
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   speed: 5
   rocketBase: {fileID: 0}
   movingDirection: 0
-  lookAtDirection: 0
+  lookAtDirection: 1
   gunDirection: 0
 --- !u!1 &481572883
 GameObject:
@@ -3708,7 +3708,7 @@ MonoBehaviour:
   speed: 5
   rocketBase: {fileID: 0}
   movingDirection: 0
-  lookAtDirection: 0
+  lookAtDirection: 1
   gunDirection: 0
 --- !u!1 &1719498335
 GameObject:

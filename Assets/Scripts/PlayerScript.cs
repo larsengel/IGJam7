@@ -124,11 +124,8 @@ public class PlayerScript : MonoBehaviour {
         // Animator - Update Direction and Speed
         if(oldMovement != movingDirection)
         {
-            if (this.playerNumber == 2)
-            {
                 PlayerAnimation animation = this.GetComponent<PlayerAnimation>();
                 animation.UpdateAnimator();
-            }
         }
 
 	}
