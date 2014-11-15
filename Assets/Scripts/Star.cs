@@ -9,7 +9,7 @@ public class Star : MonoBehaviour {
     private float timeWaiting = 10f;
     private float timeRandom = 15f;
     private float timeShowHide = 1.0f;
-    private float currentTime;
+    private float currentTime = 8f;
     private enum LIGHTSTATUS { NONE, SHOW, HIDE };
     private LIGHTSTATUS currentLight = LIGHTSTATUS.NONE;
 

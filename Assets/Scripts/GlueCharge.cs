@@ -31,11 +31,19 @@ public class GlueCharge : MonoBehaviour
         // Player hit
         if (other.tag == "Player")
         {
+            // Destroy Hit Object
             GameObject.Destroy(this.gameObject);
 
+            // Get Player
+            PlayerScript player = other.GetComponent<PlayerScript>();
+
             // Through item away
+            if (player.catchObject != null & player.catchFollowing == true)
+                player.ThroughItemAway();
 
             // Hit Player -> through back - slow movement
+            player.EnableDamage();
+
         }
 		if (other.tag == "Rocket" && other.GetComponent<RocketBase>().isCountdownStarted)
 		{

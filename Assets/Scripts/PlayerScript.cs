@@ -34,6 +34,13 @@ public class PlayerScript : MonoBehaviour {
     private float gravityCurrent = 0;
     private float jumpSpeed = 3.0f;
 
+    // Damage
+    private bool enableDamage = false;
+    private float damageTime = 0.2f;
+    private float damageCurrent = 0;
+    private float damageHeight = 7.0f;
+    private float damageSpeed = 5.0f;
+
 	public enum AIM
 	{ DOWN = -1, NONE = 0, UP = 1 }
 	[SerializeField]
@@ -52,6 +59,7 @@ public class PlayerScript : MonoBehaviour {
 		GetInputs();
 		Move();
         Jump();
+        Damage();
 	}
 
 
@@ -144,9 +152,7 @@ public class PlayerScript : MonoBehaviour {
 			}
 			else
 			{
-
-            	this.catchObject.transform.Translate(Vector3.up * -0.4f);
-				this.catchObject.GetComponent<Item>().isLocked = false;
+                this.ThroughItemAway();
 			}
 			catchFollowing = false;
 			this.catchObject = null;
@@ -191,13 +197,49 @@ public class PlayerScript : MonoBehaviour {
 
     }
 
-	void Launch()
+	private void Launch()
 	{
 		if(this.rocketBase != null && this.rocketBase.GetComponent<RocketBase>().isStartable())
 		{
 			this.rocketBase.GetComponent<RocketBase>().startCountdown();
 		}
-
 	}
+
+    public void ThroughItemAway()
+    {
+        this.catchObject.transform.Translate(Vector3.up * -0.4f);
+        this.catchObject.GetComponent<Item>().isLocked = false;
+    }
+
+    public void EnableDamage()
+    {
+        this.enableDamage = true;
+        this.gravityCurrent = this.gravityDefault;
+    }
+
+    public void Damage()
+    {
+        if(this.enableDamage)
+        {
+            this.damageCurrent += Time.deltaTime;
+            this.gravityCurrent -= Time.deltaTime;
+
+            if(this.damageCurrent <= this.damageTime)
+            {
+                // Jump top
+                Vector3 damageJump = new Vector3(0, 1, 0) * this.damageHeight * Time.deltaTime * (this.gravityCurrent / this.gravityDefault);
+                // Jump backwords
+                damageJump += new Vector3(1, 0, 0) * this.damageSpeed * Time.deltaTime;
+                this.transform.Translate(damageJump);
+            }
+            else
+            {
+                this.enableDamage = false;
+                this.damageCurrent = 0;
+            }
+            
+        }
+    }
+
 
 }
