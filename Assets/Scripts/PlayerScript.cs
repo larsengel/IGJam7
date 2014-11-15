@@ -67,12 +67,16 @@ public class PlayerScript : MonoBehaviour {
                 PlayerCode = "A";
                 if (Input.GetKeyDown(KeyCode.Joystick1Button0)) // A - Jump
                     StartJump();
+				if (Input.GetKeyDown(KeyCode.Joystick1Button3)) // Y - Launch
+					Launch();
                 break;
             case 2:
                 PlayerCode = "B";
                 if (Input.GetKeyDown(KeyCode.Joystick2Button0)) // A - Jump
                     StartJump();
-                break;
+				if (Input.GetKeyDown(KeyCode.Joystick2Button3)) // Y - Launch
+					Launch();
+		    	break;
         }
 
 		// Movement Controller Axis X + Y + A/D + Left/Right
