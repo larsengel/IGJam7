@@ -6,7 +6,6 @@ public class PlayerScript : MonoBehaviour {
 	public int playerNumber;
 	public string playerName;
 	private GlewGunScript gun;
-    private GameObject planet;
 	public Transform catchObject = null;
     public bool catchFollowing = false;
 	[SerializeField]
@@ -17,29 +16,29 @@ public class PlayerScript : MonoBehaviour {
 	public enum DIRECTION
 	{LEFT = -1,	NONE = 0, RIGHT = 1	}
 	[SerializeField]
-    public DIRECTION movingDirection;
-    private DIRECTION lookAtDirection;
-    private float axisDiff = 0.7f;
+    public DIRECTION movingDirection = DIRECTION.NONE;
+    public DIRECTION lookAtDirection = DIRECTION.RIGHT;
+    private float axisDiff = 0.7f; // controls must not be val 1. they could be pressed a little bit
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    public float CatchSlowmo = 0.8f;
-    public float JumpSlowmo = 0.8f;
-    
+    private float CatchSlowmo = 0.5f;
+    private float JumpSlowmo = 0.7f;
 
     // Jump
     private bool enableJump = false;
     private float jumpTime = 1.5f;
     private float jumpCurrent = 0;
-    private float gravityDefault = 0;
+    private float gravityDefault = 0.75f;
     private float gravityCurrent = 0;
     private float jumpSpeed = 3.0f;
 
     // Damage
     private bool enableDamage = false;
-    private float damageTime = 0.2f;
+    private float damageTime = 0.3f;
     private float damageCurrent = 0;
-    private float damageHeight = 7.0f;
-    private float damageSpeed = 5.0f;
+    private float damageHeight = 3.0f;
+    private float damageSpeed = 6.0f;
+    private float damageGravity = 0.1f;
 
 	public enum AIM
 	{ DOWN = -1, NONE = 0, UP = 1 }
@@ -48,7 +47,6 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start () 
 	{
-		planet = GameMaster.Earth;
 		gun = this.gameObject.transform.GetChild(0).gameObject.GetComponent<GlewGunScript>();
         this.gravityDefault = this.jumpTime / 2;
 	}
@@ -56,9 +54,12 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update() 
 	{
-		GetInputs();
-		Move();
-        Jump();
+        if (this.enableDamage == false)
+        {
+            GetInputs();
+            Move();
+            Jump();
+        }
         Damage();
 	}
 
@@ -214,8 +215,12 @@ public class PlayerScript : MonoBehaviour {
     public void EnableDamage()
     {
         this.enableDamage = true;
-        this.gravityCurrent = this.gravityDefault;
-		this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+        this.gravityCurrent = this.damageGravity;
+        this.enableJump = false;
+
+        if (this.transform.Find("Spaceman_Blue") != null)
+		    this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+
     }
 
     public void Damage()
@@ -228,7 +233,7 @@ public class PlayerScript : MonoBehaviour {
             if(this.damageCurrent <= this.damageTime)
             {
                 // Jump top
-                Vector3 damageJump = new Vector3(0, 1, 0) * this.damageHeight * Time.deltaTime * (this.gravityCurrent / this.gravityDefault);
+                Vector3 damageJump = new Vector3(0, 1, 0) * this.damageHeight * Time.deltaTime * (this.gravityCurrent / this.damageGravity);
                 // Jump backwords
                 damageJump += new Vector3(1, 0, 0) * this.damageSpeed * Time.deltaTime;
                 this.transform.Translate(damageJump);
@@ -240,6 +245,11 @@ public class PlayerScript : MonoBehaviour {
             }
             
         }
+    }
+
+    public void LookOtherWay()
+    {
+        this.movingDirection = (DIRECTION)((float)this.lookAtDirection * -1);
     }
 
 
