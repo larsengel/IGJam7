@@ -52,12 +52,7 @@ public	float test;
 			Debug.Log("loadedt");
 			charge.GetComponent<GlueCharge>().fire(this.transform.forward);
 			charge = null;
-			Glue -= 1;
-		}
-		else
-		{
-
-			//todo:: audio:fault shooting...
+			TheHUD.TheLiveBar.SetGlueAmount(this.transform.parent.GetComponent<PlayerScript>().playerNumber,this.Glue);
 		}
 	}
 }

@@ -5,14 +5,14 @@ public class TheGUI : MonoBehaviour
 {
 	public enum THE_MODE
 	{NONE=0,THE_HUD,THE_CREDSCREEN}
-	public static TheCreditsScreen TheCredits;
+	public static TheSCREENS TheScreens;
 	public static TheHUD TheHud;
 	public static THE_MODE TheMode
 	{
-		get { return (THE_MODE)(TheCredits.TheActive > 0 ? TheCredits.TheActive : TheHud.TheActive > 0 ? TheHud.TheActive : 0); }
+		get { return (THE_MODE)( TheScreens.TheActive > 0 ? TheScreens.TheActive : TheHud.TheActive > 0 ? TheHud.TheActive : 0 ); }
 		set
 		{
-			TheCredits.TheActive = value;
+			TheScreens.TheActive = value;
 			TheHud.TheActive = value;
 		}
 	}
@@ -21,7 +21,7 @@ public class TheGUI : MonoBehaviour
 
 	void Start () 
 	{
-		TheCredits = GameObject.Find("TheCredScreen").gameObject.GetComponent<TheCreditsScreen>();
+		TheScreens = GameObject.Find("TheSCREENS").gameObject.GetComponent<TheSCREENS>();
 		TheHud = GameObject.Find("TheHUD").gameObject.GetComponent<TheHUD>();
 		TheMode = THE_MODE.NONE;
 	}
@@ -29,6 +29,6 @@ public class TheGUI : MonoBehaviour
 	public static void TheUpdate()
 	{
 		TheHud.TheUpdate();
-		TheCredits.TheUpdate();
+		TheScreens.TheUpdate();
 	}
 }

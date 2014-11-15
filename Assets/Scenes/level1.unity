@@ -384,7 +384,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 503081787}
   - 114: {fileID: 503081788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SCREENlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,8 +437,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 610867813}
   - 114: {fileID: 610867814}
-  m_Layer: 0
-  m_Name: TheHUD
+  m_Layer: 9
+  m_Name: TheBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1732935982}
   m_Father: {fileID: 1202546819}
   m_RootOrder: 1
 --- !u!114 &610867814
@@ -467,10 +468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2abfa311afda314cb70c2f1d88d2215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_horizontalAlign: 0
+  m_horizontalAlign: 2
   m_verticalAlign: 0
-  m_offset: {x: 0, y: 0}
-  m_size: {x: 100, y: 100}
+  m_offset: {x: 20, y: 10}
+  m_size: {x: 400, y: 50}
   z: 0
   m_scale: 1
   m_angle: 0
@@ -479,9 +480,10 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 1
   m_clipping: 0
-  m_backgroundTexture: {fileID: 0}
+  m_backgroundTexture: {fileID: 2800000, guid: 14409f3bf4bca2d4991a3cec9d0b0da0, type: 3}
   m_autoSizeToTexture: 0
-  m_textureScaleMode: 2
+  m_textureScaleMode: 0
+  player: {fileID: 458721346}
 --- !u!1 &677780771
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +547,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotator: -.075000003
+--- !u!1 &679427201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 679427203}
+  - 114: {fileID: 679427202}
+  m_Layer: 9
+  m_Name: TheButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &679427202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679427201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1785371929, guid: 558a23d97396a414c94d995080a01e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_horizontalAlign: 0
+  m_verticalAlign: 0
+  m_offset: {x: 0, y: 0}
+  m_size: {x: 100, y: 100}
+  z: 0
+  m_scale: 1
+  m_angle: 0
+  m_anchorPoint: {x: 0, y: 0}
+  m_alpha: 1
+  m_animationTime: 1
+  m_enabled: 1
+  m_clipping: 0
+  m_buttonType: 0
+  m_pushed: 0
+  m_idleImage: {fileID: 2800000, guid: b0977bb95777c1148a7da7993b7d21e6, type: 3}
+  m_pressImage: {fileID: 2800000, guid: 1c6d0ec6c9bfa924daa7327b5134122e, type: 3}
+  m_hoverImage: {fileID: 2800000, guid: 665bed564122fa14fa5a11d870f2ea04, type: 3}
+  m_disabledImage: {fileID: 0}
+  m_autoSizeToTexture: 1
+  m_groupTag: 
+--- !u!4 &679427203
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679427201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1861872330}
+  m_RootOrder: 0
 --- !u!1 &766415576
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +687,7 @@ GameObject:
   - 4: {fileID: 992834543}
   - 114: {fileID: 992834545}
   - 114: {fileID: 992834544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: THEGUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +813,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1202546819}
   - 114: {fileID: 1202546818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HUDlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,6 +958,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -8
+--- !u!1 &1695608994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1695608995}
+  - 114: {fileID: 1695608996}
+  m_Layer: 0
+  m_Name: GlueBarA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695608995
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695608994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2061287934}
+  m_RootOrder: 0
+--- !u!114 &1695608996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695608994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1587986592, guid: 558a23d97396a414c94d995080a01e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_horizontalAlign: 0
+  m_verticalAlign: 0
+  m_offset: {x: 15, y: 10}
+  m_size: {x: 365, y: 30}
+  z: 0
+  m_scale: 1
+  m_angle: 0
+  m_anchorPoint: {x: 0, y: 0}
+  m_alpha: 1
+  m_animationTime: 1
+  m_enabled: 1
+  m_clipping: 0
+  m_backgroundTexture: {fileID: 2800000, guid: c589a98410a78c64bb06bfaea8d84028, type: 3}
+  m_autoSizeToTexture: 0
+  m_textureScaleMode: 0
 --- !u!1 &1702467880
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1094,60 @@ MonoBehaviour:
   speed: 5
   movingDirection: 0
   gunDirection: 0
+--- !u!1 &1732935981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1732935982}
+  - 114: {fileID: 1732935983}
+  m_Layer: 0
+  m_Name: GlueBarB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1732935982
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732935981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 610867813}
+  m_RootOrder: 0
+--- !u!114 &1732935983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732935981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1587986592, guid: 558a23d97396a414c94d995080a01e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_horizontalAlign: 0
+  m_verticalAlign: 0
+  m_offset: {x: 15, y: 10}
+  m_size: {x: 365, y: 30}
+  z: 0
+  m_scale: 1
+  m_angle: 0
+  m_anchorPoint: {x: 0, y: 0}
+  m_alpha: 1
+  m_animationTime: 1
+  m_enabled: 1
+  m_clipping: 0
+  m_backgroundTexture: {fileID: 2800000, guid: c589a98410a78c64bb06bfaea8d84028, type: 3}
+  m_autoSizeToTexture: 0
+  m_textureScaleMode: 0
 --- !u!1 &1755828651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1219,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1861872330}
-  m_Layer: 0
+  - 114: {fileID: 1861872331}
+  m_Layer: 9
   m_Name: TheSCREENS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,9 +1236,38 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 679427203}
   m_Father: {fileID: 503081787}
   m_RootOrder: 0
+--- !u!114 &1861872331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1861872329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7600cbc9948b9f246a5f8ac9e877a22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_horizontalAlign: 0
+  m_verticalAlign: 0
+  m_offset: {x: 0, y: 0}
+  m_size: {x: 100, y: 100}
+  z: 0
+  m_scale: 1
+  m_angle: 0
+  m_anchorPoint: {x: 0, y: 0}
+  m_alpha: 1
+  m_animationTime: 1
+  m_enabled: 1
+  m_clipping: 0
+  m_backgroundTexture: {fileID: 0}
+  m_autoSizeToTexture: 0
+  m_textureScaleMode: 2
+  TheButton: {fileID: 679427202}
+  ScreenImages: []
 --- !u!1 &2061287933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,8 +1277,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2061287934}
   - 114: {fileID: 2061287935}
-  m_Layer: 0
-  m_Name: TheHUD
+  m_Layer: 9
+  m_Name: TheBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1094,7 +1293,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1695608995}
   m_Father: {fileID: 1202546819}
   m_RootOrder: 0
 --- !u!114 &2061287935
@@ -1111,7 +1311,7 @@ MonoBehaviour:
   m_horizontalAlign: 0
   m_verticalAlign: 0
   m_offset: {x: 20, y: 10}
-  m_size: {x: 300, y: 30}
+  m_size: {x: 400, y: 50}
   z: 0
   m_scale: 1
   m_angle: 0
@@ -1120,6 +1320,7 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 1
   m_clipping: 0
-  m_backgroundTexture: {fileID: 2800000, guid: c589a98410a78c64bb06bfaea8d84028, type: 3}
+  m_backgroundTexture: {fileID: 2800000, guid: 14409f3bf4bca2d4991a3cec9d0b0da0, type: 3}
   m_autoSizeToTexture: 0
   m_textureScaleMode: 0
+  player: {fileID: 1702467885}

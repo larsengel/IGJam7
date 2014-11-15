@@ -5,45 +5,33 @@ using System.Collections;
 
 public class TheHUD : blindGUITexturedContainer
 {
-	private blindGUIAnimationState astate;
+
 	private blindGUIText[] TextDisplay = new blindGUIText[6];
-	public static TheHUD Turtlecount;
 	private const int _theID = 1;
+	public static TheHUD TheLiveBar;
+	public PlayerScript player;
 
 	void Awake()
 	{
 		for(int i=0 ; i < transform.childCount ; i++)
 			TextDisplay[i] = transform.GetChild(i).GetComponent<blindGUIText>();
-		
-		TextDisplay[0].m_text = "Turtles Left:";
-		TextDisplay[1].m_text = "0";
-		TextDisplay[2].m_text = "Turtles Collected:";
-		TextDisplay[3].m_text = "0";
-		TextDisplay[4].m_text = "Turtles Died:";
-		TextDisplay[5].m_text = "0";
 
-		Turtlecount = this;
+		
+
+		TheLiveBar = this;
 	}
 
 	void Start()
 	{
-		astate = new blindGUIAnimationState(this);
+		
 	}
 
-	public void SetLeftTurtlesNumber(int number)
+	public void SetGlueAmount(int playerNumber,int value)
 	{
-		TextDisplay[1].m_text = number.ToString();
+		this.transform.GetChild(0).gameObject.GetComponent<blindGUITexturedContainer>().m_size.x = ( value / 100 ) * 365;
 	}
 
-	public void SetCollectedTurtelsNumber(int number)
-	{
-		TextDisplay[3].m_text = number.ToString();
-	}
-	
-	public void SetDiedTurtelsNumber(int number)
-	{
-		TextDisplay[5].m_text = number.ToString();
-	}
+
 
 	public bool Enable()
 	{
