@@ -342,8 +342,8 @@ MonoBehaviour:
   pLength: 10
   randMin: 1
   randMax: 2
-  engineSprite: {fileID: 21300000, guid: 086fd002ff75ec64597cfed20ba1fa84, type: 3}
-  moduleSprite: {fileID: 21300000, guid: faf2e725f55fb3c4097aa55ee63c85d3, type: 3}
+  engineSprite: {fileID: 21300000, guid: e88e1598dd62e3c43a335e41bccbe61a, type: 3}
+  moduleSprite: {fileID: 21300000, guid: fe0a8385a55c13243be255a6dc948fae, type: 3}
 --- !u!114 &92526219
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ public class Item : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-Debug.Log("enter");
             PlayerScript player = other.GetComponent<PlayerScript>();
             if (player.catchFollowing == false)
             {
@@ -21,7 +20,6 @@ Debug.Log("enter");
 
     void OnTriggerExit2D(Collider2D other)
     {
-Debug.Log("leave");
         if (other.tag == "Player")
         {
             PlayerScript player = other.GetComponent<PlayerScript>();
