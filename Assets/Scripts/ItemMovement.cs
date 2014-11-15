@@ -8,6 +8,7 @@ public class ItemMovement : MonoBehaviour {
 	void Start() 
 	{
 		_earth = GameMaster.Earth;
+		
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,7 @@ public class ItemMovement : MonoBehaviour {
 	
 		if(d > 3.5f)
         {
+			this.transform.up = ( this.transform.position - _earth.transform.position ).normalized;
             this.transform.Translate(-this.transform.up * Time.deltaTime);
         }
         else

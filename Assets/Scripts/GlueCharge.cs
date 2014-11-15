@@ -31,6 +31,7 @@ public class GlueCharge : MonoBehaviour
 		Engaged = false;
 	}
 
+	// The Update-function:
 	public void DoGlew()
 	{
 		if(Engaged)
@@ -40,17 +41,17 @@ public class GlueCharge : MonoBehaviour
 	}
 
 	public void fire(Vector2 direction)
-	{ 
-		this.transform.forward = direction;
+	{
 		Engaged = true;
+		this.transform.forward = direction;
 	}
 
 	public bool flow()
 	{
-	
-		transform.localScale += new Vector3(transform.localScale.x,transform.localScale.y + deltaSpeed, transform.localScale.z);
-		return transform.localScale.y >= MAXIMUM_RANGE;
-
+		Vector3 scale = this.gameObject.transform.transform.localScale;
+		scale.y += deltaSpeed;
+		this.gameObject.transform.localScale = scale; 
+		return (scale.y > MAXIMUM_RANGE);
 	}
 
 	private void OnHit()

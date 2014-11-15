@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GlewGunScript : MonoBehaviour {
+public class GlewGunScript : MonoBehaviour 
+{
 
 	[SerializeField]
 	private int _glue;
@@ -12,11 +13,12 @@ public class GlewGunScript : MonoBehaviour {
 	}
 	[SerializeField]
 	private GameObject chargePrefab;
-	private GlueCharge charge;
+	private GameObject charge;
 	public bool Loadet
 	{
 		get { return charge != null; }
 	}
+
 	void Start()
 	{
 		_glue = 100;
@@ -36,17 +38,18 @@ public	float test;
 		this.transform.position = this.transform.parent.gameObject.transform.position;
 		this.transform.Rotate(this.transform.forward, rotator);
 
-		if(Glue > 0 && !Loadet)
-			charge = ( GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject ).GetComponent<GlueCharge>();
-		else
-			charge.DoGlew();
+		if(Loadet)
+			charge.GetComponent<GlueCharge>().DoGlew();
+		else if(Glue > 0)
+			charge = GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject;
+
 	}
 
 	public void Fire()
 	{
 		if(Loadet)
 		{
-			charge.fire(this.transform.forward);
+			charge.GetComponent<GlueCharge>().fire(this.transform.forward);
 			charge = null;
 			Glue -= 1;
 		}
