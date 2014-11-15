@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
 	private float speed;
 
+	public RocketBase rocketBase = null;
+
 	public enum DIRECTION
 	{LEFT = -1,	NONE = 0, RIGHT = 1	}
 	[SerializeField]
@@ -109,17 +111,29 @@ public class PlayerScript : MonoBehaviour {
 
     private void Catch()
     {
-        if (this.catchObject != null && catchFollowing == false)
+
+		if (this.catchObject != null && catchFollowing == false && this.catchObject.GetComponent<Item> ().isLocked == false)	//Aufnehmen
         {
             catchFollowing = true;
             this.catchObject.transform.Translate(Vector3.up * 0.4f);
+			this.catchObject.GetComponent<Item>().isLocked = true;
 
         }
-        else if (this.catchObject != null && catchFollowing == true)
+        else if (this.catchObject != null && catchFollowing == true) //Ablegen
         {
-            catchFollowing = false;
-            this.catchObject.transform.Translate(Vector3.up * -0.4f);
-            this.catchObject = null;
+			if(this.rocketBase != null && this.rocketBase.GetComponent<RocketBase>().getModuleCnt() < 12)
+			{
+				rocketBase.placeItem(this.catchObject.gameObject);
+
+			}
+			else
+			{
+
+            	this.catchObject.transform.Translate(Vector3.up * -0.4f);
+				this.catchObject.GetComponent<Item>().isLocked = false;
+			}
+			catchFollowing = false;
+			this.catchObject = null;
         }
     }
 
@@ -130,16 +144,12 @@ public class PlayerScript : MonoBehaviour {
 
     private void Jump()
     {
-        Debug.Log("jump action");
         if(this.enableJump == true)
         {
-            Debug.Log(jumpCurrent);
             this.jumpCurrent += Time.deltaTime;
             if(this.jumpCurrent <= this.jumpTime)
             {
-                Debug.Log("trams");
                 this.transform.Translate(Vector3.up * 1.0f * Time.deltaTime);
-
             }
             else
             {
@@ -149,5 +159,14 @@ public class PlayerScript : MonoBehaviour {
         }
 
     }
+
+	void Launch()
+	{
+		if(this.rocketBase != null && this.rocketBase.GetComponent<RocketBase>().isStartable())
+		{
+			this.rocketBase.GetComponent<RocketBase>().startCountdown();
+		}
+
+	}
 
 }
