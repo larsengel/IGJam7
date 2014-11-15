@@ -53,7 +53,7 @@ public class PlayerScript : MonoBehaviour {
 		this.gameObject.transform.up = -(direction = ( planet.GetComponent<CircleCollider2D>().center - new Vector2(this.transform.position.x, this.transform.position.y) ).normalized);
 		this.gameObject.transform.position += -transform.up * ( ( Vector2.Distance(this.planet.transform.position, new Vector2(this.transform.position.x, this.transform.position.y)) + this.transform.localScale.y ) - ( planet.GetComponent<CircleCollider2D>().radius*2 - this.transform.localScale.y*2 ) );
 
-         this.transform.position
+        //this.transform.position
 
 	}
 }
