@@ -6,15 +6,13 @@ using System.Collections;
 public class TheHUD : blindGUITexturedContainer
 {
 
-	private blindGUIText[] TextDisplay = new blindGUIText[6];
+
 	private const int _theID = 1;
 	public static TheHUD TheLiveBar;
 	public PlayerScript player;
 
 	void Awake()
 	{
-		for(int i=0 ; i < transform.childCount ; i++)
-			TextDisplay[i] = transform.GetChild(i).GetComponent<blindGUIText>();
 
 		
 
@@ -80,6 +78,6 @@ public class TheHUD : blindGUITexturedContainer
 
 
 
+*/
 
-	
 }

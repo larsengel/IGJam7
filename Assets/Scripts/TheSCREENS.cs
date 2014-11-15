@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TheSCREENS : blindGUITexturedContainer
 {
-
+    /*
 	blindGUIAnimationState SHOWN,HIDDEN;
 	public blindGUIButton TheButton;
 	public List<Texture2D> ScreenImages;
@@ -87,6 +87,6 @@ public class TheSCREENS : blindGUITexturedContainer
 				m_enabled = Disable();
 		}
 	}
-
+    */
 
 }
