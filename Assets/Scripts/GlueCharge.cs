@@ -19,7 +19,7 @@ public class GlueCharge : MonoBehaviour
     public void Flow()
 	{
 
-        Utility.DoAroundMovement(this.transform, movementDirection, speed);
+        Utility.DoAroundMovement(this.transform, movementDirection, speed, false);
 
 	}
 

@@ -22,8 +22,8 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f;
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    public float CatchSlowmo = 0.3f;
-    public float JumpSlowmo = 0.5f;
+    public float CatchSlowmo = 0.5f;
+    public float JumpSlowmo = 0.7f;
     
 
     // Jump
@@ -160,8 +160,11 @@ public class PlayerScript : MonoBehaviour {
 
     private void StartJump()
     {
-        this.enableJump = true;
-        this.gravityCurrent = this.gravityDefault;
+        if (this.enableJump == false)
+        {
+            this.enableJump = true;
+            this.gravityCurrent = this.gravityDefault;
+        }
     }
 
     private void Jump()
