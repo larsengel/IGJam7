@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f;
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    public float CatchSlowmo = 0.7f;
+    public float CatchSlowmo = 0.8f;
     public float JumpSlowmo = 0.8f;
     
 
