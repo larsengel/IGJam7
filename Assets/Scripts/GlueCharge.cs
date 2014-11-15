@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class GlueCharge : MonoBehaviour
 {
@@ -34,9 +36,17 @@ public class GlueCharge : MonoBehaviour
             // Through item away
 
             // Hit Player -> through back - slow movement
-
-
         }
+		if (other.tag == "Rocket" && other.GetComponent<RocketBase>().isCountdownStarted)
+		{
+			List<GameObject> _placedItems = other.GetComponent<RocketBase>().placedItems;
+			GameObject.Destroy(this.gameObject);
+			//GameObject.Destroy(
+			GameObject lastItem = _placedItems[_placedItems.Count-1];
+			_placedItems.RemoveAt(_placedItems.Count-1);
+			GameObject.Destroy(lastItem);
+
+		}
 
 	}
 }

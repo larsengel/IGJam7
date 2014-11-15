@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RocketBase : MonoBehaviour {
 
@@ -15,15 +16,15 @@ public class RocketBase : MonoBehaviour {
 	public int minCountdown = 10;
 	public int secondsPerEngine = 5;
 
+	public List<GameObject> placedItems = new List<GameObject>();
+
+	public bool isPlayerOnBase = false;
+
 	void Update()
 	{
 		if(isCountdownStarted)
 		{
 			countdownValue -= Time.deltaTime;
-			if(countdownValue <= 0)
-			{
-				Debug.Log("WIN! Player " + rocketNumber); 
-			}
 		}
 	}
 
@@ -63,6 +64,7 @@ public class RocketBase : MonoBehaviour {
 		}
 		Vector2 ItemCoords = getModuleCoords ();
 		item.transform.position = ItemCoords;
+		placedItems.Add (item);
 		//item.transform.localScale
 	}
 
@@ -72,7 +74,11 @@ public class RocketBase : MonoBehaviour {
 		{
 			PlayerScript player = other.GetComponent<PlayerScript>();
 			if(player.playerNumber == rocketNumber)
+			{
 				player.rocketBase = this;
+				isPlayerOnBase = true;
+		
+			}
 		}
 	}
 	
@@ -82,7 +88,10 @@ public class RocketBase : MonoBehaviour {
 		{
 			PlayerScript player = other.GetComponent<PlayerScript>();
 			if(player.playerNumber == rocketNumber)
+			{
 				player.rocketBase = null;
+				isPlayerOnBase = false;
+			}
 		}
 	}
 
@@ -97,4 +106,26 @@ public class RocketBase : MonoBehaviour {
 		isCountdownStarted = true;
 	}
 
+	void OnGUI()
+	{
+		if(isStartable() && isPlayerOnBase && !isCountdownStarted)
+			GUI.TextField(new Rect(10, 10, 200, 20), "Press Y to Launch Rocket!", 25);
+
+		if(isCountdownStarted)
+		{
+			GUI.TextField(new Rect(10, 10, 200, 20), "Countdown started...", 25);
+			GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
+		}
+		if(countdownValue <= 0 && isCountdownStarted)
+		{
+			GUI.TextField(new Rect(Screen.width/2 - 100, Screen.height/2 - 10, 200, 20), "WIN! Player " + rocketNumber, 25);
+			Time.timeScale = 0;
+		}
+		if(placedItems.Count == 0 && isCountdownStarted)
+		{
+			GUI.TextField(new Rect(Screen.width/2 - 100, Screen.height/2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1), 25);
+			Time.timeScale = 0;
+		}
+	}
+	
 }
