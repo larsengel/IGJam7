@@ -215,6 +215,7 @@ public class PlayerScript : MonoBehaviour {
     {
         this.enableDamage = true;
         this.gravityCurrent = this.gravityDefault;
+		this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
     }
 
     public void Damage()
