@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b11">
+    <folder id="0">
+        <file id="0" name="spaceman_0011_astro_body.png" width="253" height="436" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="spaceman_0009_astro_glass.png" width="253" height="275" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="spaceman_0007_astro_glass_p1_farbe.png" width="211" height="225" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="spaceman_0013_astro_backpack_p1.png" width="137" height="255" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="spaceman_0012_astro_backpack_p2.png" width="137" height="255" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="spaceman_0004_astro_foot.png" width="89" height="39" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="spaceman_0005_astro_leg_down.png" width="34" height="56" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="spaceman_0006_astro_leg_up.png" width="38" height="81" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="spaceman_0003_astro_tube.png" width="135" height="140" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="Spaceman_Blue">
+        <obj_info name="Spaceman_Blue_spaceman_0011_astro_body" realname="spaceman_0011_astro_body" type="sprite">
+            <frames>
+                <i folder="0" file="0"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_spaceman_0009_astro_glass" realname="spaceman_0009_astro_glass" type="sprite">
+            <frames>
+                <i folder="0" file="1"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_spaceman_0007_astro_glass_p1_farbe" realname="spaceman_0007_astro_glass_p1_farbe" type="sprite">
+            <frames/>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_spaceman_0012_astro_backpack_p2" realname="spaceman_0012_astro_backpack_p2" type="sprite">
+            <frames>
+                <i folder="0" file="4"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_astro_front_foot" realname="astro_front_foot" type="sprite">
+            <frames>
+                <i folder="0" file="5"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_astro_leg_front_down" realname="astro_leg_front_down" type="sprite">
+            <frames>
+                <i folder="0" file="6"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_astro_leg__front_up" realname="astro_leg__front_up" type="sprite">
+            <frames>
+                <i folder="0" file="7"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_astro_leg_down_back_000" realname="astro_leg_down_back_000" type="sprite">
+            <frames>
+                <i folder="0" file="6"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_astro_leg__back_up_000" realname="astro_leg__back_up_000" type="sprite">
+            <frames>
+                <i folder="0" file="7"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_spaceman_0004_astro_foot_000" realname="spaceman_0004_astro_foot_000" type="sprite">
+            <frames>
+                <i folder="0" file="5"/>
+            </frames>
+        </obj_info>
+        <obj_info name="Spaceman_Blue_spaceman_0003_astro_tube" realname="spaceman_0003_astro_tube" type="sprite">
+            <frames>
+                <i folder="0" file="8"/>
+            </frames>
+        </obj_info>
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="spaceman_0012_astro_backpack_p2" folder="0" file="4" abs_x="-201" abs_y="367" abs_angle="5.063617" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="2" key="0" z_index="0"/>
+                    <object_ref id="1" name="spaceman_0011_astro_body" folder="0" file="0" abs_x="-112" abs_y="493" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="1"/>
+                    <object_ref id="2" name="spaceman_0009_astro_glass" folder="0" file="1" abs_x="-30" abs_y="485" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="1" key="0" z_index="2"/>
+                    <object_ref id="3" name="astro_front_foot" folder="0" file="5" abs_x="-52" abs_y="37" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="3" key="0" z_index="3"/>
+                    <object_ref id="4" name="astro_leg_front_down" folder="0" file="6" abs_x="-46" abs_y="74" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="4" key="0" z_index="4"/>
+                    <object_ref id="5" name="astro_leg__front_up" folder="0" file="7" abs_x="-52" abs_y="128" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="5" key="0" z_index="5"/>
+                    <object_ref id="6" name="astro_leg_down_back_000" folder="0" file="6" abs_x="61" abs_y="87" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="6" key="0" z_index="6"/>
+                    <object_ref id="7" name="astro_leg__back_up_000" folder="0" file="7" abs_x="55" abs_y="124" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="7" key="0" z_index="7"/>
+                    <object_ref id="8" name="spaceman_0004_astro_foot_000" folder="0" file="5" abs_x="55" abs_y="42" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="8" key="0" z_index="8"/>
+                    <object_ref id="9" name="spaceman_0003_astro_tube" folder="0" file="8" abs_x="-152" abs_y="473" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="9" key="0" z_index="9"/>
+                </key>
+            </mainline>
+            <timeline id="0" obj="0" name="spaceman_0011_astro_body">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-112" y="493"/>
+                </key>
+            </timeline>
+            <timeline id="1" obj="1" name="spaceman_0009_astro_glass">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-30" y="485"/>
+                </key>
+            </timeline>
+            <timeline id="2" obj="3" name="spaceman_0012_astro_backpack_p2">
+                <key id="0" spin="0">
+                    <object folder="0" file="4" x="-201" y="367" angle="5.063617" scale_x="1"/>
+                </key>
+            </timeline>
+            <timeline id="3" obj="4" name="astro_front_foot">
+                <key id="0" spin="0">
+                    <object folder="0" file="5" x="-52" y="37"/>
+                </key>
+            </timeline>
+            <timeline id="4" obj="5" name="astro_leg_front_down">
+                <key id="0" spin="0">
+                    <object folder="0" file="6" x="-46" y="74"/>
+                </key>
+            </timeline>
+            <timeline id="5" obj="6" name="astro_leg__front_up">
+                <key id="0" spin="0">
+                    <object folder="0" file="7" x="-52" y="128"/>
+                </key>
+            </timeline>
+            <timeline id="6" obj="7" name="astro_leg_down_back_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="6" x="61" y="87"/>
+                </key>
+            </timeline>
+            <timeline id="7" obj="8" name="astro_leg__back_up_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="7" x="55" y="124"/>
+                </key>
+            </timeline>
+            <timeline id="8" obj="9" name="spaceman_0004_astro_foot_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="5" x="55" y="42"/>
+                </key>
+            </timeline>
+            <timeline id="9" obj="10" name="spaceman_0003_astro_tube">
+                <key id="0" spin="0">
+                    <object folder="0" file="8" x="-152" y="473"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
