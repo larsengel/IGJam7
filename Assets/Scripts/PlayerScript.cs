@@ -15,7 +15,8 @@ public class PlayerScript : MonoBehaviour {
 	public enum DIRECTION
 	{LEFT = -1,	NONE = 0, RIGHT = 1	}
 	[SerializeField]
-	private DIRECTION movingDirection;
+    private DIRECTION movingDirection;
+    private DIRECTION lookAtDirection;
 
 	public enum AIM
 	{ DOWN = -1, NONE = 0, UP = 1 }
@@ -33,7 +34,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		GetInputs();
 		Move();
-		gun.Reloade();
+		//gun.Reloade();
 	}
 
 
@@ -44,43 +45,37 @@ public class PlayerScript : MonoBehaviour {
             case 1:
 			    movingDirection=(DIRECTION)Input.GetAxis("PlayerAControll");
 				gunDirection = (AIM)Input.GetAxis("AimA");
-				if(Input.GetKeyDown(KeyCode.Joystick1Button2)) // X
-					gun.Fire();
 				if(Input.GetKeyDown(KeyCode.Joystick1Button0)) // A
 					Catch();
                 if(Input.GetKeyDown(KeyCode.Joystick1Button1)) // B
                     Jump();
+				if(Input.GetKeyDown(KeyCode.Joystick1Button2)) // X
+					Fire();
                 break;
             case 2:
 			    movingDirection=(DIRECTION)Input.GetAxis("PlayerBControll");
 				gunDirection = (AIM)Input.GetAxis("AimB");
-				if(Input.GetKeyDown(KeyCode.Joystick2Button2))
-					gun.Fire();
 				if(Input.GetKeyDown(KeyCode.Joystick2Button0))
                     Catch();
                 if(Input.GetKeyDown(KeyCode.Joystick2Button1))
                     Jump();
+				if(Input.GetKeyDown(KeyCode.Joystick2Button2))
+					Fire();
                 break;
         }
+        if (movingDirection != 0)
+            lookAtDirection = movingDirection;
 	}
 
 	private void Move()
 	{
-
-        //move left or right...
-        this.transform.position += (movingDirection == DIRECTION.LEFT) ? -this.transform.right * speed * 0.01f : (movingDirection == DIRECTION.RIGHT) ? this.transform.right * speed * 0.01f : Vector3.zero;
-        //correct orientation angle...
-        this.transform.up = -(planet.GetComponent<CircleCollider2D>().center - new Vector2(this.transform.position.x, this.transform.position.y)).normalized;
-        //correct position (distance to planet-center)...
-        this.transform.position += -transform.up * ((Vector2.Distance(this.planet.transform.position, new Vector2(this.transform.position.x, this.transform.position.y)) + this.transform.localScale.y) - (planet.GetComponent<CircleCollider2D>().radius * 2 - this.transform.localScale.y * 2));
-
+        // Player Movement
+        Utility.DoAroundMovement(this.transform, movingDirection, speed);
 
         if (this.catchObject != null && catchFollowing == true)
         {
-            this.catchObject.transform.position += (movingDirection == DIRECTION.LEFT) ? -this.catchObject.transform.right * speed * 0.01f : (movingDirection == DIRECTION.RIGHT) ? this.catchObject.transform.right * speed * 0.01f : Vector3.zero;
-            this.catchObject.transform.up = -(planet.GetComponent<CircleCollider2D>().center - new Vector2(this.catchObject.transform.position.x, this.catchObject.transform.position.y)).normalized;
-            this.catchObject.transform.position += -transform.up * ((Vector2.Distance(this.planet.transform.position, new Vector2(this.catchObject.transform.position.x, this.catchObject.transform.position.y)) + this.catchObject.transform.localScale.y) - (planet.GetComponent<CircleCollider2D>().radius * 2 - this.catchObject.transform.localScale.y * 2));
-
+            // Item Movement
+            Utility.DoAroundMovement(this.catchObject, movingDirection, speed);
         }
     }
 
@@ -103,6 +98,11 @@ public class PlayerScript : MonoBehaviour {
     private void Jump()
     {
 
+    }
+
+    private void Fire()
+    {
+        gun.Fire(lookAtDirection);
     }
 
 }

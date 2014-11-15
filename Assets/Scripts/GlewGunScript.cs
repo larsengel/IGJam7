@@ -3,56 +3,32 @@ using System.Collections;
 
 public class GlewGunScript : MonoBehaviour 
 {
-
 	[SerializeField]
-	private int _glue;
-	public int Glue
+    private GameObject chargePrefab;
+
+    public float timeNeed = 1f;
+    private float timeCurrent = 0;
+    private Transform Spawn;
+
+    void Start()
 	{
-		get { return _glue; }
-		set { _glue = value; }
-	}
-	[SerializeField]
-	private GameObject chargePrefab;
-	private GameObject charge;
-	public bool Loadet
-	{
-		get { return charge != null; }
+        Spawn = this.gameObject.transform.GetChild(0).transform;
 	}
 
-	void Start()
-	{
-		_glue = 100;
-	}
+    void Update()
+    {
+        timeCurrent += Time.deltaTime;
+    }
 
-public	float test;
-	private float rotator
+    public void Fire(PlayerScript.DIRECTION direction)
 	{
-		get 
+        if (this.timeCurrent >= this.timeNeed)
 		{
-			return test =( (float)( (int)this.transform.parent.gameObject.GetComponent<PlayerScript>().gunDirection )*3 );
+            this.timeCurrent = 0;
+
+            GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
+            charge.GetComponent<GlueCharge>().movementDirection = direction;
 		}
 	}
-	
-	public void Reloade() 
-	{
-		this.transform.position = this.transform.parent.gameObject.transform.position;
-		this.transform.Rotate(this.transform.forward, rotator);
 
-		if(Loadet)
-			charge.GetComponent<GlueCharge>().DoGlew();
-		else if(Glue > 0)
-			charge = GameObject.Instantiate(chargePrefab, this.transform.position, this.transform.rotation) as GameObject;
-
-	}
-
-	public void Fire()
-	{
-		if(Loadet)
-		{
-			Debug.Log("loadedt");
-			charge.GetComponent<GlueCharge>().fire(this.transform.forward);
-			charge = null;
-			//THEHUD.TheLiveBar.SetGlueAmount(this.transform.parent.GetComponent<PlayerScript>().playerNumber,this.Glue);
-		}
-	}
 }
