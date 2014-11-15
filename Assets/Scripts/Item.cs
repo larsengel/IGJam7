@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Item : MonoBehaviour {
 
+	public bool isLocked = false;
+	public int type;	// 1 = Engine, 0 = Module
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")

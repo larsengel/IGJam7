@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
 	private float speed;
 
+	public RocketBase rocketBase = null;
+
 	public enum DIRECTION
 	{LEFT = -1,	NONE = 0, RIGHT = 1	}
 	[SerializeField]
@@ -86,17 +88,29 @@ public class PlayerScript : MonoBehaviour {
 
     private void Catch()
     {
-        if (this.catchObject != null && catchFollowing == false)	//Aufnehmen
+
+		if (this.catchObject != null && catchFollowing == false && this.catchObject.GetComponent<Item> ().isLocked == false)	//Aufnehmen
         {
             catchFollowing = true;
             this.catchObject.transform.Translate(Vector3.up * 0.4f);
+			this.catchObject.GetComponent<Item>().isLocked = true;
 
         }
         else if (this.catchObject != null && catchFollowing == true) //Ablegen
         {
-            catchFollowing = false;
-            this.catchObject.transform.Translate(Vector3.up * -0.4f);
-            this.catchObject = null;
+			if(this.rocketBase != null)
+			{
+				rocketBase.placeItem(this.catchObject.gameObject);
+
+			}
+			else
+			{
+
+            	this.catchObject.transform.Translate(Vector3.up * -0.4f);
+				this.catchObject.GetComponent<Item>().isLocked = false;
+			}
+			catchFollowing = false;
+			this.catchObject = null;
         }
     }
 

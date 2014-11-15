@@ -36,6 +36,7 @@ public class ItemSpawner : MonoBehaviour {
         Transform clone = Instantiate(item, new Vector3(randomX, randomY, 0), Quaternion.identity) as Transform;
         //clone.LookAt(GameMaster.Earth.transform.position);
         clone.transform.up = GameMaster.Earth.transform.position - clone.transform.position;
+		clone.GetComponent<Item> ().type = Random.value > 0.8 ? 1 : 0;
 
         timer = randMin + Random.value * randMax;
         itemCounter++;
