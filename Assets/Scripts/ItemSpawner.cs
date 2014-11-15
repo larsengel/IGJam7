@@ -13,7 +13,9 @@ public class ItemSpawner : MonoBehaviour {
 
 	public float randMin = 10f, randMax = 10f;
 
-	public Sprite engineSprite, moduleSprite;
+    public Sprite engineSprite, moduleSprite;
+
+    private int counter;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +33,8 @@ public class ItemSpawner : MonoBehaviour {
 
     private void Spawn()
     {
+        this.counter++;
+
 		float angle;
 		float rnd = Random.value;
 		if(rnd > 0.5f)
@@ -49,6 +53,7 @@ public class ItemSpawner : MonoBehaviour {
 		clone.GetComponent<SpriteRenderer> ().sprite = clone.GetComponent<Item> ().type == 1 ? engineSprite : moduleSprite;
 
         timer = randMin + Random.value * randMax;
+        timer += this.counter * 0.5f;
         itemCounter++;
     }
 }
