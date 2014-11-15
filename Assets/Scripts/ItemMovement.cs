@@ -7,7 +7,6 @@ public class ItemMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_earth = GameMaster.Earth;
-	
 	}
 	
 	// Update is called once per frame
@@ -24,7 +23,12 @@ public class ItemMovement : MonoBehaviour {
 		if(d > 3.5f)
         {
             this.transform.Translate(Vector3.forward * Time.deltaTime);
-		}
+        }
+        else
+        {
+            // delete script
+            Component.Destroy(this);
+        }
 
 	}
 }

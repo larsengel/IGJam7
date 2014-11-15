@@ -253,11 +253,11 @@ GameObject:
   - 4: {fileID: 458721345}
   - 114: {fileID: 458721346}
   - 50: {fileID: 458721343}
-  - 114: {fileID: 458721347}
   - 212: {fileID: 458721342}
+  - 61: {fileID: 458721344}
   m_Layer: 0
   m_Name: PlayerB
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 24170882b463d724e8c80b701925cc5f, type: 3}
-  m_Color: {r: 1, g: .279411793, b: .279411793, a: 1}
+  m_Color: {r: .363894552, g: .279411793, b: 1, a: 1}
 --- !u!50 &458721343
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -295,10 +295,21 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &458721344
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458721341}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .751937985, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!4 &458721345
 Transform:
   m_ObjectHideFlags: 0
@@ -325,20 +336,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 2
   playerName: 
-  planet: {fileID: 0}
   catchObject: {fileID: 0}
-  speed: .100000001
---- !u!114 &458721347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 458721341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b290cc7bd7cc4c744ba7b952db1e3419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  catchFollowing: 0
+  speed: 5
+  movingDirection: 0
+  gunDirection: 0
 --- !u!1 &677780771
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _glue: 100
   chargePrefab: {fileID: 100000, guid: 951703ffe3b8d5346a08ba0412bf8ec5, type: 2}
+  test: 0
 --- !u!1 &1115053906
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _glue: 100
   chargePrefab: {fileID: 100000, guid: 951703ffe3b8d5346a08ba0412bf8ec5, type: 2}
+  test: 0
 --- !u!1 &1289302550
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,11 +642,11 @@ GameObject:
   - 4: {fileID: 1702467884}
   - 114: {fileID: 1702467885}
   - 50: {fileID: 1702467882}
-  - 114: {fileID: 1702467886}
   - 212: {fileID: 1702467881}
+  - 61: {fileID: 1702467883}
   m_Layer: 0
   m_Name: PlayerA
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,7 +672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 24170882b463d724e8c80b701925cc5f, type: 3}
-  m_Color: {r: .437018365, g: .33088237, b: 1, a: 1}
+  m_Color: {r: 1, g: .33088237, b: .33088237, a: 1}
 --- !u!50 &1702467882
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -680,10 +684,21 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &1702467883
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702467880}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .751938164, y: 1.00000024}
+  m_Center: {x: 1.49011612e-08, y: 0}
 --- !u!4 &1702467884
 Transform:
   m_ObjectHideFlags: 0
@@ -710,20 +725,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   playerName: 
-  planet: {fileID: 0}
   catchObject: {fileID: 0}
-  speed: .0500000007
---- !u!114 &1702467886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1702467880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b290cc7bd7cc4c744ba7b952db1e3419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  catchFollowing: 0
+  speed: 5
+  movingDirection: 0
+  gunDirection: 0
 --- !u!1 &1755828651
 GameObject:
   m_ObjectHideFlags: 0
