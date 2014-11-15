@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TheHud : blindGUITexturedContainer
+public class THEHUD : blindGUITexturedContainer
 {
 	/*
 	private const int _theID = 1;
-	
-	void Start () {
-	
+	//public TheGUI.THE_MODE TheActive;
+
+	void Start()
+	{
 	}
 
 	public bool Enable()
@@ -31,11 +32,6 @@ public class TheHud : blindGUITexturedContainer
 		TheActive = TheGUI.TheMode;
 	}
 
-
-
-
-	//public bool _IEnabled=true;
-
 	public TheGUI.THE_MODE TheActive
 	{
 		get
@@ -51,7 +47,10 @@ public class TheHud : blindGUITexturedContainer
 
 		}
 	}
-	void Update () {
 	
+	void Update()
+	{
+
 	}*/
+
 }
