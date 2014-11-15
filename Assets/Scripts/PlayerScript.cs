@@ -21,8 +21,8 @@ public class PlayerScript : MonoBehaviour {
     private float axisDiff = 0.7f; // controls must not be val 1. they could be pressed a little bit
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
-    private float CatchSlowmo = 0.5f;
-    private float JumpSlowmo = 0.7f;
+    private float CatchSlowmo = 0.6f;
+    private float JumpSlowmo = 0.8f;
 
     // Jump
     private bool enableJump = false;
@@ -113,7 +113,7 @@ public class PlayerScript : MonoBehaviour {
         }
 
         // RT - Fire
-        if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") < -0.6f) // RT
+        if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") < -0.6f && this.catchFollowing == false) // RT - Shot
             Fire();
 	}
 
