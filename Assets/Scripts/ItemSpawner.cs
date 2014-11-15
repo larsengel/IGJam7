@@ -31,7 +31,7 @@ public class ItemSpawner : MonoBehaviour {
 
     private void Spawn()
     {
-        float angle = Random.value * 2 * Mathf.PI;
+        float angle = 0;
         float randomX = pLength * Mathf.Cos(angle) + GameMaster.Earth.transform.position.x;
         float randomY = pLength * Mathf.Sin(angle) + GameMaster.Earth.transform.position.y;
 
