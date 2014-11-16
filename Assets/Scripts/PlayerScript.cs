@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start () 
 	{
-		gun = this.gameObject.transform.GetChild(0).gameObject.GetComponent<GlewGunScript>();
+		gun = this.gameObject.transform.Find ("GlewGun").gameObject.GetComponent<GlewGunScript>();
         this.gravityDefault = this.jumpTime / 2;
 	}
 	
