@@ -1,0 +1,469 @@
+{
+	"entity": [
+		{
+			"animation": [
+				{
+					"gline": [],
+					"id": 0,
+					"interval": 100,
+					"length": 1000,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"abs_a": 1,
+										"abs_angle": 0,
+										"abs_pivot_x": 0.604174,
+										"abs_pivot_y": 0.11213099999999998,
+										"abs_scale_x": 1,
+										"abs_scale_y": 1,
+										"abs_x": 16.024859,
+										"abs_y": -0.387869,
+										"file": 0,
+										"folder": 0,
+										"id": 0,
+										"key": 0,
+										"name": "Unbenannt-30000",
+										"timeline": "0",
+										"z_index": "0"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 120
+							},
+							{
+								"bone_ref": [],
+								"id": 2,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 2,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 240
+							},
+							{
+								"bone_ref": [],
+								"id": 3,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 3,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 360
+							},
+							{
+								"bone_ref": [],
+								"id": 4,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 4,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 490
+							},
+							{
+								"bone_ref": [],
+								"id": 5,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 5,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 610
+							},
+							{
+								"bone_ref": [],
+								"id": 6,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 6,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 730
+							},
+							{
+								"bone_ref": [],
+								"id": 7,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 7,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 860
+							}
+						]
+					},
+					"name": "Explosion",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 0,
+										"file": 0,
+										"folder": 0,
+										"pivot_x": 0.604174,
+										"pivot_y": 0.11213099999999998,
+										"x": 16.024859,
+										"y": 0.387869
+									},
+									"spin": 0
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 0,
+										"file": 1,
+										"folder": 0,
+										"pivot_x": 0.604174,
+										"pivot_y": 0.11213099999999998,
+										"x": 16.024859,
+										"y": 0.387869
+									},
+									"spin": 0,
+									"time": 120
+								},
+								{
+									"id": 2,
+									"object": {
+										"angle": 0,
+										"file": 2,
+										"folder": 0,
+										"pivot_x": 0.604174,
+										"pivot_y": 0.11213099999999998,
+										"x": 16.024859,
+										"y": 0.387869
+									},
+									"spin": 0,
+									"time": 240
+								},
+								{
+									"id": 3,
+									"object": {
+										"angle": 0,
+										"file": 3,
+										"folder": 0,
+										"pivot_x": 0.604174,
+										"pivot_y": 0.11213099999999998,
+										"x": 9.573246,
+										"y": -18.96697
+									},
+									"spin": 0,
+									"time": 360
+								},
+								{
+									"id": 4,
+									"object": {
+										"angle": 0,
+										"file": 4,
+										"folder": 0,
+										"pivot_x": 0.643996,
+										"pivot_y": 0.17224300000000003,
+										"x": 19.210843,
+										"y": 0.327757
+									},
+									"spin": 0,
+									"time": 490
+								},
+								{
+									"id": 5,
+									"object": {
+										"angle": 0,
+										"file": 5,
+										"folder": 0,
+										"pivot_x": 0.614051,
+										"pivot_y": 0.11851999999999996,
+										"x": 16.014981,
+										"y": -9.295939
+									},
+									"spin": 0,
+									"time": 610
+								},
+								{
+									"id": 6,
+									"object": {
+										"angle": 0,
+										"file": 6,
+										"folder": 0,
+										"pivot_x": 0.664427,
+										"pivot_y": 0.21521800000000002,
+										"x": 9.512992,
+										"y": -6.16683
+									},
+									"spin": 0,
+									"time": 730
+								},
+								{
+									"id": 7,
+									"object": {
+										"angle": 0,
+										"file": 7,
+										"folder": 0,
+										"pivot_x": 0.664427,
+										"pivot_y": 0.21521800000000002,
+										"x": 11.140959,
+										"y": -4.528156
+									},
+									"spin": 0,
+									"time": 860
+								}
+							],
+							"name": "Unbenannt-30000",
+							"obj": 0
+						}
+					]
+				},
+				{
+					"gline": [],
+					"id": 1,
+					"interval": 100,
+					"length": 1000,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"abs_a": 1,
+										"abs_angle": 360,
+										"abs_pivot_x": 0,
+										"abs_pivot_y": 1,
+										"abs_scale_x": 1,
+										"abs_scale_y": 1,
+										"abs_x": -2,
+										"abs_y": 1,
+										"file": 8,
+										"folder": 0,
+										"id": 0,
+										"key": 0,
+										"name": "leer",
+										"timeline": "0",
+										"z_index": "0"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 506
+							}
+						]
+					},
+					"name": "empty",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"file": 8,
+										"folder": 0,
+										"x": -2,
+										"y": -1
+									},
+									"spin": 0
+								},
+								{
+									"id": 1,
+									"object": {
+										"file": 8,
+										"folder": 0,
+										"scale_x": 0.9838709677419355,
+										"scale_y": 2.833333333333333,
+										"x": -2.0080645161290325,
+										"y": 14.583333333333334
+									},
+									"spin": 0,
+									"time": 506
+								}
+							],
+							"name": "leer",
+							"obj": 1
+						}
+					]
+				}
+			],
+			"character_map": [],
+			"id": 0,
+			"name": "Explosion",
+			"obj_info": [
+				{
+					"frames": [
+						{
+							"file": 0,
+							"folder": 0
+						},
+						{
+							"file": 1,
+							"folder": 0
+						},
+						{
+							"file": 2,
+							"folder": 0
+						},
+						{
+							"file": 3,
+							"folder": 0
+						},
+						{
+							"file": 4,
+							"folder": 0
+						},
+						{
+							"file": 5,
+							"folder": 0
+						},
+						{
+							"file": 6,
+							"folder": 0
+						},
+						{
+							"file": 7,
+							"folder": 0
+						}
+					],
+					"name": "Explosion_Unbenannt-30000",
+					"realname": "Unbenannt-30000",
+					"type": "sprite"
+				},
+				{
+					"frames": [
+						{
+							"file": 8,
+							"folder": 0
+						}
+					],
+					"name": "Explosion_leer",
+					"realname": "leer",
+					"type": "sprite"
+				}
+			]
+		}
+	],
+	"folder": [
+		{
+			"file": [
+				{
+					"height": 1080,
+					"id": 0,
+					"name": "Unbenannt-30000.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 1,
+					"name": "Unbenannt-30001.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 2,
+					"name": "Unbenannt-30002.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 3,
+					"name": "Unbenannt-30003.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 4,
+					"name": "Unbenannt-30004.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 5,
+					"name": "Unbenannt-30005.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 6,
+					"name": "Unbenannt-30006.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 1080,
+					"id": 7,
+					"name": "Unbenannt-30007.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 8,
+					"id": 8,
+					"name": "leer.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 30
+				}
+			],
+			"id": 0
+		}
+	],
+	"generator": "BrashMonkey Spriter",
+	"generator_version": "b11",
+	"scon_version": "1.0"
+}

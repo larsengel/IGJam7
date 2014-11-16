@@ -1,0 +1,567 @@
+{
+	"entity": [
+		{
+			"animation": [
+				{
+					"gline": [],
+					"id": 0,
+					"interval": 100,
+					"length": 400,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"abs_a": 1,
+										"abs_angle": 179.641497,
+										"abs_pivot_x": 0.490704,
+										"abs_pivot_y": 0.028236999999999957,
+										"abs_scale_x": 1,
+										"abs_scale_y": 1,
+										"abs_x": 7.377717,
+										"abs_y": 34.265079,
+										"file": 0,
+										"folder": 0,
+										"id": 0,
+										"key": 0,
+										"name": "Dust1",
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"abs_a": 0.57,
+										"abs_angle": 0,
+										"abs_pivot_x": 0,
+										"abs_pivot_y": 1,
+										"abs_scale_x": 1,
+										"abs_scale_y": 1,
+										"abs_x": -150,
+										"abs_y": 31.818182,
+										"file": 1,
+										"folder": 0,
+										"id": 1,
+										"key": 0,
+										"name": "Dust2",
+										"timeline": "2",
+										"z_index": "1"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 1,
+										"timeline": "2",
+										"z_index": "1"
+									}
+								],
+								"time": 80
+							},
+							{
+								"bone_ref": [],
+								"id": 2,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 2,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 1,
+										"timeline": "1",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 2,
+										"timeline": "2",
+										"z_index": "2"
+									}
+								],
+								"time": 160
+							},
+							{
+								"bone_ref": [],
+								"id": 3,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 3,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 3,
+										"timeline": "1",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 3,
+										"timeline": "2",
+										"z_index": "2"
+									}
+								],
+								"time": 237
+							},
+							{
+								"bone_ref": [],
+								"id": 4,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 4,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 320
+							}
+						]
+					},
+					"name": "Dust",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 179.641497,
+										"file": 0,
+										"folder": 0,
+										"pivot_x": 0.490704,
+										"pivot_y": 0.028236999999999957,
+										"x": 7.377717,
+										"y": -34.265079
+									}
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 179.852262,
+										"file": 1,
+										"folder": 0,
+										"pivot_x": 0.490704,
+										"pivot_y": 0.028236999999999957,
+										"x": 7.377717,
+										"y": -34.265079
+									},
+									"spin": -1,
+									"time": 80
+								},
+								{
+									"id": 2,
+									"object": {
+										"angle": 179.313635,
+										"file": 2,
+										"folder": 0,
+										"pivot_x": 0.490704,
+										"pivot_y": 0.028236999999999957,
+										"x": 7.377717,
+										"y": -34.265079
+									},
+									"time": 160
+								},
+								{
+									"id": 3,
+									"object": {
+										"angle": 179.789834,
+										"file": 3,
+										"folder": 0,
+										"pivot_x": 0.490704,
+										"pivot_y": 0.028236999999999957,
+										"x": 7.377717,
+										"y": -34.265079
+									},
+									"time": 237
+								},
+								{
+									"id": 4,
+									"object": {
+										"angle": 180.552208,
+										"file": 4,
+										"folder": 0,
+										"pivot_x": 0.490704,
+										"pivot_y": 0.028236999999999957,
+										"x": 7.377717,
+										"y": -34.265079
+									},
+									"spin": -1,
+									"time": 320
+								}
+							],
+							"name": "Dust1",
+							"obj": 0
+						},
+						{
+							"id": 1,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 179.28038,
+										"file": 5,
+										"folder": 0,
+										"pivot_x": 0.522631,
+										"pivot_y": 0.713051,
+										"scale_x": 0.553261,
+										"scale_y": 0.580741,
+										"x": 9.605401623888488,
+										"y": -101.00818282529671
+									},
+									"spin": -1,
+									"time": 160
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 179.28038,
+										"file": 5,
+										"folder": 0,
+										"pivot_x": 0.505572,
+										"pivot_y": 0.65804,
+										"scale_x": 0.553261,
+										"scale_y": 0.580741,
+										"x": 28.158421,
+										"y": -66.73558
+									},
+									"spin": -1,
+									"time": 160
+								},
+								{
+									"id": 2,
+									"object": {
+										"a": 0,
+										"angle": 178.261239,
+										"file": 5,
+										"folder": 0,
+										"pivot_x": 0.505572,
+										"pivot_y": 0.65804,
+										"x": -20.849695061977137,
+										"y": -61.476021137193165
+									},
+									"spin": -1,
+									"time": 237
+								},
+								{
+									"id": 3,
+									"object": {
+										"a": 0,
+										"angle": 178.261239,
+										"file": 5,
+										"folder": 0,
+										"pivot_x": 0.522631,
+										"pivot_y": 0.713051,
+										"x": -55.390596,
+										"y": -119.866731
+									},
+									"time": 237
+								}
+							],
+							"name": "Dust6_000",
+							"obj": 2
+						},
+						{
+							"id": 2,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"a": 0.57,
+										"angle": 0,
+										"file": 1,
+										"folder": 0,
+										"x": -150,
+										"y": -31.818182
+									},
+									"spin": 0
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 0,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.100899,
+										"scale_y": 1.180449,
+										"x": -149.949551,
+										"y": 10.515836
+									},
+									"time": 80
+								},
+								{
+									"id": 2,
+									"object": {
+										"a": 0.62,
+										"angle": 5.581908999999996,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.527801,
+										"scale_y": 1.617589,
+										"x": -113.356541,
+										"y": -83.62287
+									},
+									"time": 160
+								},
+								{
+									"id": 3,
+									"object": {
+										"a": 0,
+										"angle": 13.311782999999991,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.865352,
+										"scale_y": 1.974976,
+										"x": -154.325915,
+										"y": -183.010969
+									},
+									"spin": -1,
+									"time": 237
+								}
+							],
+							"name": "Dust2",
+							"obj": 4
+						}
+					]
+				},
+				{
+					"gline": [],
+					"id": 1,
+					"interval": 100,
+					"length": 1000,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"abs_a": 1,
+										"abs_angle": 360,
+										"abs_pivot_x": 0,
+										"abs_pivot_y": 1,
+										"abs_scale_x": 2.8225806451612905,
+										"abs_scale_y": 5.166666666666667,
+										"abs_x": -34.08870967741936,
+										"abs_y": -18.916666666666668,
+										"file": 6,
+										"folder": 0,
+										"id": 0,
+										"key": 0,
+										"name": "leer",
+										"timeline": "0",
+										"z_index": "0"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 499
+							}
+						]
+					},
+					"name": "empty",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"file": 6,
+										"folder": 0,
+										"scale_x": 2.8225806451612905,
+										"scale_y": 5.166666666666667,
+										"x": -34.08870967741936,
+										"y": 18.916666666666668
+									},
+									"spin": 0
+								},
+								{
+									"id": 1,
+									"object": {
+										"file": 6,
+										"folder": 0,
+										"x": 1,
+										"y": 4
+									},
+									"spin": 0,
+									"time": 499
+								}
+							],
+							"name": "leer",
+							"obj": 5
+						}
+					]
+				}
+			],
+			"character_map": [],
+			"id": 0,
+			"name": "Dust",
+			"obj_info": [
+				{
+					"frames": [
+						{
+							"file": 0,
+							"folder": 0
+						},
+						{
+							"file": 1,
+							"folder": 0
+						},
+						{
+							"file": 2,
+							"folder": 0
+						},
+						{
+							"file": 3,
+							"folder": 0
+						},
+						{
+							"file": 4,
+							"folder": 0
+						}
+					],
+					"name": "Dust_Dust1",
+					"realname": "Dust1",
+					"type": "sprite"
+				},
+				{
+					"frames": [],
+					"name": "Dust_Dust6",
+					"realname": "Dust6",
+					"type": "sprite"
+				},
+				{
+					"frames": [
+						{
+							"file": 5,
+							"folder": 0
+						}
+					],
+					"name": "Dust_Dust6_000",
+					"realname": "Dust6_000",
+					"type": "sprite"
+				},
+				{
+					"frames": [],
+					"name": "Dust_Dust6_001",
+					"realname": "Dust6_001",
+					"type": "sprite"
+				},
+				{
+					"frames": [
+						{
+							"file": 1,
+							"folder": 0
+						}
+					],
+					"name": "Dust_Dust2",
+					"realname": "Dust2",
+					"type": "sprite"
+				},
+				{
+					"frames": [
+						{
+							"file": 6,
+							"folder": 0
+						}
+					],
+					"name": "Dust_leer",
+					"realname": "leer",
+					"type": "sprite"
+				}
+			]
+		}
+	],
+	"folder": [
+		{
+			"file": [
+				{
+					"height": 136,
+					"id": 0,
+					"name": "Dust1.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 384
+				},
+				{
+					"height": 165,
+					"id": 1,
+					"name": "Dust2.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 316
+				},
+				{
+					"height": 193,
+					"id": 2,
+					"name": "Dust3.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 427
+				},
+				{
+					"height": 234,
+					"id": 3,
+					"name": "Dust4.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 528
+				},
+				{
+					"height": 340,
+					"id": 4,
+					"name": "Dust5.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 679
+				},
+				{
+					"height": 1080,
+					"id": 5,
+					"name": "Dust6.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 1920
+				},
+				{
+					"height": 8,
+					"id": 6,
+					"name": "leer.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 30
+				}
+			],
+			"id": 0
+		}
+	],
+	"generator": "BrashMonkey Spriter",
+	"generator_version": "b11",
+	"scon_version": "1.0"
+}
