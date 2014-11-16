@@ -9,6 +9,8 @@ public class GlueCharge : MonoBehaviour
     public float speed = 15.0f;
     public PlayerScript.DIRECTION movementDirection = PlayerScript.DIRECTION.RIGHT;
 
+    private float timer;
+
 	void Start ()
 	{
 	}
@@ -16,6 +18,13 @@ public class GlueCharge : MonoBehaviour
 	void Update()
 	{
 		Flow();
+
+        // Destroy after 10 Sek
+        timer += Time.deltaTime;
+        if(timer >= 5f)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
 	}
 
     public void Flow()
