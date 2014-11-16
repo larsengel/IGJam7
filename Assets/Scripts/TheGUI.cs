@@ -48,8 +48,6 @@ public class TheGUI : MonoBehaviour
 
 	void Update()
 	{
-		if(GameMaster.GameIsRunning)
-			TheUpdate();
-
+		TheUpdate();
 	}
 }
