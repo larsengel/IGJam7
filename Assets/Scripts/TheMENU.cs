@@ -4,11 +4,21 @@ using System.Collections;
 public class TheMENU : blindGUITexturedContainer
 {
 	private blindGUIButton[] buttons = new blindGUIButton[3];
+
 	private const TheGUI.THE_MODE _theID = TheGUI.THE_MODE.THE_MENU;
+
+	public AudioClip ClickSound;
+
+	private bool buttonCanChanged=true;
+
+	private enum Buttons{ start = 0, instructions = 1, exit = 2 }
+
+	private Buttons ActiveButton;
 
 
 	public override void Start()
 	{
+		base.Start();
 		for(int i=0 ; i < this.transform.childCount ; i++)
 		{
 			buttons[i] = this.transform.GetChild(i).gameObject.GetComponent<blindGUIButton>();
@@ -19,23 +29,67 @@ public class TheMENU : blindGUITexturedContainer
 
 	private void OnSellect(blindGUIButton sender)
 	{
-		switch(sender.name)
+		ActiveButton = (Buttons)System.Enum.Parse(typeof(Buttons),sender.name);
+		SellectMenuOption();
+	}
+
+
+	private void GetControllerInput()
+	{
+		if(TheActive == _theID)
 		{
-		case "start":
+			if(buttonCanChanged)
+			{
+				if(Input.GetAxis("PlayerAControl") < -0.1f)
+				{
+					buttons[(int)ActiveButton].m_pushed = false;
+					if(++ActiveButton > Buttons.exit)
+						ActiveButton = Buttons.start;
+					buttonCanChanged = false;
+					buttons[(int)ActiveButton].m_pushed = true;
+				}
+				else if(Input.GetAxis("PlayerAControl") > 0.1f)
+				{
+					buttons[(int)ActiveButton].m_pushed = false;
+					if(--ActiveButton < Buttons.start)
+						ActiveButton = Buttons.exit;
+					buttonCanChanged = false;
+					buttons[(int)ActiveButton].m_pushed = true;
+				}
+			}
+			else
+			{
+				if(Input.GetAxis("PlayerAControl") == 0)
+					buttonCanChanged = true;
+			}
+
+			if(Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Return))
+				SellectMenuOption();
+		}
+	}
+
+	private void SellectMenuOption()
+	{
+		switch(ActiveButton)
+		{
+		case Buttons.start:
 			TheGUI.TheMode = TheGUI.THE_MODE.THE_GAME;
+			GameMaster.GameIsRunning = true;
 			break;
-		case "instructions":
+		case Buttons.instructions:
 			TheGUI.TheMode = TheGUI.THE_MODE.THE_INSTRUCTIONS;
 			break;
-		case "exit":
+		case Buttons.exit:
 			TheGUI.TheMode = TheGUI.THE_MODE.THE_EXIT;
 			break;
 		}
+		audio.PlayOneShot(ClickSound);
 	}
 
 	public void TheUpdate()
 	{
-
+		if(!GameMaster.GameIsRunning)
+			GetControllerInput();
 	}
 
 	public bool Enable()
@@ -58,11 +112,11 @@ public class TheMENU : blindGUITexturedContainer
 	{
 		get
 		{
-			return m_enabled ? (TheGUI.THE_MODE)_theID : TheGUI.THE_MODE.THE_NONE;
+			return m_enabled ? _theID : TheGUI.THE_MODE.THE_NONE;
 		}
 		set
 		{
-			if(value == (TheGUI.THE_MODE)_theID)
+			if(value == _theID)
 				m_enabled = Enable();
 			else
 				m_enabled = Disable();

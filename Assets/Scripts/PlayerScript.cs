@@ -54,13 +54,16 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update() 
 	{
-        if (this.enableDamage == false)
-        {
-            GetInputs();
-            Move();
-            Jump();
-        }
-        Damage();
+		if(GameMaster.GameIsRunning)
+		{
+			if(this.enableDamage == false)
+			{
+				GetInputs();
+				Move();
+				Jump();
+			}
+			Damage();
+		}
 	}
 
 

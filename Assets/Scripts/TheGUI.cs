@@ -18,9 +18,11 @@ public class TheGUI : MonoBehaviour
 			}
 			else
 			{
-				TheMenu.TheActive = value;
-				TheScreens.TheActive = value;
 				TheHud.TheActive = value;
+				if(value >= TheGUI.THE_MODE.THE_INSTRUCTIONS)
+					GameMaster.GameIsRunning = false;
+				TheScreens.TheActive = value;
+				TheMenu.TheActive = value;
 			}
 		}
 	}
@@ -44,4 +46,10 @@ public class TheGUI : MonoBehaviour
 		TheScreens.TheUpdate();
 	}
 
+	void Update()
+	{
+		if(GameMaster.GameIsRunning)
+			TheUpdate();
+
+	}
 }

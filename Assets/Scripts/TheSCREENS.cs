@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class TheSCREENS : blindGUITexturedContainer
 {
-	
-	 blindGUIAnimationState SHOWN,HIDDEN;
 	 public blindGUIButton TheButton;
 	 public blindGUIText   TheButtonText; 
 	 public List<Texture2D> ScreenImages;
@@ -13,19 +11,15 @@ public class TheSCREENS : blindGUITexturedContainer
 
 	 void Awake()
 	 {
-
-		 //SHOWN = new blindGUIAnimationState(m_size, m_scale, m_anchorPoint, m_offset, m_angle, 1);
-		 //HIDDEN = new blindGUIAnimationState(m_size, m_scale, m_anchorPoint, m_offset, m_angle, 0);
 		 TheButton = GameObject.Find("TheButton").GetComponent<blindGUIButton>();
 		 TheButtonText = TheButton.transform.GetChild(0).gameObject.GetComponent<blindGUIText>();
 	 }
 
 	 public override void Start()
 	 {
+		 base.Start();
 		 m_alpha = 0;
-		 m_animationTime = 3;
 		 TheButton.m_buttonClickDelegate = ClickTheButton;
-
 	 }
 
 
@@ -41,29 +35,22 @@ public class TheSCREENS : blindGUITexturedContainer
 
 	 protected internal void TheUpdate()
 	 {
-		 if(Input.anyKeyDown)
-			TheActive = TheGUI.THE_MODE.THE_MENU;
-		 else
-			TheActive = TheGUI.TheMode;
-
-		 FlashingBackbutton();
-
+		 if(!GameMaster.GameIsRunning)
+		 {
+			 if(Input.anyKeyDown)
+				 TheActive = TheGUI.THE_MODE.THE_MENU;
+		//	 else
+				// TheActive = TheGUI.TheMode;
+		 }
 	 }
 
 
-	 private float BackButtonTexrAlpha = 0.5f;
-	 private float advancer = 0.001f;
-	 private bool invert = false;
-	 private void FlashingBackbutton()
-	 {
-		 if(BackButtonTexrAlpha > 1 || BackButtonTexrAlpha < 0)
-			 invert = !invert;
-		 BackButtonTexrAlpha += invert ? -advancer : advancer;
-		 TheButtonText.m_alpha = BackButtonTexrAlpha;
-	 }
+
+
 
 	 private void ClickTheButton(blindGUIButton theButton)
 	 {
+		 GameMaster.GameIsRunning = false;
 		 TheGUI.TheMode = TheGUI.THE_MODE.THE_MENU;
 	 }
 

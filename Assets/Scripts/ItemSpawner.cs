@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ItemSpawner : MonoBehaviour {
+public class ItemSpawner : MonoBehaviour
+{
 
 	public int itemCounter = 0;
 
@@ -17,17 +18,22 @@ public class ItemSpawner : MonoBehaviour {
 
     private int counter;
 
-	// Use this for initialization
-	void Start () {
+
+	void Start () 
+	{
+
 	}
 	
-	// Update is called once per frame
+
 	void Update() 
 	{
-		timer -= Time.deltaTime;
-		if(timer < 0)
+		if(GameMaster.GameIsRunning)
 		{
-            Spawn();
+			timer -= Time.deltaTime;
+			if(timer < 0)
+			{
+				Spawn();
+			}
 		}
 	}
 

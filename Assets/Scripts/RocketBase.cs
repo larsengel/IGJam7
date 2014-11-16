@@ -22,9 +22,12 @@ public class RocketBase : MonoBehaviour {
 
 	void Update()
 	{
-		if(isCountdownStarted)
+		if(GameMaster.GameIsRunning)
 		{
-			countdownValue -= Time.deltaTime;
+			if(isCountdownStarted)
+			{
+				countdownValue -= Time.deltaTime;
+			}
 		}
 	}
 
@@ -122,7 +125,8 @@ public class RocketBase : MonoBehaviour {
 	{
 		countdownValue = Mathf.Max(minCountdown, maxCountdown - engines * secondsPerEngine);
 		isCountdownStarted = true;
-		GameObject.Find ("ScriptContainer/Countdown").GetComponent<AudioSource> ().Play ();
+
+		TheGUI.TheHud.TheDowncounter.StartCountdown(rocketNumber, (int)countdownValue);
 	}
 
 	void OnGUI()
@@ -132,18 +136,28 @@ public class RocketBase : MonoBehaviour {
 
 		if(isCountdownStarted)
 		{
-			GUI.TextField(new Rect(10, 10, 200, 20), "Countdown started...", 25);
-			GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
+	//		GUI.TextField(new Rect(10, 10, 200, 20), "Countdown started...", 25);
+	//		GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
 		}
 		if(countdownValue <= 0 && isCountdownStarted)
 		{
-            GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + rocketNumber + "(" + (rocketNumber == 1 ? "red" : "blue") + ")", 25);
+      //      GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + rocketNumber + "(" + (rocketNumber == 1 ? "red" : "blue") + ")", 25);
 			Time.timeScale = 0;
+			
+			if(rocketNumber==1)
+				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN;
+			if(rocketNumber == 2)
+				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN;
 		}
 		if(placedItems.Count == 0 && isCountdownStarted)
 		{
-            GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1) + "(" + (rocketNumber == 2 ? "red" : "blue") + ")", 25);
+    //        GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1) + "(" + (rocketNumber == 2 ? "red" : "blue") + ")", 25);
 			Time.timeScale = 0;
+
+			if(rocketNumber == 2)
+				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN;
+			if(rocketNumber == 1)
+				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN;
 		}
 	}
 	
