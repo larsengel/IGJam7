@@ -164,12 +164,15 @@ public class RocketBase : MonoBehaviour {
 			if(rocketNumber == 2 && !isExplosionStarted)
 			{
 				GameObject.Find("ExplosionB").GetComponent<Animator>().SetBool("explosion", true);
+				GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
 				isExplosionStarted = true;
 				Debug.Log("Explosion Player B");
 			}
 			if(rocketNumber == 1 && !isExplosionStarted)
 			{
 				GameObject.Find("ExplosionA").GetComponent<Animator>().SetBool("explosion", true);
+				GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
+
 				isExplosionStarted = true;
 				Debug.Log("Explosion Player A");
 			}
