@@ -41,9 +41,12 @@ public class TheGUI : MonoBehaviour
 
 	public static void TheUpdate()
 	{
-		TheMenu.TheUpdate();
-		TheHud.TheUpdate();
-		TheScreens.TheUpdate();
+		if(GameMaster.GameIsRunning)
+		{
+			TheMenu.TheUpdate();
+			TheHud.TheUpdate();
+			TheScreens.TheUpdate();
+		}
 	}
 
 	void Update()
