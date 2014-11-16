@@ -15,7 +15,7 @@ public class ExplosionScript : MonoBehaviour {
 
 	void callback()
 	{
-		this.GetComponent<Animator>().SetBool("explosion", false);
+		//this.GetComponent<Animator>().SetBool("explosion", false);
 		Debug.Log (this.name);
 		if(this.name == "ExplosionA")
 				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN;

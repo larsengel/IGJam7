@@ -38,9 +38,10 @@ public class TheMENU : blindGUITexturedContainer
 	{
 		if(TheActive == _theID)
 		{
-			if(buttonCanChanged)
+            if (buttonCanChanged)
 			{
-				if(Input.GetAxis("PlayerAControl") < -0.1f)
+                float axis = Input.GetAxis("PlayerAControl") + Input.GetAxis("PlayerBControl");
+                if (axis < -0.1f)
 				{
 					buttons[(int)ActiveButton].m_pushed = false;
 					if(++ActiveButton > Buttons.exit)
@@ -48,7 +49,7 @@ public class TheMENU : blindGUITexturedContainer
 					buttonCanChanged = false;
 					buttons[(int)ActiveButton].m_pushed = true;
 				}
-				else if(Input.GetAxis("PlayerAControl") > 0.1f)
+                else if (axis > 0.1f)
 				{
 					buttons[(int)ActiveButton].m_pushed = false;
 					if(--ActiveButton < Buttons.start)
