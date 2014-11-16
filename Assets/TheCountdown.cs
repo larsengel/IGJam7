@@ -44,7 +44,7 @@ public class TheCountdown : blindGUITexturedContainer
 		if(player == 1)
 			this.m_offset.x = -435;
 		else if(player == 2)
-			this.m_offset.y = 435;
+			this.m_offset.x = 435;
 		else
 			return;
 

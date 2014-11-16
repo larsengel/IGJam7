@@ -34,8 +34,11 @@ public class TheSCREENS : blindGUITexturedContainer
 			 
 			 current = ( (int)TheScreen - (int)TheGUI.THE_MODE.THE_INSTRUCTIONS );
 
-			 if(TheScreen==TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN || TheScreen==TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN)
-				this.TheButton.m_pressImage = this.TheButton.m_hoverImage = this.TheButton.m_idleImage = ScreenImages[4];
+			 if(TheScreen == TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN || TheScreen == TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN)
+			 {
+				 this.TheButton.m_pressImage = this.TheButton.m_hoverImage = this.TheButton.m_idleImage = ScreenImages[4];
+				 GameObject.Find("ScriptContainer/Countdown").GetComponent<AudioSource>().Stop();
+			 }
 			 else
 				 this.TheButton.m_pressImage = this.TheButton.m_hoverImage = this.TheButton.m_idleImage = ScreenImages[3];
 
@@ -63,7 +66,11 @@ public class TheSCREENS : blindGUITexturedContainer
 
 	 private void ClickTheButton(blindGUIButton theButton)
 	 {
-		 GameMaster.GameIsRunning = false;
+		 if(GameMaster.GameIsRunning)
+		 {
+			 GameMaster.GameIsRunning = false;
+			 Application.LoadLevel("level1");
+		 }
 		 TheGUI.TheMode = TheGUI.THE_MODE.THE_MENU;
 	 }
 

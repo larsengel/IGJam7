@@ -19,8 +19,8 @@ public class TheGUI : MonoBehaviour
 			else
 			{
 				TheHud.TheActive = value;
-				if(value >= TheGUI.THE_MODE.THE_INSTRUCTIONS)
-					GameMaster.GameIsRunning = false;
+				//if(value >= TheGUI.THE_MODE.THE_INSTRUCTIONS)
+				//	GameMaster.GameIsRunning = false;
 				TheScreens.TheActive = value;
 				TheMenu.TheActive = value;
 			}
