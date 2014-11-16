@@ -158,6 +158,10 @@ public class PlayerScript : MonoBehaviour {
             catchFollowing = true;
             this.catchObject.transform.Translate(Vector3.up * 0.4f);
 			this.catchObject.GetComponent<Item>().isLocked = true;
+            if(this.catchObject.GetComponent<ItemMovement>() != null)
+            {
+                Component.Destroy(this.catchObject.GetComponent<ItemMovement>());
+            }
 
         }
         else if (this.catchObject != null && catchFollowing == true) //Ablegen
