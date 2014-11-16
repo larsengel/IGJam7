@@ -31,4 +31,17 @@ public class Item : MonoBehaviour {
         }
     }
 
+	void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.tag == "Player")
+		{
+			PlayerScript player = other.GetComponent<PlayerScript>();
+			if (player.catchFollowing == false && player.catchObject == null)
+			{
+				player.catchObject = this.transform;
+			}
+		}
+		
+	}
+	
 }
