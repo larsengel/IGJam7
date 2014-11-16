@@ -27,8 +27,21 @@ public class TheSCREENS : blindGUITexturedContainer
 	 {
 		 if(TheScreen >= TheGUI.THE_MODE.THE_INSTRUCTIONS)
 		 {
+			 
+
+				// this.TheButton.m_pressImage = this.TheButton.m_hoverImage = this.TheButton.m_idleImage = ScreenImages[3];
+		//	 else if(current >= (int)TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN)
+			 
 			 current = ( (int)TheScreen - (int)TheGUI.THE_MODE.THE_INSTRUCTIONS );
+
+			 if(TheScreen==TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN || TheScreen==TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN)
+				this.TheButton.m_pressImage = this.TheButton.m_hoverImage = this.TheButton.m_idleImage = ScreenImages[4];
+			 else
+				 this.TheButton.m_pressImage = this.TheButton.m_hoverImage = this.TheButton.m_idleImage = ScreenImages[3];
+
 			 m_backgroundTexture = ScreenImages[current];
+			// this.TheButton.m_idleImage = ScreenImages[current + 3];
+			
 		 }
 	 }
 
