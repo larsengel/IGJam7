@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400022}
-  - 114: {fileID: 11400022}
+  - 114: {fileID: 11400026}
   m_Layer: 9
   m_Name: PlayerBBar
   m_TagString: Untagged
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400024}
-  - 114: {fileID: 11400026}
+  - 114: {fileID: 11400022}
   m_Layer: 9
   m_Name: PlayerABar
   m_TagString: Untagged
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 0
   m_clipping: 0
-  m_text: Back!
+  m_text: 
   m_font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_textAnchor: 4
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 1
   m_clipping: 0
-  m_backgroundTexture: {fileID: 0}
+  m_backgroundTexture: {fileID: 2800000, guid: 2546c6fc8078b57489c158bcf3fb9f3a, type: 3}
   m_autoSizeToTexture: 0
   m_textureScaleMode: 2
   TheDowncounter: {fileID: 11400034}
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 1
   m_clipping: 0
-  m_backgroundTexture: {fileID: 2800000, guid: a98f5775e7ea6964ab25a0e6f8f560fd, type: 3}
+  m_backgroundTexture: {fileID: 2800000, guid: 47169b2a5d1582d40aee63ca13552fa7, type: 3}
   m_autoSizeToTexture: 0
   m_textureScaleMode: 0
   ClickSound: {fileID: 8300000, guid: 5fd82f363d2c5a24aacc64142eeb18d5, type: 3}
@@ -878,9 +878,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_horizontalAlign: 0
-  m_verticalAlign: 0
-  m_offset: {x: 15, y: 10}
-  m_size: {x: 365, y: 30}
+  m_verticalAlign: 1
+  m_offset: {x: -390, y: 0}
+  m_size: {x: 365, y: 27.2999992}
   z: 0
   m_scale: 1
   m_angle: 0
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 1
   m_clipping: 0
-  m_backgroundTexture: {fileID: 2800000, guid: c589a98410a78c64bb06bfaea8d84028, type: 3}
+  m_backgroundTexture: {fileID: 2800000, guid: 8bfa95d2863de794bb7c89073c43b6aa, type: 3}
   m_autoSizeToTexture: 0
   m_textureScaleMode: 0
 --- !u!114 &11400022
@@ -897,16 +897,16 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100020}
+  m_GameObject: {fileID: 100024}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2abfa311afda314cb70c2f1d88d2215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_horizontalAlign: 0
-  m_verticalAlign: 0
-  m_offset: {x: 1500, y: 10}
-  m_size: {x: 400, y: 50}
+  m_verticalAlign: 2
+  m_offset: {x: 0, y: 15}
+  m_size: {x: 400, y: 46}
   z: 0
   m_scale: 1
   m_angle: 0
@@ -933,9 +933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_horizontalAlign: 0
-  m_verticalAlign: 0
-  m_offset: {x: 15, y: 10}
-  m_size: {x: 365, y: 30}
+  m_verticalAlign: 1
+  m_offset: {x: 20, y: 0}
+  m_size: {x: 365, y: 27.2999992}
   z: 0
   m_scale: 1
   m_angle: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_animationTime: 1
   m_enabled: 1
   m_clipping: 0
-  m_backgroundTexture: {fileID: 2800000, guid: c589a98410a78c64bb06bfaea8d84028, type: 3}
+  m_backgroundTexture: {fileID: 2800000, guid: 84e4954c8b9f38f48856b32fd7077876, type: 3}
   m_autoSizeToTexture: 0
   m_textureScaleMode: 0
 --- !u!114 &11400026
@@ -952,16 +952,16 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100024}
+  m_GameObject: {fileID: 100020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2abfa311afda314cb70c2f1d88d2215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_horizontalAlign: 0
-  m_verticalAlign: 0
-  m_offset: {x: 20, y: 10}
-  m_size: {x: 400, y: 50}
+  m_verticalAlign: 2
+  m_offset: {x: 1920, y: 15}
+  m_size: {x: -400, y: 46}
   z: 0
   m_scale: 1
   m_angle: 0
