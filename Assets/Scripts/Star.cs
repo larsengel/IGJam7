@@ -4,10 +4,10 @@ using System.Collections;
 public class Star : MonoBehaviour {
 
     private float minIntensity = 0f;
-    private float maxIntensity = 0.9f;
-    private float timeWaitingDefault = 5.0f;
+    private float maxIntensity = 0.7f;
+    private float timeWaitingDefault = 7.0f;
     private float timeWaitingCurrent = 0;
-    private float timeRandom = 5.0f;
+    private float timeRandom = 7.0f;
     private float timeShowHide = 1.0f;
     private float currentTime = 0f;
     private enum LIGHTSTATUS { NONE, SHOW, HIDE };

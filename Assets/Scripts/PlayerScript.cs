@@ -45,14 +45,13 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
 	internal AIM gunDirection;
 
-	void Start () 
+	void Start()
 	{
 		gun = this.gameObject.transform.Find ("GlewGun").gameObject.GetComponent<GlewGunScript>();
         this.gravityDefault = this.jumpTime / 2;
 	}
 	
-	// Update is called once per frame
-	void Update() 
+	void Update()
 	{
 		if(GameMaster.GameIsRunning)
 		{
@@ -78,20 +77,20 @@ public class PlayerScript : MonoBehaviour {
         {
             case 1:
                 PlayerCode = "A";
-                if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.E)) // A - Jump
+                if (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Q)) // A - Jump
                     StartJump();
-				if (Input.GetKeyDown(KeyCode.Joystick1Button3)  || Input.GetKeyDown(KeyCode.Q)) // Y - Launch
+				if (Input.GetKeyDown(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.R)) // Y - Launch
 					Launch();
-                if (Input.GetKeyDown(KeyCode.Joystick1Button2)) // X
+                if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.E)) // Button X
                     Catch();
                 break;
             case 2:
                 PlayerCode = "B";
-                if (Input.GetKeyDown(KeyCode.Joystick2Button0)  || Input.GetKeyDown(KeyCode.O)) // A - Jump
+                if (Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.I)) // A - Jump
                     StartJump();
-				if (Input.GetKeyDown(KeyCode.Joystick2Button3)  || Input.GetKeyDown(KeyCode.P)) // Y - Launch
+				if (Input.GetKeyDown(KeyCode.Joystick2Button3) || Input.GetKeyDown(KeyCode.P)) // Y - Launch
 					Launch();
-                if (Input.GetKeyDown(KeyCode.Joystick2Button2)) // X
+                if (Input.GetKeyDown(KeyCode.Joystick2Button2) || Input.GetKeyDown(KeyCode.O)) // Button X
                     Catch();
 		    	break;
         }
@@ -243,10 +242,10 @@ public class PlayerScript : MonoBehaviour {
         this.enableJump = false;
         
 		if(playerNumber == 2)
-			this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Hitted");
+			this.transform.Find("Spaceman_Blue").GetComponent<Animator>().SetTrigger ("Hitted");
 		if(playerNumber == 1)
-			this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetTrigger ("Hitted");
-		GameObject.Find ("ScriptContainer/Hit").GetComponent<AudioSource> ().Play ();
+			this.transform.Find("Spaceman_Red").GetComponent<Animator>().SetTrigger ("Hitted");
+		GameObject.Find("ScriptContainer/Hit").GetComponent<AudioSource>().Play();
 
     }
 
