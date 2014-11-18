@@ -4120,6 +4120,34 @@ Prefab:
       propertyPath: m_backgroundTexture
       value: 
       objectReference: {fileID: 2800000, guid: a98f5775e7ea6964ab25a0e6f8f560fd, type: 3}
+    - target: {fileID: 11400028, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_horizontalAlign
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400028, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_verticalAlign
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400032, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_scaleType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_horizontalAlign
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_verticalAlign
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_horizontalAlign
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
+      propertyPath: m_verticalAlign
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8200000, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2a609a456ce0f8c4bab3acabe8adcac4, type: 2}
@@ -5293,7 +5321,7 @@ MonoBehaviour:
   m_Script: {fileID: -1335060629, guid: 558a23d97396a414c94d995080a01e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scaleType: 1
+  m_scaleType: 4
   m_scaleDirection: 0
   m_targetScreenSize: {x: 1920, y: 1080}
 --- !u!1 &1407227989
@@ -5801,7 +5829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_horizontalAlign: 0
-  m_verticalAlign: 0
+  m_verticalAlign: 1
   m_offset: {x: 0, y: 0}
   m_size: {x: 1920, y: 1080}
   z: 0
@@ -6443,8 +6471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407ff083029805c42b31cea0b3b716e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_horizontalAlign: 0
-  m_verticalAlign: 0
+  m_horizontalAlign: 1
+  m_verticalAlign: 1
   m_offset: {x: 0, y: 0}
   m_size: {x: 1920, y: 1080}
   z: 0
@@ -7363,8 +7391,8 @@ MonoBehaviour:
   m_Script: {fileID: -164922898, guid: 558a23d97396a414c94d995080a01e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_horizontalAlign: 0
-  m_verticalAlign: 0
+  m_horizontalAlign: 1
+  m_verticalAlign: 1
   m_offset: {x: 0, y: 0}
   m_size: {x: 1920, y: 1080}
   z: 0
