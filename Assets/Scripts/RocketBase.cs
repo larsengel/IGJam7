@@ -62,13 +62,9 @@ public class RocketBase : MonoBehaviour {
 	public void placeItem(GameObject item)
 	{
 		if(item.GetComponent<Item>().type == 1)
-		{
 			engines++;
-		}
 		else
-		{
 			modules++;
-		}
 		
 		Vector3 theScale = item.transform.localScale;
 		theScale.x = 0.35f;

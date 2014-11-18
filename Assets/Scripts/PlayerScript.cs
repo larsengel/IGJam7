@@ -152,7 +152,8 @@ public class PlayerScript : MonoBehaviour {
     private void Catch()
     {
 
-		if (this.catchObject != null && catchFollowing == false && this.catchObject.GetComponent<Item> ().isLocked == false)	//Aufnehmen
+        // Aufnehmen
+		if (this.catchObject != null && catchFollowing == false && this.catchObject.GetComponent<Item>().isLocked == false)	
         {
             catchFollowing = true;
             this.catchObject.transform.Translate(Vector3.up * 0.4f);
@@ -161,22 +162,38 @@ public class PlayerScript : MonoBehaviour {
             {
                 Component.Destroy(this.catchObject.GetComponent<ItemMovement>());
             }
-
         }
-        else if (this.catchObject != null && catchFollowing == true) //Ablegen
+        // Ablegen
+        else if (this.catchObject != null && catchFollowing == true)
         {
 			if(this.rocketBase != null && this.rocketBase.GetComponent<RocketBase>().getModuleCnt() < 12)
 			{
-				rocketBase.placeItem(this.catchObject.gameObject);
-
+                rocketBase.placeItem(this.catchObject.gameObject);
+                catchFollowing = false;
+                this.catchObject = null;
 			}
 			else
 			{
                 this.ThroughItemAway();
 			}
-			catchFollowing = false;
-			this.catchObject = null;
         }
+    }
+
+    public void ThroughItemAway()
+    {
+
+        float x1 = this.catchObject.transform.position.x;
+        float y1 = this.catchObject.transform.position.y;
+        float x2 = GameMaster.Earth.transform.position.x;
+        float y2 = GameMaster.Earth.transform.position.y;
+        float dist = Vector2.Distance(new Vector2(x1, y1), new Vector2(x2, y2));
+        dist -= 3.5f;
+        dist *= -1;
+
+        this.catchObject.transform.Translate(Vector3.up * dist);
+        this.catchObject.GetComponent<Item>().isLocked = false;
+        catchFollowing = false;
+        this.catchObject = null;
     }
 
     private void Fire()
@@ -189,9 +206,9 @@ public class PlayerScript : MonoBehaviour {
         if (this.enableJump == false)
         {
 			if(playerNumber == 2)
-				this.transform.Find ("Spaceman_Blue").GetComponent<Animator> ().SetTrigger ("Jump");
+				this.transform.Find("Spaceman_Blue").GetComponent<Animator>().SetTrigger("Jump");
 			if(playerNumber == 1)
-				this.transform.Find ("Spaceman_Red").GetComponent<Animator> ().SetTrigger ("Jump");
+				this.transform.Find("Spaceman_Red").GetComponent<Animator>().SetTrigger("Jump");
 			GameObject.Find ("ScriptContainer/Jump").GetComponent<AudioSource> ().Play ();
             this.enableJump = true;
             this.gravityCurrent = this.gravityDefault;
@@ -229,12 +246,6 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
-    public void ThroughItemAway()
-    {
-        this.catchObject.transform.Translate(Vector3.up * -0.4f);
-        this.catchObject.GetComponent<Item>().isLocked = false;
-    }
-
     public void EnableDamage()
     {
         this.enableDamage = true;
@@ -246,6 +257,10 @@ public class PlayerScript : MonoBehaviour {
 		if(playerNumber == 1)
 			this.transform.Find("Spaceman_Red").GetComponent<Animator>().SetTrigger ("Hitted");
 		GameObject.Find("ScriptContainer/Hit").GetComponent<AudioSource>().Play();
+
+        if(this.catchFollowing == true) {
+            this.ThroughItemAway();
+        }
 
     }
 
@@ -261,7 +276,6 @@ public class PlayerScript : MonoBehaviour {
                 // Jump top
                 Vector3 damageJump = new Vector3(0, 1, 0) * this.damageHeight * Time.deltaTime * (this.gravityCurrent / this.damageGravity);
                 // Jump backwords
-                //Debug.Log(lookAtDirection);
                 damageJump += new Vector3((float)lookAtDirection*-1, 0, 0) * this.damageSpeed * Time.deltaTime;
                 this.transform.Translate(damageJump);
             }

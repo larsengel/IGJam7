@@ -23,7 +23,7 @@ public class Item : MonoBehaviour {
         if (other.tag == "Player")
         {
             PlayerScript player = other.GetComponent<PlayerScript>();
-            if (player.catchObject == this.transform)
+            if (player.catchObject == this.transform && player.catchFollowing == false)
             {
                 player.catchObject = null;
                 player.catchFollowing = false;
