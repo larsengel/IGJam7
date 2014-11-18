@@ -4,18 +4,19 @@ using System.Collections;
 public class Star : MonoBehaviour {
 
     private float minIntensity = 0f;
-    private float maxIntensity = 0.7f;
-    private float timeWaiting = 10f;
-    private float timeRandom = 10f;
+    private float maxIntensity = 0.9f;
+    private float timeWaitingDefault = 5.0f;
+    private float timeWaitingCurrent = 0;
+    private float timeRandom = 5.0f;
     private float timeShowHide = 1.0f;
-    private float currentTime = 8f;
+    private float currentTime = 0f;
     private enum LIGHTSTATUS { NONE, SHOW, HIDE };
     private LIGHTSTATUS currentLight = LIGHTSTATUS.NONE;
 
 
 	// Use this for initialization
 	void Start () {
-        timeWaiting += Random.Range(0, timeRandom);
+        DoRandomTime();
 	}
 	
 	// Update is called once per frame
@@ -23,7 +24,7 @@ public class Star : MonoBehaviour {
 
         this.currentTime += Time.deltaTime;
 
-        if(this.currentLight == LIGHTSTATUS.NONE && this.currentTime >= this.timeWaiting)
+        if (this.currentLight == LIGHTSTATUS.NONE && this.currentTime >= this.timeWaitingCurrent)
         {
             this.currentLight = LIGHTSTATUS.SHOW;
             this.light.enabled = true;
@@ -51,11 +52,14 @@ public class Star : MonoBehaviour {
                 this.currentLight = LIGHTSTATUS.NONE;
                 currentTime = 0;
                 this.light.enabled = false;
+                DoRandomTime();
             }
         } 
-
-
-
-
 	}
+
+    void DoRandomTime()
+    {
+        this.timeWaitingCurrent = this.timeWaitingDefault + Random.Range(0, this.timeRandom);
+    }
+
 }
