@@ -85,8 +85,6 @@ public class RocketBase : MonoBehaviour {
 		item.transform.rotation = Quaternion.identity;
 		placedItems.Add (item);
 		GameObject.Find ("ScriptContainer/ModuleToRocket").GetComponent<AudioSource> ().Play ();
-
-		//item.transform.localScale
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -98,7 +96,6 @@ public class RocketBase : MonoBehaviour {
 			{
 				player.rocketBase = this;
 				isPlayerOnBase = true;
-		
 			}
 		}
 	}
@@ -118,7 +115,8 @@ public class RocketBase : MonoBehaviour {
 
 	public bool isStartable()
 	{
-		return engines > 0;
+		//return engines > 0;
+        return (getModuleCnt() >= 9 && engines > 0);
 	}
 
 	public void startCountdown()
