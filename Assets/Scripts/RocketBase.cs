@@ -70,17 +70,15 @@ public class RocketBase : MonoBehaviour {
 		theScale.x = 0.35f;
 		theScale.y = 0.35f;
 		item.transform.localScale = theScale;
-		float itemWidth = item.renderer.bounds.size.x;
-		float itemHeight = item.renderer.bounds.size.y;
+        Vector2 ItemCoords = getModuleCoords();
+        ItemCoords.x += item.renderer.bounds.extents.x;
+        ItemCoords.y += item.renderer.bounds.extents.y;
 
-		Vector2 ItemCoords = getModuleCoords ();
-		ItemCoords.x += itemWidth / 2;
-		ItemCoords.y += itemHeight / 2;
 
 		item.transform.position = ItemCoords;
 		item.transform.rotation = Quaternion.identity;
-		placedItems.Add (item);
-		GameObject.Find ("ScriptContainer/ModuleToRocket").GetComponent<AudioSource> ().Play ();
+		placedItems.Add(item);
+		GameObject.Find("ScriptContainer/ModuleToRocket").GetComponent<AudioSource>().Play();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -111,7 +109,6 @@ public class RocketBase : MonoBehaviour {
 
 	public bool isStartable()
 	{
-		//return engines > 0;
         return (getModuleCnt() >= 9 && engines > 0);
 	}
 

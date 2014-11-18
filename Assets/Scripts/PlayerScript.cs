@@ -65,7 +65,6 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
-
 	private void GetInputs()
 	{
         DIRECTION oldMovement = movingDirection;
@@ -83,6 +82,8 @@ public class PlayerScript : MonoBehaviour {
 					Launch();
                 if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.E)) // Button X
                     Catch();
+                if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.R))
+                    Fire();
                 break;
             case 2:
                 PlayerCode = "B";
@@ -92,6 +93,8 @@ public class PlayerScript : MonoBehaviour {
 					Launch();
                 if (Input.GetKeyDown(KeyCode.Joystick2Button2) || Input.GetKeyDown(KeyCode.O)) // Button X
                     Catch();
+                if (Input.GetKeyDown(KeyCode.Joystick2Button1) || Input.GetKeyDown(KeyCode.L))
+                    Fire();
 		    	break;
         }
 
@@ -126,8 +129,8 @@ public class PlayerScript : MonoBehaviour {
         // Animator - Update Direction and Speed
         if(oldMovement != movingDirection)
         {
-                PlayerAnimation animation = this.GetComponent<PlayerAnimation>();
-                animation.UpdateAnimator();
+            PlayerAnimation animation = this.GetComponent<PlayerAnimation>();
+            animation.UpdateAnimator();
         }
 
 	}
@@ -177,6 +180,7 @@ public class PlayerScript : MonoBehaviour {
                 this.ThroughItemAway();
 			}
         }
+
     }
 
     public void ThroughItemAway()
