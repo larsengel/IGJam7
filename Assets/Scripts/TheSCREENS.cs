@@ -72,7 +72,8 @@ public class TheSCREENS : blindGUITexturedContainer
 			 Application.LoadLevel("level1");
 		 }
 		 TheGUI.TheMode = TheGUI.THE_MODE.THE_MENU;
-	 }
+         GameObject.Find("ScriptContainer/Click").GetComponent<AudioSource>().Play();
+     }
 
 
 	 public bool Enable()

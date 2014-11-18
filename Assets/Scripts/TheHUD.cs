@@ -22,8 +22,8 @@ public class TheHUD : blindGUITexturedContainer
 	{
 		if(m_alpha < 1)
 			m_alpha = 1;
-		TheGUI.TheMenu.GetComponent<AudioSource>().Stop();
-		GameObject.Find("ScriptContainer").GetComponent<AudioSource>().Play();
+		//TheGUI.TheMenu.GetComponent<AudioSource>().Stop();
+		//GameObject.Find("ScriptContainer").GetComponent<AudioSource>().Play();
 		return m_alpha == 1;
 	}
 
@@ -31,8 +31,8 @@ public class TheHUD : blindGUITexturedContainer
 	{
 		if(m_alpha > 0)
 			m_alpha = 0;
-		GameObject.Find("ScriptContainer").GetComponent<AudioSource>().Stop();
-		TheGUI.TheMenu.GetComponent<AudioSource>().Play();
+		//GameObject.Find("ScriptContainer").GetComponent<AudioSource>().Stop();
+		//TheGUI.TheMenu.GetComponent<AudioSource>().Play();
 		return !( m_alpha == 0 );
 	}
 

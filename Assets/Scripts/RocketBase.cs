@@ -160,22 +160,17 @@ public class RocketBase : MonoBehaviour {
 		{
     //        GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1) + "(" + (rocketNumber == 2 ? "red" : "blue") + ")", 25);
 
+            if (!isExplosionStarted)
+            {
+                if (rocketNumber == 1)
+                    GameObject.Find("ExplosionA").GetComponent<Animator>().SetBool("explosion", true);
+                if (rocketNumber == 2)
+                    GameObject.Find("ExplosionB").GetComponent<Animator>().SetBool("explosion", true);
+                isExplosionStarted = true;
+                GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
+            }
 
-			if(rocketNumber == 2 && !isExplosionStarted)
-			{
-				GameObject.Find("ExplosionB").GetComponent<Animator>().SetBool("explosion", true);
-				GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
-				isExplosionStarted = true;
-				Debug.Log("Explosion Player B");
-			}
-			if(rocketNumber == 1 && !isExplosionStarted)
-			{
-				GameObject.Find("ExplosionA").GetComponent<Animator>().SetBool("explosion", true);
-				GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
 
-				isExplosionStarted = true;
-				Debug.Log("Explosion Player A");
-			}
 		}
 	}
 	

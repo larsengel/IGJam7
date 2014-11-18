@@ -4,15 +4,9 @@ using System.Collections;
 public class TheMENU : blindGUITexturedContainer
 {
 	private blindGUIButton[] buttons = new blindGUIButton[3];
-
 	private const TheGUI.THE_MODE _theID = TheGUI.THE_MODE.THE_MENU;
-
-	public AudioClip ClickSound;
-
 	private bool buttonCanChanged=true;
-
 	private enum Buttons{ start = 0, instructions = 1, exit = 2 }
-
 	private Buttons ActiveButton;
 
 
@@ -73,18 +67,23 @@ public class TheMENU : blindGUITexturedContainer
 	{
 		switch(ActiveButton)
 		{
-		case Buttons.start:
-			TheGUI.TheMode = TheGUI.THE_MODE.THE_GAME;
-			GameMaster.GameIsRunning = true;
-			break;
-		case Buttons.instructions:
-			TheGUI.TheMode = TheGUI.THE_MODE.THE_INSTRUCTIONS;
-			break;
-		case Buttons.exit:
-			TheGUI.TheMode = TheGUI.THE_MODE.THE_EXIT;
-			break;
+		    case Buttons.start:
+			    TheGUI.TheMode = TheGUI.THE_MODE.THE_GAME;
+			    GameMaster.GameIsRunning = true;
+
+                GameObject.Find("ScriptContainer/Menu").GetComponent<AudioSource>().Pause();
+                GameObject.Find("ScriptContainer").GetComponent<AudioSource>().Play();
+
+			    break;
+		    case Buttons.instructions:
+			    TheGUI.TheMode = TheGUI.THE_MODE.THE_INSTRUCTIONS;
+			    break;
+		    case Buttons.exit:
+			    TheGUI.TheMode = TheGUI.THE_MODE.THE_EXIT;
+			    break;
 		}
-		audio.PlayOneShot(ClickSound);
+        GameObject.Find("ScriptContainer/Click").GetComponent<AudioSource>().Play();
+
 	}
 
 	public void TheUpdate()
