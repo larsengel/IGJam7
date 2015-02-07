@@ -14,9 +14,6 @@ public class Cam : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		if(GameMaster.GameIsRunning)
-		{
 			this.transform.Rotate(new Vector3(0, 0, 1f * speed * Time.deltaTime));
-		}
 	}
 }

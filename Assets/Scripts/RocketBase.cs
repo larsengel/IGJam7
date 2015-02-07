@@ -22,13 +22,10 @@ public class RocketBase : MonoBehaviour {
 
 	void Update()
 	{
-		if(GameMaster.GameIsRunning)
-		{
 			if(isCountdownStarted)
 			{
 				countdownValue -= Time.deltaTime;
 			}
-		}
 	}
 
 	public int getModuleCnt()

@@ -27,14 +27,11 @@ public class ItemSpawner : MonoBehaviour
 
 	void Update() 
 	{
-		if(GameMaster.GameIsRunning)
-		{
 			timer -= Time.deltaTime;
 			if(timer < 0)
 			{
 				Spawn();
 			}
-		}
 	}
 
     private void Spawn()

@@ -53,8 +53,6 @@ public class PlayerScript : MonoBehaviour {
 	
 	void Update()
 	{
-		if(GameMaster.GameIsRunning)
-		{
 			if(this.enableDamage == false)
 			{
 				GetInputs();
@@ -62,7 +60,6 @@ public class PlayerScript : MonoBehaviour {
 				Jump();
 			}
 			Damage();
-		}
 	}
 
 	private void GetInputs()
