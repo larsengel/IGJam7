@@ -10,6 +10,8 @@ public class GlewGunScript : MonoBehaviour
     public float timeCurrent = 0;
     private Transform Spawn;
 
+	public bool cooldown = false;
+
     void Start()
 	{
         Spawn = this.gameObject.transform.GetChild(0).transform;
@@ -28,8 +30,26 @@ public class GlewGunScript : MonoBehaviour
             this.timeCurrent = 0;
 			fireSound.Play();
 
+			timeNeed = 1f;
+			cooldown = false;
+
             GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
             charge.GetComponent<GlueCharge>().movementDirection = direction;
+		}
+
+		else
+		{
+			if (cooldown == false)
+			{
+			this.timeCurrent = 0;
+			fireSound.Play();
+
+			timeNeed = 2f;
+			cooldown = true;
+			
+			GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
+			charge.GetComponent<GlueCharge>().movementDirection = direction;
+			}
 		}
 	}
 
