@@ -106,7 +106,7 @@ public class RocketBase : MonoBehaviour {
 
 	public bool isStartable()
 	{
-        return (getModuleCnt() >= 6 && engines > 1);
+		return (getModuleCnt() >= 6 && engines > 1);
 	}
 
 	public void startCountdown()
@@ -126,13 +126,21 @@ public class RocketBase : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if(isStartable() && isPlayerOnBase && !isCountdownStarted)
-			GUI.TextField(new Rect(10, 10, 200, 20), "Press Y to Launch Rocket!", 25);
+		if (isStartable () && isPlayerOnBase && !isCountdownStarted) {
+						if (rocketNumber == 1) {
+								GameObject.Find ("PlayerA_Launch").GetComponent<SpriteRenderer> ().enabled = true;
+						}
+						if (rocketNumber == 2) {
+								GameObject.Find ("PlayerB_Launch").GetComponent<SpriteRenderer> ().enabled = true;
+						}
+				}
 
 		if(isCountdownStarted)
 		{
 	//		GUI.TextField(new Rect(10, 10, 200, 20), "Countdown started...", 25);
-	//		GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
+			GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
+			GameObject.Find ("PlayerB_Launch").GetComponent<SpriteRenderer> ().enabled = false;
+			GameObject.Find ("PlayerA_Launch").GetComponent<SpriteRenderer> ().enabled = false;
 		}
 		if(countdownValue <= 0 && isCountdownStarted)
 		{
