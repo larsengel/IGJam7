@@ -39,13 +39,28 @@ public class RocketBase : MonoBehaviour {
 		} else {
 			launchMessage.SetActive(false);
 		}
+		if(placedItems.Count == 0 && isCountdownStarted)
+		{
+			if (!isExplosionStarted)
+			{
+				GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
+				if (rocketNumber == 1)
+					GameObject.Find("ExplosionA").GetComponent<Animator>().SetBool("explosion", true);
+				if (rocketNumber == 2)
+					GameObject.Find("ExplosionB").GetComponent<Animator>().SetBool("explosion", true);
+				isExplosionStarted = true;
+				
+			}
+			
+			
+		}
 	}
-
+	
 	public int getModuleCnt()
 	{
 		return engines+modules;
 	}
-
+	
 	Vector2 getModuleCoords()
 	{
 		int cnt = getModuleCnt () - 1;
@@ -156,22 +171,6 @@ public class RocketBase : MonoBehaviour {
 				Endscreen.winner = 2;
 
 			Application.LoadLevel("endscreen");
-		}
-		if(placedItems.Count == 0 && isCountdownStarted)
-		{
-    //        GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + (rocketNumber == 1 ? 2 : 1) + "(" + (rocketNumber == 2 ? "red" : "blue") + ")", 25);
-
-            if (!isExplosionStarted)
-            {
-                if (rocketNumber == 1)
-                    GameObject.Find("ExplosionA").GetComponent<Animator>().SetBool("explosion", true);
-                if (rocketNumber == 2)
-                    GameObject.Find("ExplosionB").GetComponent<Animator>().SetBool("explosion", true);
-                isExplosionStarted = true;
-                GameObject.Find("ScriptContainer/Explosion").GetComponent<AudioSource>().Play();
-            }
-
-
 		}
 	}
 	

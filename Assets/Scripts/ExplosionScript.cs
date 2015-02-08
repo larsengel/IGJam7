@@ -18,10 +18,11 @@ public class ExplosionScript : MonoBehaviour {
 		//this.GetComponent<Animator>().SetBool("explosion", false);
 		Debug.Log (this.name);
 		if(this.name == "ExplosionB")
-				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN;
+			Endscreen.winner = 1;
 		else if(this.name == "ExplosionA")
-				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN;
-
+			Endscreen.winner = 2;
+		
+		Application.LoadLevel("endscreen");
 		//Time.timeScale = 0;
 	}
 }
