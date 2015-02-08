@@ -106,7 +106,7 @@ public class RocketBase : MonoBehaviour {
 
 	public bool isStartable()
 	{
-        return (getModuleCnt() >= 9 && engines > 0);
+        return (getModuleCnt() >= 6 && engines > 1);
 	}
 
 	public void startCountdown()
@@ -119,7 +119,7 @@ public class RocketBase : MonoBehaviour {
 		if(this.rocketNumber == 2)
 			GameObject.Find("DustB").GetComponent<Animator>().SetBool("started", true);
 
-		TheGUI.TheHud.TheDowncounter.StartCountdown(rocketNumber, (int)countdownValue);
+		//TheGUI.TheHud.TheDowncounter.StartCountdown(rocketNumber, (int)countdownValue);
 	}
 
 	bool isExplosionStarted = false;
@@ -137,12 +137,14 @@ public class RocketBase : MonoBehaviour {
 		if(countdownValue <= 0 && isCountdownStarted)
 		{
       //      GUI.TextField(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "WIN! Player " + rocketNumber + "(" + (rocketNumber == 1 ? "red" : "blue") + ")", 25);
-			Time.timeScale = 0;
+			//Time.timeScale = 0;
 			
 			if(rocketNumber==1)
-				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER1_WINSCREEN;
+				Endscreen.winner = 1;
 			if(rocketNumber == 2)
-				TheGUI.TheMode = TheGUI.THE_MODE.THE_PLAYER2_WINSCREEN;
+				Endscreen.winner = 2;
+
+			Application.LoadLevel("endscreen");
 		}
 		if(placedItems.Count == 0 && isCountdownStarted)
 		{
