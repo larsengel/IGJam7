@@ -20,12 +20,25 @@ public class RocketBase : MonoBehaviour {
 
 	public bool isPlayerOnBase = false;
 
+	public GameObject launchMessage;
+
+	void Start(){
+		//GameObject.Find ("PlayerA_Launch").SetActive(false);
+		//GameObject.Find ("PlayerB_Launch").SetActive(false);
+
+	}
+
 	void Update()
 	{
-			if(isCountdownStarted)
-			{
-				countdownValue -= Time.deltaTime;
-			}
+		if(isCountdownStarted)
+		{
+			countdownValue -= Time.deltaTime;
+		}
+		if (isStartable () && isPlayerOnBase && !isCountdownStarted) {
+			launchMessage.SetActive(true);
+		} else {
+			launchMessage.SetActive(false);
+		}
 	}
 
 	public int getModuleCnt()
@@ -106,7 +119,7 @@ public class RocketBase : MonoBehaviour {
 
 	public bool isStartable()
 	{
-		return (getModuleCnt() >= 6 && engines > 1);
+		return (getModuleCnt() >= 6 && engines >= 1);
 	}
 
 	public void startCountdown()
@@ -126,21 +139,11 @@ public class RocketBase : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if (isStartable () && isPlayerOnBase && !isCountdownStarted) {
-						if (rocketNumber == 1) {
-								GameObject.Find ("PlayerA_Launch").GetComponent<SpriteRenderer> ().enabled = true;
-						}
-						if (rocketNumber == 2) {
-								GameObject.Find ("PlayerB_Launch").GetComponent<SpriteRenderer> ().enabled = true;
-						}
-				}
-
 		if(isCountdownStarted)
 		{
 	//		GUI.TextField(new Rect(10, 10, 200, 20), "Countdown started...", 25);
 			GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
-			GameObject.Find ("PlayerB_Launch").GetComponent<SpriteRenderer> ().enabled = false;
-			GameObject.Find ("PlayerA_Launch").GetComponent<SpriteRenderer> ().enabled = false;
+			launchMessage.SetActive(false);
 		}
 		if(countdownValue <= 0 && isCountdownStarted)
 		{
