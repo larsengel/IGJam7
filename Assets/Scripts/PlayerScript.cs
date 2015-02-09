@@ -26,11 +26,11 @@ public class PlayerScript : MonoBehaviour {
 
     // Jump
     private bool enableJump = false;
-    private float jumpTime = 1f;
+    private float jumpTime = 0.8f;
     private float jumpCurrent = 0;
-    private float gravityDefault = 0.5f;
+    private float gravityDefault = 0.4f;
     private float gravityCurrent = 0;
-    private float jumpSpeed = 3.5f;
+    private float jumpSpeed = 4.0f;
 
     // Damage
     private bool enableDamage = false;

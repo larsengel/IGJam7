@@ -2132,7 +2132,7 @@ MonoBehaviour:
   playerName: 
   catchObject: {fileID: 0}
   catchFollowing: 0
-  speed: 5
+  speed: 6.5
   rocketBase: {fileID: 0}
   movingDirection: 0
   lookAtDirection: 1
@@ -4582,9 +4582,9 @@ AudioSource:
   m_GameObject: {fileID: 1244768094}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: d8c6ac920782c094195c7eff549f5c34, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 76d098a350d3c5f4990af189c749f2b5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .952000022
+  m_Volume: .785000026
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6206,7 +6206,7 @@ MonoBehaviour:
   playerName: 
   catchObject: {fileID: 0}
   catchFollowing: 0
-  speed: 5
+  speed: 6.5
   rocketBase: {fileID: 0}
   movingDirection: 0
   lookAtDirection: 1
