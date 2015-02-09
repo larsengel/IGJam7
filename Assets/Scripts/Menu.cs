@@ -23,12 +23,12 @@ public class Menu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyUp(KeyCode.JoystickButton0))
+		if(Input.GetKeyUp(KeyCode.JoystickButton0) || Input.GetKey (KeyCode.Return))
 		{
 			Application.LoadLevel("level1");
 		
 		}
-		if(Input.GetKeyUp(KeyCode.JoystickButton1))
+		if(Input.GetKeyUp(KeyCode.JoystickButton1) || Input.GetKey (KeyCode.Escape))
 		{
 
 			if(mode == 0)
@@ -43,7 +43,7 @@ public class Menu : MonoBehaviour {
 			}
 
 		}
-		if(Input.GetKeyUp(KeyCode.JoystickButton3))
+		if(Input.GetKeyUp(KeyCode.JoystickButton3) || Input.GetKey (KeyCode.H))
 		{
 			if(mode == 0)
 			{
