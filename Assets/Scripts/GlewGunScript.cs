@@ -32,14 +32,16 @@ public class GlewGunScript : MonoBehaviour
 		if (sizex < 1) {
 			sizex += 1*Time.deltaTime/timeNeed;
 		}
-		if (sizex > 1)
+		if (sizex > 1){
+			GameObject.Find("RdyToShoot").GetComponent<AudioSource>().Play ();
 			sizex = 1;
+		}
 
 		bar.transform.localScale = new Vector3(sizex, bar.transform.localScale.y, bar.transform.localScale.z);
 
     }
 
-    public void Fire(PlayerScript.DIRECTION direction)
+	public void Fire(PlayerScript.DIRECTION direction)
 	{
         if (this.timeCurrent >= this.timeNeed)
 		{
@@ -58,7 +60,6 @@ public class GlewGunScript : MonoBehaviour
 			if (cooldown == false)
 			{
 				this.timeCurrent = 0;
-				fireSound.Play();
 				bar.transform.localScale = new Vector3(0, bar.transform.localScale.y, bar.transform.localScale.z);
 
 				timeNeed = 2f;
@@ -66,6 +67,9 @@ public class GlewGunScript : MonoBehaviour
 				
 				GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
 				charge.GetComponent<GlueCharge>().movementDirection = direction;
+
+				//fireSound.Play();
+				GameObject.Find("Cooldown").GetComponent<AudioSource>().Play();
 			}
 		}
 	}
