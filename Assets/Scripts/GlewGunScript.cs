@@ -35,6 +35,7 @@ public class GlewGunScript : MonoBehaviour
 		if (sizex > 1){
 			GameObject.Find("RdyToShoot").GetComponent<AudioSource>().Play ();
 			sizex = 1;
+			bar.GetComponent<SpriteRenderer>().color = new Color(1,1,1);
 		}
 
 		bar.transform.localScale = new Vector3(sizex, bar.transform.localScale.y, bar.transform.localScale.z);
@@ -61,6 +62,8 @@ public class GlewGunScript : MonoBehaviour
 			{
 				this.timeCurrent = 0;
 				bar.transform.localScale = new Vector3(0, bar.transform.localScale.y, bar.transform.localScale.z);
+				bar.GetComponent<SpriteRenderer>().color = new Color(0.5F,0.5F,0.5F);
+
 
 				timeNeed = 2f;
 				cooldown = true;

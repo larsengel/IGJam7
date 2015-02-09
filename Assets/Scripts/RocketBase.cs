@@ -7,6 +7,9 @@ public class RocketBase : MonoBehaviour {
 	public int engines = 0;
 	public int modules = 0;
 
+
+	public GUIStyle style;
+
 	public int rocketNumber;
 
 	public bool isCountdownStarted = false;
@@ -25,7 +28,10 @@ public class RocketBase : MonoBehaviour {
 	void Start(){
 		//GameObject.Find ("PlayerA_Launch").SetActive(false);
 		//GameObject.Find ("PlayerB_Launch").SetActive(false);
-
+		style.fontSize = 70;
+		style.fontStyle = FontStyle.Bold;
+		style.contentOffset = new Vector2(2.6f,0);
+		style.alignment = TextAnchor.UpperRight;
 	}
 
 	void Update()
@@ -142,6 +148,7 @@ public class RocketBase : MonoBehaviour {
 		countdownValue = Mathf.Max(minCountdown, maxCountdown - engines * secondsPerEngine);
 		isCountdownStarted = true;
 		GameObject.Find("ScriptContainer/Engine").GetComponent<AudioSource>().Play();
+		GameObject.Find("ScriptContainer/Countdown").GetComponent<AudioSource>().Play();
 		if(this.rocketNumber == 1)
 			GameObject.Find("DustA").GetComponent<Animator>().SetBool("started", true);
 		if(this.rocketNumber == 2)
@@ -157,7 +164,7 @@ public class RocketBase : MonoBehaviour {
 		if(isCountdownStarted)
 		{
 	//		GUI.TextField(new Rect(10, 10, 200, 20), "Countdown started...", 25);
-			GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25);
+			GUI.TextField(new Rect(Screen.width-250, 10, 200, 20), (int)countdownValue+"", 25, style);
 			launchMessage.SetActive(false);
 		}
 		if(countdownValue <= 0 && isCountdownStarted)
