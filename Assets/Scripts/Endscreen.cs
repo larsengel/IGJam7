@@ -26,7 +26,7 @@ public class Endscreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyUp(KeyCode.JoystickButton0))
+		if(Input.GetKeyUp(KeyCode.JoystickButton0) || Input.GetKey (KeyCode.Return))
 		{
 			Application.LoadLevel("menu");
 			
