@@ -73,6 +73,7 @@ public class GlueCharge : MonoBehaviour
 			GameObject lastItem = _placedItems[_placedItems.Count-1];
 			_placedItems.RemoveAt(_placedItems.Count-1);
 			GameObject.Destroy(lastItem);
+			other.transform.Find("RocketHit").GetComponent<Animator>().SetTrigger("Hit");
 		}
 
 	}

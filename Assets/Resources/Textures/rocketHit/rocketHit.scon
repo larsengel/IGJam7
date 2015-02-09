@@ -1,0 +1,423 @@
+{
+	"entity": [
+		{
+			"animation": [
+				{
+					"gline": [],
+					"id": 0,
+					"interval": 100,
+					"length": 500,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"abs_a": 1,
+										"abs_angle": 313.99857709764274,
+										"abs_pivot_x": 0.5068027210884354,
+										"abs_pivot_y": 0.46850393700787396,
+										"abs_scale_x": 0.4992375942841732,
+										"abs_scale_y": 0.5122625327414432,
+										"abs_x": 1.9931972789115662,
+										"abs_y": -0.03149606299211882,
+										"file": 0,
+										"folder": 0,
+										"id": 0,
+										"key": 0,
+										"name": "poop_red",
+										"timeline": "0",
+										"z_index": "0"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 0,
+										"timeline": "1",
+										"z_index": "1"
+									}
+								],
+								"time": 99
+							},
+							{
+								"bone_ref": [],
+								"id": 2,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 1,
+										"timeline": "1",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 0,
+										"timeline": "2",
+										"z_index": "2"
+									}
+								],
+								"time": 201
+							},
+							{
+								"bone_ref": [],
+								"id": 3,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 2,
+										"timeline": "1",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 1,
+										"timeline": "2",
+										"z_index": "2"
+									}
+								],
+								"time": 299
+							},
+							{
+								"bone_ref": [],
+								"id": 4,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 3,
+										"timeline": "1",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 2,
+										"timeline": "2",
+										"z_index": "2"
+									}
+								],
+								"time": 400
+							},
+							{
+								"bone_ref": [],
+								"id": 5,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 4,
+										"timeline": "1",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 3,
+										"timeline": "2",
+										"z_index": "2"
+									}
+								],
+								"time": 494
+							},
+							{
+								"bone_ref": [],
+								"id": 6,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "0"
+									}
+								],
+								"time": 500
+							}
+						]
+					},
+					"name": "RocketHit",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 313.99857709764274,
+										"file": 0,
+										"folder": 0,
+										"pivot_x": 0.5068027210884354,
+										"pivot_y": 0.46850393700787396,
+										"scale_x": 0.4992375942841732,
+										"scale_y": 0.5122625327414432,
+										"x": 1.9931972789115662,
+										"y": 0.03149606299211882
+									}
+								},
+								{
+									"id": 1,
+									"object": {
+										"a": 0,
+										"angle": 70.49187456590255,
+										"file": 0,
+										"folder": 0,
+										"pivot_x": 0.5068027210884354,
+										"pivot_y": 0.46850393700787396,
+										"scale_x": 2.321487895225693,
+										"scale_y": 2.3839845795051593,
+										"x": 48.014900116974985,
+										"y": 232.73266467734933
+									},
+									"spin": -1,
+									"time": 500
+								}
+							],
+							"name": "poop_red",
+							"obj": 0
+						},
+						{
+							"id": 1,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"a": 0.5,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 0.7721088435374149,
+										"scale_y": 0.6653543307086617,
+										"x": -41.113945578231295,
+										"y": 89.66732283464566
+									},
+									"time": 99
+								},
+								{
+									"id": 1,
+									"object": {
+										"a": 0.9987468671679198,
+										"angle": 36.289315072379964,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.4314971825354466,
+										"scale_y": 1.6356570032986442,
+										"x": -90.50049511398996,
+										"y": 126.99429395116628
+									},
+									"time": 201
+								},
+								{
+									"id": 2,
+									"object": {
+										"a": 0.9987468671679198,
+										"angle": 78.50133089604196,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.4314971825354468,
+										"scale_y": 1.6356570032986446,
+										"x": -35.50049511398991,
+										"y": 104.99429395116633
+									},
+									"time": 299
+								},
+								{
+									"id": 3,
+									"object": {
+										"a": 0.7,
+										"angle": 134.07356896929832,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 2.0029375815996695,
+										"scale_y": 2.3142664111085702,
+										"x": 89.97458649208392,
+										"y": 88.08476460793798
+									},
+									"time": 400
+								},
+								{
+									"id": 4,
+									"object": {
+										"a": 0,
+										"angle": 158.9463583729436,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 2.002937581599669,
+										"scale_y": 2.3142664111085707,
+										"x": 146.97458649208392,
+										"y": 320.0847646079379
+									},
+									"spin": -1,
+									"time": 494
+								}
+							],
+							"name": "poop",
+							"obj": 1
+						},
+						{
+							"id": 2,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 334.827455146591,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 0.5952380952380956,
+										"scale_y": 0.5944881889763778,
+										"x": 46.797619047619044,
+										"y": 82.2027559055118
+									},
+									"time": 201
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 359.2684994561765,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 0.5952380952380955,
+										"scale_y": 0.5944881889763778,
+										"x": 85.79761904761904,
+										"y": 159.20275590551182
+									},
+									"time": 299
+								},
+								{
+									"id": 2,
+									"object": {
+										"a": 0.8,
+										"angle": 46.95440087809163,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 0.5952380952380952,
+										"scale_y": 0.5944881889763779,
+										"x": 97.04761904761898,
+										"y": 219.95275590551182
+									},
+									"time": 400
+								},
+								{
+									"id": 3,
+									"object": {
+										"a": 0,
+										"angle": 75.01387739635493,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 0.5952380952380951,
+										"scale_y": 0.5944881889763781,
+										"x": 154.29761904761898,
+										"y": 312.77738277118345
+									},
+									"spin": -1,
+									"time": 494
+								}
+							],
+							"name": "poop_001",
+							"obj": 3
+						}
+					]
+				}
+			],
+			"character_map": [],
+			"id": 0,
+			"name": "RocketHit",
+			"obj_info": [
+				{
+					"frames": [
+						{
+							"file": 0,
+							"folder": 0
+						}
+					],
+					"name": "RocketHit_poop_red",
+					"realname": "poop_red",
+					"type": "sprite"
+				},
+				{
+					"frames": [
+						{
+							"file": 1,
+							"folder": 0
+						}
+					],
+					"name": "RocketHit_poop",
+					"realname": "poop",
+					"type": "sprite"
+				},
+				{
+					"frames": [],
+					"name": "RocketHit_poop_000",
+					"realname": "poop_000",
+					"type": "sprite"
+				},
+				{
+					"frames": [
+						{
+							"file": 1,
+							"folder": 0
+						}
+					],
+					"name": "RocketHit_poop_001",
+					"realname": "poop_001",
+					"type": "sprite"
+				}
+			]
+		}
+	],
+	"folder": [
+		{
+			"file": [
+				{
+					"height": 126,
+					"id": 0,
+					"name": "poop_red.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 146
+				},
+				{
+					"height": 126,
+					"id": 1,
+					"name": "poop.png",
+					"pivot_x": 0,
+					"pivot_y": 1,
+					"width": 146
+				}
+			],
+			"id": 0
+		}
+	],
+	"generator": "BrashMonkey Spriter",
+	"generator_version": "r2",
+	"scon_version": "1.0"
+}

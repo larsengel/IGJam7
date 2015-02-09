@@ -45,6 +45,8 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
 	internal AIM gunDirection;
 
+	bool isAxisUsed = false;
+
 	void Start()
 	{
 		gun = this.gameObject.transform.Find ("GlewGun").gameObject.GetComponent<GlewGunScript>();
@@ -119,9 +121,19 @@ public class PlayerScript : MonoBehaviour {
             pickup = PICKUPSTATUS.NONE;
         }
 
+
         // RT - Fire
         if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") < -0.6f && this.catchFollowing == false) // RT - Shot
-            Fire();
+		{
+			if(!isAxisUsed){
+				Fire();
+				isAxisUsed = true;
+			}
+		}
+		if (Input.GetAxisRaw("Player" + PlayerCode + "ControlLTRT") == 0){
+			isAxisUsed = false;
+		}
+
 
         // Animator - Update Direction and Speed
         if(oldMovement != movingDirection)

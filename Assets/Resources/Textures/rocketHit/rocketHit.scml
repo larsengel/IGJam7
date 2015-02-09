@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r2">
+    <folder id="0">
+        <file id="0" name="poop_red.png" width="146" height="126" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="poop.png" width="146" height="126" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="RocketHit">
+        <obj_info name="RocketHit_poop_red" realname="poop_red" type="sprite">
+            <frames>
+                <i folder="0" file="0"/>
+            </frames>
+        </obj_info>
+        <obj_info name="RocketHit_poop" realname="poop" type="sprite">
+            <frames>
+                <i folder="0" file="1"/>
+            </frames>
+        </obj_info>
+        <obj_info name="RocketHit_poop_000" realname="poop_000" type="sprite">
+            <frames/>
+        </obj_info>
+        <obj_info name="RocketHit_poop_001" realname="poop_001" type="sprite">
+            <frames>
+                <i folder="0" file="1"/>
+            </frames>
+        </obj_info>
+        <animation id="0" name="RocketHit" length="500" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="poop_red" folder="0" file="0" abs_x="1.010919" abs_y="50.434638" abs_angle="313.998577" abs_scale_x="0.499238" abs_scale_y="0.512263" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="99">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                </key>
+                <key id="2" time="201">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="3" time="299">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                </key>
+                <key id="4" time="400">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="3" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                </key>
+                <key id="5" time="494">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="4" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="3" z_index="2"/>
+                </key>
+                <key id="6" time="500">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" obj="0" name="poop_red">
+                <key id="0">
+                    <object folder="0" file="0" x="1.993197" y="0.031496" pivot_x="0.506803" pivot_y="0.468504" angle="313.998577" scale_x="0.499238" scale_y="0.512263"/>
+                </key>
+                <key id="1" time="500" spin="-1">
+                    <object folder="0" file="0" x="48.0149" y="232.732665" pivot_x="0.506803" pivot_y="0.468504" angle="70.491875" scale_x="2.321488" scale_y="2.383985" a="0"/>
+                </key>
+            </timeline>
+            <timeline id="1" obj="1" name="poop">
+                <key id="0" time="99">
+                    <object folder="0" file="1" x="-41.113946" y="89.667323" scale_x="0.772109" scale_y="0.665354" a="0.5"/>
+                </key>
+                <key id="1" time="201">
+                    <object folder="0" file="1" x="-90.500495" y="126.994294" angle="36.289315" scale_x="1.431497" scale_y="1.635657" a="0.998747"/>
+                </key>
+                <key id="2" time="299">
+                    <object folder="0" file="1" x="-35.500495" y="104.994294" angle="78.501331" scale_x="1.431497" scale_y="1.635657" a="0.998747"/>
+                </key>
+                <key id="3" time="400">
+                    <object folder="0" file="1" x="89.974586" y="88.084765" angle="134.073569" scale_x="2.002938" scale_y="2.314266" a="0.7"/>
+                </key>
+                <key id="4" time="494" spin="-1">
+                    <object folder="0" file="1" x="146.974586" y="320.084765" angle="158.946358" scale_x="2.002938" scale_y="2.314266" a="0"/>
+                </key>
+            </timeline>
+            <timeline id="2" obj="3" name="poop_001">
+                <key id="0" time="201">
+                    <object folder="0" file="1" x="46.797619" y="82.202756" angle="334.827455" scale_x="0.595238" scale_y="0.594488"/>
+                </key>
+                <key id="1" time="299">
+                    <object folder="0" file="1" x="85.797619" y="159.202756" angle="359.268499" scale_x="0.595238" scale_y="0.594488"/>
+                </key>
+                <key id="2" time="400">
+                    <object folder="0" file="1" x="97.047619" y="219.952756" angle="46.954401" scale_x="0.595238" scale_y="0.594488" a="0.8"/>
+                </key>
+                <key id="3" time="494" spin="-1">
+                    <object folder="0" file="1" x="154.297619" y="312.777383" angle="75.013877" scale_x="0.595238" scale_y="0.594488" a="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
