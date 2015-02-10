@@ -5,6 +5,7 @@ public class Item : MonoBehaviour {
 
 	public bool isLocked = false;
 	public int type;	// 1 = Engine, 0 = Module
+    public float currentDegrees = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {

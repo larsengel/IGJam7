@@ -8,8 +8,6 @@ public class PlayerScript : MonoBehaviour {
 	private GlewGunScript gun;
 	public Transform catchObject = null;
     public bool catchFollowing = false;
-	[SerializeField]
-	private float speed;
 
 	public RocketBase rocketBase = null;
 
@@ -18,11 +16,16 @@ public class PlayerScript : MonoBehaviour {
 	[SerializeField]
     public DIRECTION movingDirection = DIRECTION.NONE;
     public DIRECTION lookAtDirection = DIRECTION.RIGHT;
-    private float axisDiff = 0.7f; // controls must not be val 1. they could be pressed a little bit
+    private float axisDiff = 0.7f; // controls maximum isn't value 1 mostly. older controller joysticks have some problems
     private enum PICKUPSTATUS { NONE, DOWNTHISFRAME, WASDOWN };
     private PICKUPSTATUS pickup = PICKUPSTATUS.NONE;
+
+    // Movement
+    [SerializeField]
+    private float speed;
     private float CatchSlowmo = 0.8f;
     private float JumpSlowmo = 0.8f;
+    private float currentDegrees = 0;
 
     // Jump
     private bool enableJump = false;
@@ -40,10 +43,10 @@ public class PlayerScript : MonoBehaviour {
     private float damageSpeed = 6.0f;
     private float damageGravity = 0.1f;
 
-	public enum AIM
-	{ DOWN = -1, NONE = 0, UP = 1 }
-	[SerializeField]
-	internal AIM gunDirection;
+	//public enum AIM
+	//{ DOWN = -1, NONE = 0, UP = 1 }
+	//[SerializeField]
+	//internal AIM gunDirection;
 
 	bool isAxisUsed = false;
 
@@ -51,6 +54,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		gun = this.gameObject.transform.Find ("GlewGun").gameObject.GetComponent<GlewGunScript>();
         this.gravityDefault = this.jumpTime / 2;
+        currentDegrees = 90 + 180 * playerNumber;
 	}
 	
 	void Update()
@@ -108,7 +112,7 @@ public class PlayerScript : MonoBehaviour {
         if (movingDirection != 0)
             lookAtDirection = movingDirection;
 
-		gunDirection = (AIM)Input.GetAxis("AimA");
+		//gunDirection = (AIM)Input.GetAxis("AimA");
 
         // Reset LT Pickup'ing
         if (Input.GetAxis("Player" + PlayerCode + "ControlLTRT") > 0.6f && pickup == PICKUPSTATUS.NONE) // LR
@@ -152,12 +156,14 @@ public class PlayerScript : MonoBehaviour {
             tmpSpeed *= CatchSlowmo;
         if (this.enableJump == true) // slow down if Jump
             tmpSpeed *= JumpSlowmo;
-        Utility.DoAroundMovement(this.transform, movingDirection, tmpSpeed, !this.enableJump);
+
+        this.currentDegrees = Utility.DoAroundMovement(this.transform, this.currentDegrees, movingDirection, tmpSpeed, !this.enableJump);
 
         if (this.catchObject != null && catchFollowing == true)
         {
             // Item Movement
-            Utility.DoAroundMovement(this.catchObject, movingDirection, tmpSpeed, !this.enableJump);
+            float deg = Utility.DoAroundMovement(this.catchObject, this.catchObject.GetComponent<Item>().currentDegrees, movingDirection, tmpSpeed, !this.enableJump);
+            this.catchObject.GetComponent<Item>().currentDegrees = deg;
         }
     }
 
@@ -169,7 +175,9 @@ public class PlayerScript : MonoBehaviour {
         {
             catchFollowing = true;
             this.catchObject.transform.Translate(Vector3.up * 0.4f);
-			this.catchObject.GetComponent<Item>().isLocked = true;
+            Item item = this.catchObject.GetComponent<Item>();
+			item.isLocked = true;
+            item.currentDegrees = this.currentDegrees;
             if(this.catchObject.GetComponent<ItemMovement>() != null)
             {
                 Component.Destroy(this.catchObject.GetComponent<ItemMovement>());
@@ -211,7 +219,7 @@ public class PlayerScript : MonoBehaviour {
 
     private void Fire()
     {
-        gun.Fire(lookAtDirection);
+        gun.Fire(lookAtDirection, this.currentDegrees + (float)this.lookAtDirection*10);
     }
 
     private void StartJump()
@@ -303,7 +311,7 @@ public class PlayerScript : MonoBehaviour {
 
     public void LookOtherWay()
     {
-        this.lookAtDirection = (DIRECTION)((float)this.lookAtDirection * -1);
+        this.lookAtDirection = (DIRECTION)((float)this.lookAtDirection*-1);
         this.movingDirection = (DIRECTION)((float)this.lookAtDirection);
     }
 

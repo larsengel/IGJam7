@@ -8,6 +8,7 @@ public class GlueCharge : MonoBehaviour
 	[SerializeField]
     public float speed = 15.0f;
     public PlayerScript.DIRECTION movementDirection = PlayerScript.DIRECTION.RIGHT;
+    public float currentDegrees = 0;
 
     private float timer;
 
@@ -17,7 +18,7 @@ public class GlueCharge : MonoBehaviour
 
 	void Update()
 	{
-		Flow();
+        Flow();
 
         // Destroy after 10 Sek
         timer += Time.deltaTime;
@@ -29,14 +30,12 @@ public class GlueCharge : MonoBehaviour
 
     public void Flow()
 	{
-
-        Utility.DoAroundMovement(this.transform, movementDirection, speed, false);
-
+        // Shot Movement
+        this.currentDegrees = Utility.DoAroundMovement(this.transform, this.currentDegrees, movementDirection, speed, false);
 	}
 
     void OnTriggerEnter2D(Collider2D other)
 	{
-        //Debug.Log(other.tag);
         // Player hit
         if (other.tag == "Player")
         {
@@ -62,7 +61,10 @@ public class GlueCharge : MonoBehaviour
 
         if (other.tag == "Shot")
         {
+            // Destroy other shot
             GameObject.Destroy(other.gameObject);
+
+            // Destroy this shot
             GameObject.Destroy(this.gameObject);
         }
 

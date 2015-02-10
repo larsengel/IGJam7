@@ -42,7 +42,7 @@ public class GlewGunScript : MonoBehaviour
 
     }
 
-	public void Fire(PlayerScript.DIRECTION direction)
+	public void Fire(PlayerScript.DIRECTION direction, float curDegrees)
 	{
         if (this.timeCurrent >= this.timeNeed)
 		{
@@ -52,8 +52,7 @@ public class GlewGunScript : MonoBehaviour
 			timeNeed = 1f;
 			cooldown = false;
 
-            GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
-            charge.GetComponent<GlueCharge>().movementDirection = direction;
+            createShot(direction, curDegrees);
 		}
 
 		else
@@ -62,19 +61,23 @@ public class GlewGunScript : MonoBehaviour
 			{
 				this.timeCurrent = 0;
 				bar.transform.localScale = new Vector3(0, bar.transform.localScale.y, bar.transform.localScale.z);
-				bar.GetComponent<SpriteRenderer>().color = new Color(0.5F,0.5F,0.5F);
-
+				//bar.GetComponent<SpriteRenderer>().color = new Color(0.5F,0.5F,0.5F); // Does not work?!
+                GameObject.Find("Cooldown").GetComponent<AudioSource>().Play();
 
 				timeNeed = 2f;
 				cooldown = true;
-				
-				GameObject charge = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
-				charge.GetComponent<GlueCharge>().movementDirection = direction;
 
-				//fireSound.Play();
-				GameObject.Find("Cooldown").GetComponent<AudioSource>().Play();
+                createShot(direction, curDegrees);
 			}
 		}
 	}
+
+    private void createShot(PlayerScript.DIRECTION direction, float curDegrees)
+    {
+        GameObject chargeObj = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
+        GlueCharge charge = chargeObj.GetComponent<GlueCharge>();
+        charge.movementDirection = direction;
+        charge.currentDegrees = curDegrees;
+    }
 
 }
