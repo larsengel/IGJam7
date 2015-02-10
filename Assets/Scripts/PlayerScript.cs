@@ -304,6 +304,13 @@ public class PlayerScript : MonoBehaviour {
             {
                 this.enableDamage = false;
                 this.damageCurrent = 0;
+
+                // move player by degrees
+                float addDegrees = 15 * (float)lookAtDirection*-1;
+                this.currentDegrees += addDegrees;
+                // rotate player
+                transform.Rotate(new Vector3(0, 0, 1), addDegrees * -1);
+
             }
             
         }
