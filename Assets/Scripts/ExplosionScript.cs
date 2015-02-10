@@ -16,7 +16,6 @@ public class ExplosionScript : MonoBehaviour {
 	void callback()
 	{
 		//this.GetComponent<Animator>().SetBool("explosion", false);
-		Debug.Log (this.name);
 		if(this.name == "ExplosionB")
 			Endscreen.winner = 1;
 		else if(this.name == "ExplosionA")

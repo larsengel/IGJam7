@@ -28,7 +28,6 @@ public class Utility : MonoBehaviour {
         float cos = Mathf.Cos(angle);
 
         float distance = Vector2.Distance(GameMaster.Earth.transform.position,new Vector2(transform.position.x, transform.position.y));
-        Debug.Log(distance);
 
         // set kreismovement
         Vector3 pos = new Vector3(sin * distance, cos * distance, 0);
