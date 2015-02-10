@@ -42,7 +42,7 @@ public class GlewGunScript : MonoBehaviour
 
     }
 
-	public void Fire(PlayerScript.DIRECTION direction, float curDegrees)
+	public void Fire(PlayerScript.DIRECTION direction, float curDegrees, float addDegrees)
 	{
         if (this.timeCurrent >= this.timeNeed)
 		{
@@ -52,7 +52,7 @@ public class GlewGunScript : MonoBehaviour
 			timeNeed = 1f;
 			cooldown = false;
 
-            createShot(direction, curDegrees);
+            createShot(direction, curDegrees, addDegrees);
 		}
 
 		else
@@ -67,17 +67,22 @@ public class GlewGunScript : MonoBehaviour
 				timeNeed = 2f;
 				cooldown = true;
 
-                createShot(direction, curDegrees);
+                createShot(direction, curDegrees, addDegrees);
 			}
 		}
 	}
 
-    private void createShot(PlayerScript.DIRECTION direction, float curDegrees)
+    private void createShot(PlayerScript.DIRECTION direction, float curDegrees, float addDegrees)
     {
         GameObject chargeObj = GameObject.Instantiate(chargePrefab, Spawn.position, this.transform.rotation) as GameObject;
         GlueCharge charge = chargeObj.GetComponent<GlueCharge>();
         charge.movementDirection = direction;
-        charge.currentDegrees = curDegrees;
+        charge.currentDegrees = curDegrees + addDegrees;
+
+        if (addDegrees > 0)
+        {
+            Utility.DoTurn(chargeObj.transform, addDegrees * 2);
+        }
     }
 
 }

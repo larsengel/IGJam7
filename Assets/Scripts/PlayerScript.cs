@@ -23,17 +23,17 @@ public class PlayerScript : MonoBehaviour {
     // Movement
     [SerializeField]
     private float speed;
-    private float CatchSlowmo = 0.8f;
-    private float JumpSlowmo = 0.8f;
+    private float CatchSlowmo = 0.7f;
+    private float JumpSlowmo = 0.6f;
     private float currentDegrees = 0;
 
     // Jump
     private bool enableJump = false;
     private float jumpTime = 0.8f;
     private float jumpCurrent = 0;
-    private float gravityDefault = 0.4f;
+    private float gravityDefault = 0.2f;
     private float gravityCurrent = 0;
-    private float jumpSpeed = 4.0f;
+    private float jumpSpeed = 5.0f;
 
     // Damage
     private bool enableDamage = false;
@@ -162,7 +162,7 @@ public class PlayerScript : MonoBehaviour {
         if (this.catchObject != null && catchFollowing == true)
         {
             // Item Movement
-            float deg = Utility.DoAroundMovement(this.catchObject, this.catchObject.GetComponent<Item>().currentDegrees, movingDirection, tmpSpeed, !this.enableJump);
+            float deg = Utility.DoAroundMovement(this.catchObject, this.catchObject.GetComponent<Item>().currentDegrees, movingDirection, tmpSpeed, false);
             this.catchObject.GetComponent<Item>().currentDegrees = deg;
         }
     }
@@ -174,7 +174,7 @@ public class PlayerScript : MonoBehaviour {
 		if (this.catchObject != null && catchFollowing == false && this.catchObject.GetComponent<Item>().isLocked == false)	
         {
             catchFollowing = true;
-            this.catchObject.transform.Translate(Vector3.up * 0.4f);
+            this.catchObject.transform.Translate(Vector3.down * 1.2f);
             Item item = this.catchObject.GetComponent<Item>();
 			item.isLocked = true;
             item.currentDegrees = this.currentDegrees;
@@ -211,7 +211,7 @@ public class PlayerScript : MonoBehaviour {
         dist -= 3.5f;
         dist *= -1;
 
-        this.catchObject.transform.Translate(Vector3.up * dist);
+        this.catchObject.transform.Translate(Vector3.down * dist);
         this.catchObject.GetComponent<Item>().isLocked = false;
         catchFollowing = false;
         this.catchObject = null;
@@ -219,7 +219,7 @@ public class PlayerScript : MonoBehaviour {
 
     private void Fire()
     {
-        gun.Fire(lookAtDirection, this.currentDegrees + (float)this.lookAtDirection*10);
+        gun.Fire(lookAtDirection, this.currentDegrees, (float)this.lookAtDirection*10);
     }
 
     private void StartJump()
@@ -244,11 +244,11 @@ public class PlayerScript : MonoBehaviour {
             this.gravityCurrent -= Time.deltaTime;
             if(this.jumpCurrent <= this.jumpTime)
             {
-                Vector3 speedJump = Vector3.up * this.jumpSpeed * Time.deltaTime * (this.gravityCurrent / this.gravityDefault);
+                float speedJump = this.jumpSpeed * Time.deltaTime * (this.gravityCurrent / this.gravityDefault);
 
-                this.transform.Translate(speedJump);
+                this.transform.Translate(Vector3.up * speedJump);
                 if (this.catchObject != null && this.catchFollowing == true)
-                    this.catchObject.transform.Translate(speedJump);
+                    this.catchObject.transform.Translate(Vector3.down * speedJump);
             }
             else
             {
@@ -309,7 +309,7 @@ public class PlayerScript : MonoBehaviour {
                 float addDegrees = 15 * (float)lookAtDirection*-1;
                 this.currentDegrees += addDegrees;
                 // rotate player
-                transform.Rotate(new Vector3(0, 0, 1), addDegrees * -1);
+                Utility.DoTurn(this.transform, addDegrees);
 
             }
             
